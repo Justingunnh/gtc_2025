@@ -1,0 +1,647 @@
+[Speaker 1]
+A massive game of gear pong at the end of this. This is for if you get stuck, so blue cups indicate everything's good, and we can chill if you change that. Over to Red Cup, you'll see. We've got a whole bunch of Tas around the room, that's everyone standing.
+
+[Speaker 1]
+If you have a red cup, they will run over to assist. Um, so yeah, please. That is our mechanism to let us know that you need help anytime to swap that over, and we'll cover up, uh. Yeah, Josh is already on Red Cup. Thank you, Josh.
+
+[Speaker 1]
+So, we've got a fairly packed session. This is a very interesting course that you've you've signed up for. Um. The chances of us going through material and you sitting down and going through the Hands-On in a in a timely fashion and reading through everything. We're probably not going to get through all of that today.
+
+[Speaker 1]
+Um, so our plan here is for you to have a guided walkthrough with Angel. He will take you through the material angels, our instructor, and I will give them a fantastic intro in a minute. He will take you through the material. I also take you through the actual Hands-On labs, and there we'll spend some time explaining exactly what's happening and the purpose of each of our notebooks.
+
+[Speaker 1]
+A good thing about this is that you can have access to the entire course for six months. So post this. There will be the slides that will go through. The Jupiter notebooks for the Practical, and obviously, you'll have access to the GPU resource after the event for a period of six months.
+
+[Speaker 1]
+So, the idea here is that a good feel for what we're doing? Ask any questions as we're going through things that don't make sense. And then hopefully you've got time, uh, after the event, to spend real time going through all the material. And digesting it because there's a there's a lot to take in in this course.
+
+[Speaker 1]
+Um, has everybody now been able to successfully log in? Uh, when you do log in, you'll see that there's a play button to start the course. Please click that as soon as you can. Um, it'll take potentially a few minutes for the laps to spin up. Um, so please, please do take that.
+
+[Speaker 1]
+Yes, it's good everyone's on top of this. I can't believe everyone's locked in already. This is fantastic. Okay, so just a couple of questions to get a feel for background. Who here is using kubernetes in their sort of day-to-day, like, okay, fantastic? How about model fine tuning? Is anyone doing fine tuning?
+
+[Speaker 1]
+Homo sort of the the all get Ops conversation that you guys applying CD pipelines. Okay, perfect. A good mix, and hopefully you'll pick out a few bits and pieces as we go through this. I'm just gonna check my notes here, friends. It's important I've forgotten. I think we're good.
+
+[Speaker 1]
+Okay, so this is a two-hour DLI, but we will be finishing slightly early. Around 15 20 minutes prior, we'll start to wrap up as a chance for you to give us a little bit of session feedback and also for us to clear out the room for the next class.
+
+[Speaker 1]
+Um, so? Without further Ado, we have Angel here who is our lead instructor. He's put together pretty much the entirety of this course. A lot of this material has come out of what we've been working on with customers, so we've got a lot of customers that are at the point where they're looking to deploy, uh, LL mops into production environments.
+
+[Speaker 1]
+Saying around those deployments is actually key, and really AI pipelines are getting to the point that they need that sort of devops best practices to again Drive consistency, accountability, Etc across these environments. This is this is born out of real life customer scenarios. And yeah, I hope you you get a lot out of this.
+
+[Speaker 1]
+So ancho is based in emea. Is, I'd say. Best case partial enemy yeah? Done some phenomenal stuff. Particularly in pry rules as well. I think you've done some really cool stuff over many Cloud environments, deploying and setting up full Kate's orchestration application deployment over multi-cloud, so some fantastic pieces of work there, and he's brought all this knowledge to Nvidia and really is applying it to all of our microservices, so I don't
+
+[Speaker 2]
+Know
+
+[Speaker 1]
+If you paid any attention to our Nemo framework and the Nemo microservices conversations, but any microservice you see in there, uh, Angel's pretty much deployed that now, so?
+
+[Speaker 1]
+We go through. Thank you very much. Thank you.
+
+[Speaker 3]
+Oh yeah, thank you very much, Martin, for uh, such a nice, uh, introduction.
+
+[Speaker 1]
+But
+
+[Speaker 3]
+Before starting, everyone had logged into the the DLI environment has and clicked on the play button. It can, some can raise a hand who has not logged in.
+
+[Speaker 3]
+So, I'll wait for one or two minutes so that everyone has logged in and click on the play button before starting. I got that essential for that. You can get, uh, the lab up and running before we start doing the the Practical stuff.
+
+[Speaker 2]
+So the agenda for this presentation
+
+[Speaker 3]
+Is as this. So we start with a very basic kubernetes stuff. I know Martin asked the question that most of you are have familiar with the kubernetes, so I'll very quickly go over the the kubernetes background and then a bit on the get off side, how githubs can be done with a very open source tools like Hargo CD. The presentation involves around the names Nvidia names Nemo microservices and how you can use all these components to form the fine tuning pipeline. Is how you can use this fine tuning pipeline in an automation way using some tools like overflow. How many of you have used Argo workflow?
+
+[Speaker 3]
+A few that's good to know. So, yeah, if everyone has logged in so we can start doing it. So, the question is why this lab. So, if you see this lab involves around like a like multiple personas, starting with the the data Engineers who is curating the data, then going towards the data scientists who are doing the fine tuning of the models and then ml engineer, application developer, building an application on top, and lastly, we have the ml Ops or the devops Engineers to do the automation of the whole pipeline. All of these together, and this is a lab which brings all of these personas together and how you can mix and match to bring up the whole end-to-end pipeline of fine tuning in an automation way.
+
+[Speaker 3]
+So, I'll start with a very quick high level overview of the kubernetes. So, as you're all familiar with the kubernetes, kubernetes has the control plane and the the worker nodes architecture. The control plane is the main component, or the which is responsible for doing all the the main management stuff in the kubernetes, and it involves multiple components like hcd at CD is the database key value database, which stores all the information related to the kubernetes, like the ports i p addresses of the. Perfect formation. All the metadata? Then you have the controller manager. The controller manager is responsible for managing different kinds of controllers in the kubernetes. Different controllers means like, if you have a nodes or the pods or some other, the controller in the kubernetes, and then we have the the scheduler and the scheduler is responsible for scheduling the pods to a specific node, depending on whatever resources you have asked for it.
+
+[Speaker 3]
+Api servers. If you want to interact with the kubernetes, you always. This is the the first point where you go into and then. From there, the you can interact with the kubernetes. And we have the nodes which are actually doing the work, and these nodes have like operating system. It could be any operating system, and then top of the operating system. You have a container runtime, which could be like Docker container D or any other, and then you have the cubelet. Cubelet is the main component on these nodes, which is. Scheduling the part on the nodes.
+
+[Speaker 2]
+And
+
+[Speaker 3]
+Networking is a very big topic of on its own, so I'll quickly go over like the the cni, which is a container networking interface in the kubernetes, which creates like an overlay Network so that the parts which are running on the kubernetes can talk to each other or can it track? That's a very high at live and overview of the kubernetes, and in kubernetes, the basic component. If you want to deploy anything, you go as a pod, so part is like a smallest KH Computing compute resource, which contains your containers. So, if you are not familiar with the kubernetes concept so you can assume it like a one-to-one to like a container for the time being, but it can have a multiple containers as well. So, you can do that.
+
+[Speaker 3]
+You can see how that yaml file of the board looks like, so, like the main components are the whether you want to have an init container, which could be responsible for executing some kind of a startup task, like a basic installation or stuff. Something like that, and then you have the main container, which is your main application running in the kubernetes.
+
+[Speaker 3]
+And then, once you have like a like all the like, all the parts in the kubernetes, you can manage them in a very different way, and these are the ways which you can manage that in the kubernetes. These are called as workloads, so basically the main which you use mostly in the kubernetes is the deployment, and the deployment is a replica set, which can manage your pods like keep them healthy. Check the status of the pods and based on that it can restart. So not go over the other ones, but the main one is the the demon side.
+
+[Speaker 3]
+And then you have also the storages how you can manage the storage within the kubernetes, the basic components to manage the storage, like attaching something to the port like a mount directory, config map or something, and that comes from the persistent volume claim. So, PVC is like, if you wanna add something like a storage to the fod, so you can go via PVC and the PVC would request a persistent volume, which is the abstraction of a storage container and this e.
+
+[Speaker 3]
+The storage class is like a concept to map it to the underneath storage. Let's say, like a CSI driver, we call it container storage interface, and that could be one of these, depending on where you are bringing up the kubernetes cluster. Example, you can have a GCE persistent disk, or it could be an nfs, or it could be even a host path like on the node itself.
+
+[Speaker 3]
+And then. Now you can think of like you have. If you have an application which is using a lot of resources on the kubernetes, then you have to manage all of these to deploy an application. This is just a subset of the things which you want to deploy on the kubernetes. The question is how you want to manage all of these in a way so that you can reproduce the things again and again from one environment to another environment?
+
+[Speaker 3]
+So, then comes the git Ops. For how many of you are familiar with the GitHub's term? It's a. It's a good. It's a good bunch. So, so just to give you a very high level overview of the guitars. So, GitHubs is a way like, if you want to manage a cloud, native application, or any infrastructure, the word git and the Ops are the two words over here. If you can see, the git Ops means, like everything, which you can use as a git or operational use. So, like it uses the kit as a single source of truth to deploy your application. So, your all your Source code lies into the?
+
+[Speaker 3]
+So you can put over there and it uses as a source of Truth to deploy on the kubernetes cluster. There would be an agent like an Argo CD or a flux, which is running on the kubernetes, and it's a continuously checking. What are the changes happening in the the git repository and based on that it will deploy from the kubernetes? So, how does this flow Works? So, let's say you are a developer, you will do a commit into, or a pull request into your git repository, whether it's a gitlab or a GitHub. And once you do that, then there is some kind of a continuous integration pipeline running in the back and to do some testing and things.
+
+[Speaker 3]
+And that would automatically push the image which you have changed as a code into some kind of an image repository, which could be like a Docker Hub or any private registry. And now, once you have a new image, now you want to use that new image into your kubernetes cluster. So, one way would be that developer same developer or the devops Persona can update the Manifest to use the the new image, and that new image would be in the again in the kubernetes in the git. Could also be automated using some tools like customized dot IO, which can take from the continuous integration pipeline and directly update your kubernetes manifest file to use the the latest image, and once you have that, then you have an Argo CD, which is checking for the changes happening into the git repository, and it will see that I have a new image version or something, and then it will deploy that new virtual image to a kubernetes cluster, whether it's a Dev or a product environment.
+
+[Speaker 3]
+I go ahead.
+
+[Speaker 3]
+If not. So, so you have seen this term Argo City a lot. So Argo City is like a declarative. Or like, a way or a tool to manage the getoff's like within all for the kubernetes. There is another tool called as flux, which is an alternative to Arco CD, which you can use for the same purpose as Argo CD. Basically with Argo City. You can take kubernetes manifest file to deploy on the kubernetes. This could also be a help files or help charts, or a or a customized application. If you have used the customized or IO tool?
+
+[Speaker 3]
+Does it work? So, you have some kind of a yaml files. Like, if you want to deploy nginx on kubernetes, so you will create this yaml file, and along with the yaml file of deployment, you would also have a service.yaml file, which is for exposing that nginx and then you push that yaml file to the the git. Get. You need to create an Argo CD application to to take those yaml file and deploy it to the kubernetes cluster, and this kind over here application is a custom resource created by Argo CD on the kubernetes cluster, and then you can specify what is my destination kubernetes cluster? So, like, over here, this is a default. So, this is the local kubernetes cluster where the Argo CD is running, so you can also have a external kubernetes cluster you can specify over here that thing as well.
+
+[Speaker 3]
+Files are stored. So over here I have specified K8 Manifest nginx where my nginx files are sold. And then get wrapper URL, and this is the underneath. Like how you want to manage your policies, like how frequent, how frequently the synchronization should happen, whether I want to create the namespace or not? And once you do that, then Argo CD would automatically see or pull the new manifest file from the kit and then deploy to your kubernetes cluster on the right side. You can see the UI of the Argo CD where you see the new application, the nginx, which will be deployed.
+
+[Speaker 3]
+And then, if you click on that application, you can see more details into what all the resources are getting deployed by that I have by the Argo CD for you. So, like the nginx service, which we pushed into the kit along with the nginx deployment file. So, what happens if someone manually go into the kubernetes cluster and changes something? So, like someone goes into the kubernetes cluster and changes from two replicas to three replicas. So, what would happen is Argo? CD would see that the current state of the kubernetes cluster is not matching my desired state, which is in the get. So, what it will do is we'll try to synchronize all the cluster from the git version and then change back to the two replicas.
+
+[Speaker 3]
+Any any question until here? So, this part gives you a very high level overview of kubernetes rucd how you can use Argo CD to deploy one application, which is on your kit to the kubernetes cluster. So, now we will shift the go towards the more Hands-On environment where you have the lab. So to give you a bit overview of what the lab is, so the lab consists of a instance which has a four A100 gpus, which rkt cakes, and on top of that, we have a container engine, which is the talker and then on top of the docker. We are deploying the kubernetes cluster for you by default, and this kubernetes is like a mini Cube, so this is just like a reference, so you can use the.
+
+[Speaker 3]
+Is to any kubernetes platform. Everything would remain the same. And on top of that, we have the the GPU operator, which is doing the the for the exposing the gpus from the underneath node to the kubernetes so that you can deploy any application which can use the gpus. There are many tools to deploy the kubernetes. So, like eks, AKs, or gke, these are the managed tools. And on the right side, you have the self-hosted tools which you can use to deploy in the kubernetes like uberia, minicube, or k3s. To give you a big background on the GPU operator, the GPU operator allows, or it installs a bunch of components on the kubernetes cluster, which allows you to have the gpus advertised to the at a higher level so that the parts which are scheduled on the kubernetes can use those gpus underneath, and this consists of like installing the Nvidia driver GPU driver. Then you have the container runtime, which is Nvidia container runtime, and then the device plugin. The device plugin is the main which Xbox.
+
+[Speaker 3]
+Kubernetes.
+
+[Speaker 3]
+To deploy the GPU operator, you can use a help chart or help. How many of you are familiar with the help? Okay, a few on much mode. So, help is like a package manager to deploy on the kubernetes. So it can, you can package your multiple kubernetes resources into a single help chart, and then deploy all of them together using the help tool, and that what we are doing is for the GPU operator to deploy on the kubernetes cluster. And once you deploy that. So, if you do Cube CTL, get parts minus n, which is the namespace of the GPU operator. So, then you would see a bunch of components which are deployed on the kubernetes cluster, which I showed you earlier.
+
+[Speaker 3]
+So, that's the the first part of the Hands-On session, which you see in the lab and in the the second handphone session, what we are doing, which what we are doing is we already have deployed rbcd as part of the the lab and the in that Argo CD, you can check all the parts which are running by rgcd. So, like the application controller, the red is the radius is for managing the the backend information for Argo CD for you and the repo entry server, which is managing all the all.
+
+[Speaker 3]
+For those are few components, which are LCD deploys for you. So, what we want to do as part of the the second notebook, which you have in the lab? We create some example kubernetes manifest along with an Argo CD application to track those components, commit those application manifest, plus the application into a git. And then. From the git, we synchronize it with an Argo CD and deploy to the kubernetes cluster. So, one one question over here. How many of you already have a GitHub account? I assume everyone, so we'll try to use the your GitHub account, uh, or you will use your GitHub account to create this thing. So in the end, what would happen is you would have all the or repository created to deploy on the kubernetes cluster?
+
+[Speaker 3]
+So, now we'll start with two laps, the lab one and the lab two. The last one is a high level overview of the environment which I described earlier and the lamp two is Argo CD and connecting Argo CD with the git repository. So, you have to create a grid repository and then deploy a sample application. See. Now you can go back to the the interface where you click the start button and then start using the notebooks.
+
+[Speaker 3]
+So, you must have effect on this launch button. Once you click on the launch, let's start with, like, how many of the series launch button over here?
+
+[Speaker 2]
+How many of you
+
+[Speaker 3]
+See the launch button?
+
+[Speaker 3]
+And or how many of you don't see the launch better? Apply to it. Okay, yeah, everyone should see this launch button over here and then. Once you click on the launch button, so you should be taken to a Jupiter notebook. I assume everyone is familiar with the Jupiter notebook environment.
+
+[Speaker 2]
+Okay.
+
+[Speaker 2]
+So, if you don't see
+
+[Speaker 3]
+The launch button, can you put the red cup on the top so that the Tas can help you out?
+
+[Speaker 3]
+It's a. It's a good thing that everyone sees the launch button, so it means that you haven't launched your the notebooks where we are gonna do the Hands-On, so I want to ask a quick question. Do you want me to guide, uh, the notebooks, and then you can follow along with me, or you want to do independently. We give you like 15-20 minutes to do it independently, and then we come back to the next notebooks. So, who is up up for option, one that me guiding through it, and who?
+
+[Speaker 3]
+I see more on the option too actually. For then, the voting goes for the option too, so I will let you do the the Hands-On for the notebook one and the notebook 2. The main time consuming part could be in the notebook 2 where you would connect your or you would create a gate repository and connect it to the Argo CD. So, then I'll give you like? 15 to 20 minutes to do these two notebooks, and then we'll start proceeding with the the next session, which is going to be more interesting on how you can build the fine tuning pipeline. Once you have connected to Argo CDU.
+
+[Speaker 2]
+Oh, I think it's in the settings.
+
+[Speaker 3]
+So, now, what we have done is, we have a way. So, whatever you push to the the git repo. Now we can deploy it to the harbor City using Argosini to the kubernetes cluster. So now you see, this is a path. So, whatever you push to the git, it would be automatically deployed. So, now we want to push all our different Nvidia memes and Nemo microservices application. These names and Nema microservices application would allow you to.
+
+[Speaker 3]
+Over a bit of details on this, not into the depth, but a high level overview of what these microservices are. Yeah, so
+
+[Speaker 2]
+Banking services is
+
+[Speaker 3]
+Just the name of Microsoft, I assume it like a bunch of containers, which has some application code and exposes an API endpoint, which you can use to do the fine tuning stuff. Let's start with a like basic of genai, so there are two parts to go towards the the Jenny eyes. One could be using the managed generative AI solution. Like, let's say you have an API open AI API which you want to integrate into your application that goes into the the managed generative AI and Services all the solutions. Self that you do everything from this class, like, like building the infrastructure, becoming getting a model packaging into a container or something, and then using it as a set point for your application.
+
+[Speaker 3]
+The Nvidian names which we call it as a Nvidia inference. Microservices sit somewhere in the Bitcoin, so we have a humid is like a package which is optimized contains the optimized model for your GPU Hardware. So, like, for example if you want to use llama 3.1 8 billion model for your ant inference or something else, so we have a name container and this name container contains all the optimized model.
+
+[Speaker 3]
+Lnm model for a specific gpus. So, now you can deploy this name on any kubernetes cluster or any hardware, and then expose it as an endpoint, and this has a open AI API endpoint compliant, so you have existing application, which were based on, let's say, open AI apis, so you can use same as along with the the name as well. The good part with the name is that. Let's say you wanna fine-tune. The model on your own data set, so you have some kind of a proprietary data set and you wanna fine-tune on that data set, and then integrate or use that fine-tune model. So, with the name, so those fine-tuned models are called as like adapters, these are adapters for different fine tuned applications, which you have built. Like, for example, it could be what could
+
+[Speaker 2]
+Be
+
+[Speaker 3]
+For code generation. Other could be for customers for support, chat, query, or something like that. So, these are different fine t.
+
+[Speaker 3]
+All your fine-tuned adapters are stored and the name can be used or take all the adapters from this particular adapter store and use it or put it into the GPU memory, and then you can use these adapters as like a model for your fine tuned this configurations
+
+[Speaker 2]
+For some reason.
+
+[Speaker 4]
+Oh, interesting, will
+
+[Speaker 3]
+Show actually how this would work once you start doing the Hands-On session. Moment of the names. So, one question how many of your authorities familiar with the names? Okay, a good number, so the names for deployment are the names on the kubernetes. We have the name operator and this name operator sits on top of. Once you have your infrastructure services like kubernetes and then GPU operator and network operator, then the name operator comes on top of that which allows you to do model precaching. So, let's say, if you want to use some models, it will. It can do some re caching of that model, then can do Auto scaling as well Auto upgrade plus plus.
+
+[Speaker 3]
+So, how does it do that in the back end? It contains multiple custom resources in the kubernetes, and those custom resources are the the Navy cache name, service, and the name pipeline, then cache is like a resource which is used for managing the the model itself. Name service is the resource for managing the the container and the name pipeline is the wind resource. If you wanna combine multiple names together to form an application so you can integrate them into the name pipeline.
+
+[Speaker 3]
+This is to just give you an example of how the name, cache, and the name service. Yaml file looks like, so it, it has a custom resource called as an mcache. The more important part over here is the the model puller where your model is located, and then which model you want to get, whether it's a Lara profiles Lara profile, is that it can be fine-tuned for your proprietary data, and you want it for a specific engine. Whether it's a tensor RT and a Lam or vlm?
+
+[Speaker 3]
+Gpu over here, which GPU one I get for the model profile? If you don't specify any of this parameter, it will automatically download the most optimized profile for your GPU Hardware, where you're trying to deploy it. And on the right side. Once you have the the model profile, you can use the name service, which is the name container to use that model profile. And the model or the name container would be specified over here, the repository. And I'll come back to this environment variables and the name cache is referring to this particular cache, which is we have created for the the model profile.
+
+[Speaker 3]
+And then you can specify how many number of gpus you want to give it to this model. Plus, how you want to expose this? The one thing which I specified over here, the environment variable. That's the beft Source where all your DOTA adapters are stored, and I am over using over here,
+
+[Speaker 2]
+Uh,
+
+[Speaker 3]
+The endpoint called as entity store. That's one of the Nemo microservices. Like a setting on top and allows you to read from the like a database or a background data store where all your this adapters are stored, and then you can also specify the past refresh interval. So, like every 30 seconds, which I specified over here. If you push a new, let's say adapter into the Nemo entity store, it will automatically refresh and shows up into the the name.
+
+[Speaker 3]
+That if you can. If you do V1 slash models into the name endpoint, so you would see that new adapter over there. So any, any questions until here?
+
+[Speaker 2]
+Sorry. Uh.
+
+[Speaker 3]
+Can it be across multiple service adapter store, right? The service is too right. The the services are the name, service, or the adapter store the name service itself. Yeah, the name service here. You can deploy any different servers actually.
+
+[Speaker 2]
+Uh,
+
+[Speaker 3]
+If you are meaning that if you wanna deploy the name service across multiple nodes like a big model like four or five the, uh. So currently, the name operator does not support that functionality, but it is a under process actually to do the deployment of the name service across multi-node. Have the head modify that. So we do a leader marker side piece to help deployment so that you can deploy the name container across. If you want to use multi node?
+
+[Speaker 2]
+Thank you.
+
+[Speaker 5]
+Uh, we had one more question, yes.
+
+[Speaker 2]
+Okay, pretty girl. Yeah, go ahead.
+
+[Speaker 5]
+One second
+
+[Speaker 1]
+Are, are you able to create your own Nim or you sort of constrained by the models that are pretty slight here and also the pet thing. Does this only work with Transformers? This is using the hugging face
+
+[Speaker 3]
+At library. Yeah, so first question, can you create your own name? The short answer is, you know, so we do have a name Factory, we call it, uh, inside, which does the whole process of taking the open source model and converting it to a name because?
+
+[Speaker 3]
+Use those x amount of gpus to build the optimized models for different Hardwares, and it consumes a lot of resources. And the second question, uh? Can you take a hugging phase model and use it as a pest adapter? Is that correct?
+
+[Speaker 1]
+Yeah, is that what you have here for the adapters.
+
+[Speaker 2]
+Yeah, so you can do
+
+[Speaker 3]
+That. We have a script if you take the hugging model hugging face model, convert it into a Nemo format, and then I'll show you how you can once you have it, not Nemo format. How you can integrate into the whole pipeline to use it as a the weft Source.
+
+[Speaker 2]
+Sorry, like, quick question. Follow question
+
+[Speaker 6]
+On his question number one, like, what if it's the same model just the same architecture just fine-tuned, uh, model? Can you still leverage and then somehow, or would? Think every time I ask that the question is, the answer is no. But is there plans for that? And yeah,
+
+[Speaker 3]
+So it's the short answer is still, you won't have to get directly. Let me take that. Actually, we do
+
+[Speaker 7]
+Support fine-tune versions of Open Source models. So, if you have fine-tuned version of llama 3.270b, we do support that along with loras, so you can have that fine-tuned version and Laura's on top of that, and later in the lab, you will train your.
+
+[Speaker 7]
+More details.
+
+[Speaker 6]
+This is going to leverage the same accelerator,
+
+[Speaker 3]
+Right? Yeah,
+
+[Speaker 7]
+It? It will leverage the same accelerator lowers will be accelerated. Punching models will be accelerated with the same Tender RTLLM effectively.
+
+[Speaker 3]
+Yeah, thank you. Yeah, Dmitry is our solution architect for data scientist AI. Anything around names influence microservices so he can answer your question.
+
+[Speaker 7]
+If you have any more questions just? Put the red cup on top and we will answer them one
+
+[Speaker 3]
+More time. So, so let me go ahead and quickly give you a high level overview of the the name of microservices. So this is a like a connect GA. General availability after the GTC one would be announced some of the components in the GTC. This Nemo microservices are so, so this is like a Enterprise AI flywheel. So, what happens is like, you have a some kind of an Enterprise data, which is your proprietary data. And you wanna do some kind of a data processing on top of it. Once you have done some kind of a data processing, then you want to build a customized, fine-tuned model on their data. And once you have built the customized, fine-tuned model, then you want to evaluate whether that model is good enough for your use case or not. And once you have done that evaluation, you wanna deploy that model, along with some kind of a guard rails, to limit the what it can or it cannot do. And that's where, like, we call it as a fly.
+
+[Speaker 3]
+And to support this whole flywheel. We have different microservices, so starting with the data processing we have Nemo curator. What model customization we have Nemo customizer for evaluation? We have Nemo evaluator guard rails nemocardials Plus for deploying the custom model. As we talked about over. Here, you can use the name and plug in your lower adapters, which are customized over here. So, in the end, you would get something like a pipeline like this. You start with the data preparation using Nema curator, then go towards the training and the customization, using the customization or customizer. Do some evaluation based on the open source benchmarks, which we have integrated as part of the Nemo evaluator to see that if the fine-tuned model is performing good enough for your use case.
+
+[Speaker 3]
+Retriever, which we are not using it over here. And then, for deploying, you can go with the guard rails, plus the Nvidia name. So, that's like a hand-to-end flow. And for deploying the the Nemo microservices. There are a bunch of components which we refer. So, on the underneath side, you can see infrastructure has, which we are already have done. The kubernetes plus algo CD and we currently use third manager, which you are not using it at the moment, but in the back, and it's being used. And then, on top of that, we have. I call them as a demo microservices components, which are required for the name of microservices to run. So, for example, Argo work work.
+
+[Speaker 3]
+So some kind of a workload from like sequential or acyclic graph, so you can build using Hardware workflow. Then we have postgres for storing the metadata information required for the different microservices, then we have ml flow. How many of you used ml flow? Mostly, like data scientists use that Hamel flow to visualize all the metrics of, let's say, like, you customize some models you want to see. What's the validation, loss, training, loss, and everything you can see it in the ml flow? Binoio is a tool which is a similar to S3 for storing the objects.
+
+[Speaker 3]
+And then Melvis is for the vector database and the Nvidia name operator for deploying the names. So these are the some of the components, which are required for deploying the Nemo microservices and on top of the. Once you have these components up and running, then you can deploy the Nemo microservices to use these components. Did mention in the the previous slide of all the the demo microservices. There are two Nema microservices Nebo entity store and the data store, which are used for storing all the the like stuff like models, data sets, uh, plus some metadata.
+
+[Speaker 3]
+At that sphere, you can have your adapter store in this particular micro service is over here, where you can push your fine-tuned model and can be referred from the the name to look up for the adapters. So, any questions from the high level?
+
+[Speaker 2]
+Yeah.
+
+[Speaker 3]
+So can't really? So the question is, can you explain the the guardrails? So guardrails is a like a micro service, which allows, let's say you don't want a name to answer certain questions. Like, for ethics based questions or something like that, so you can program that into the the name of Garfield, microservice, and then the name came for. The llm can say that it's out of whatever you want us from, actually a default response, so it will go with that. It's just a very high level overview. I think there is.
+
+[Speaker 3]
+There may be yeah, so they didn't. Yeah, love
+
+[Speaker 7]
+Made a bit more to that explanation. So basically, you can to fine-tune your model so that it doesn't respond. Uh, the things you don't like it to respond, but uh, what guardrail does, is? It introduces runtime checks, so you can ask another llm being a judge of of. Salad, then that may be the same name that may be a different name depends on the setup. Uh, you asked that to verify that this first response is not invalidating your? Policy for, like, non-disclosure of internal information, or for it's the ton of voices correct. That's the idea behind guard Trails.
+
+[Speaker 2]
+Yeah, you can Define your
+
+[Speaker 7]
+Own policies within the garage rails, so
+
+[Speaker 3]
+The question was, can you define your own policies and answer is yes? Um, yeah, but let's take this one. Yeah,
+
+[Speaker 6]
+So, uh, the previous slide you showed the the components, which are? Mandatory to use it
+
+[Speaker 3]
+To deploy name, so I'm not name the name of micro, so the name of microservices. Yeah, right. So, if you want to deviate?
+
+[Speaker 6]
+Using a different Vector database like specifactor
+
+[Speaker 3]
+Or something like that, that will be possible. So, the question is, can you deviate from the some of these components. That's why I showcased them as a component so you can use any open source equivalent or proprietary component with them and integrate with your name of microservice over there. So that's why it's under, like a separate block over here. Okay.
+
+[Speaker 2]
+So, how do you make
+
+[Speaker 8]
+Deploying models faster? Do you always fetch it from the adapter store or is it cached somewhere? So
+
+[Speaker 3]
+The question is, how do I make the fine-tuned, adapted models deploy faster, right? So, yeah. So, we do have two kinds of a cache supported one is a GPU cache. Another is, uh, the CPU cache, where you are frequently used. Adapters can be stored, and there is a background policy like. Chapters would be stored over the other rest in the let's say. Like, any adapter store would be there, so it's already part of the name container.
+
+[Speaker 7]
+And the models themselves will be cached in the SSD
+
+[Speaker 9]
+Storage or any kubernetes storage you provide as a cache.
+
+[Speaker 3]
+I'll take my last question. Yeah,
+
+[Speaker 10]
+Can this be used on the gauge too?
+
+[Speaker 3]
+As you mean the question is, can this be used on the edge for demand. Yeah, okay. So, yeah, the question is, can you use this on-prem? Yes, you can, actually, as long as you have.
+
+[Speaker 3]
+Is only the name required the GPU for running the llm or something because these are all the containers so you can deploy them anywhere wherever you want. It's on hedge or in the cloud.
+
+[Speaker 7]
+Yeah, let me actually clarify that you need gpus to write a customizer to run. Yeah,
+
+[Speaker 2]
+For
+
+[Speaker 7]
+The customizer. For the evaluator, you provide it with the API of Nim, and then the name is running somewhere on the GPU.
+
+[Speaker 3]
+Yeah, thank you. Yeah, so you directly don't need for these microservices, but once you start doing the customization job or evaluation job, so those jobs additionally would require the gpus, which we will see in the the Hands-On session. So, then we have the next two notebooks for the Hands-On session and those two notebooks. What we are doing is deploying the components needed by the demo microservices, which you saw in the the previous slide, the middle block. All those extra components, which we need to deploy, and then we are deploying the the Neva microservices in the the fourth notebook. So, now you have your, uh, let's say, like, kit repository. Now you can put the Argo CD application over there into the git repository. That's what's.
+
+[Speaker 3]
+Would recognize it and then deploy to the kubernetes cluster. So, what would happen is like, these are the? The components or the Nemo microservice components, which we are deploying on the kubernetes cluster on the right side. Once you have pushed all the those components. You would see this bunch of applications in the Argo CD UI. And an example of how we are doing it. So, like, I am shooting over here, like a Nemo operate. I haven't talked about the name operator, but it's very similar to the name operator, but for managing the the demo microservices in the middle section, you can see the help chart, which we are referring, and this hell chart is currently integrated into the lab. But let's say, if you want to deploy the same thing in your environment, you can integrate the the nvcr, which is a Nvidia container registry held chart over there.
+
+[Speaker 3]
+The git path would be, and lastly, the the synchronization. Parameters. We will have the ml flow as well. And then, in the fourth notebook, we deploy in a very similar way. All the the Nema microservices? And it's, it's a very similar structure like the health chart repository referred over here, and some of the parameters which you want to configure for your help chart. Like, uh, where is my that URL for the name? Where is my postgres running so you can specify over those those things over there?
+
+[Speaker 3]
+So, then we have lab three and four. So, we do have less time. So, what I will do? I will cover up the the lecture section so you can then continue on the Hands-On session for both the three and four and the five and the six lab all together. For now! Let's say you are done with these two notebooks, which is the components deployed, plus also the microservices. Now, the next question is how you can leverage these microservices to build a? Pipeline. If you remember, I showed you like a high level diagram of the flywheel, like starting with the customizer, then going to the evaluator, then going towards the name for deploying, and that's how the the process is.
+
+[Speaker 3]
+So, you take the from the Nvidia NGC, which is a container registry the like, a foundation model or something, and then use the Nemo customizer to like, customize your this Foundation model and how you can do that. You can send an API request to the customizer and see the the Hands-On session. It's just an API request like a rest API request to the customizer, saying that I want to use this Foundation model with this hyper parameters to do the customization job. Will get the data, the data. First, you have to store it into the data store, get the data, do the the customization, and store the output back into the the data store, and once it is done that, you can do the the evaluation using the demo evaluator on the your customized data set, or you can catch the open source benchmarks to do the evaluation. And once you are done, and you are happy with the evaluation. You can plug that your adapter into the.
+
+[Speaker 3]
+From the data store. So, that's a very high level overview of the fine tuning pipeline. So and for, like, like I showed you like a fine tuning pipeline, like one fine tuning pipeline. But now, let's say, in your environment. You want to run multiple fine tuning pipelines in parallel, so you like creating a multiple workflows. So, like an example, I show over you here, so you create a data set and then upload your private data files into that data set into the data store, and now you want to run in parallel multiple customization job. Running parallel on the gpus, depending on how many gpus you would have, then we would have some kind of a status check if that customization job is finished, once that customization job is finished, then you can perform evaluation and then deploy it to the the name or using the name matchly to perform inference.
+
+[Speaker 3]
+You can launch as many as you want, so these are just sending the request to the customization and doing the next species. But to plug these all together, actually. So you can do this step-by-step manually, which you're gonna do in the fifth notebook. But to make it automation, we have a tool called Argo workflow. Works login. A few, so either workflow allows you to like create a sequence of steps, and these were the. These are the sequence of the steps which you wanna perform, so you want creating a data set, then uploading the files, then starting a customization job and then evaluation and inference.
+
+[Speaker 3]
+Then put all of this into an R2 workflow. And how does that work? So, you would have a very like a individual components which I described earlier. So, like in the middle, see, or at the top? You have a create data set component over here, and that's gonna be like an input. You can specify where is my data set, where it is coming from, and then you can specify your main logic of what you want to do based on those inputs. And then what do you want the output from that component? So this is like a one component for creating a data set using our Google workflow automation, so you can now imagine creating all these components for all the the previous.
+
+[Speaker 3]
+Like, you created the component for this again for uploading the data set, then customization and XYZ. So, this allows you to have these components individually, and now you can plug them together to form the the Argo workflow. I don't have a yeah, but then you can plug them to farm and arm of workflow, and the algo workflow would be like a sequence of steps A to B to C and C to D. And once you have that Argo workflow, you can go to the Argo workflow UI and then press the let's say, like the submit button, which I show you on the top left. This allows you to submit the end-to-end pipeline of doing, uh, the fine tuning based on some of the parameters which you want to expose to the user. Like, you can expose where my data store is, which Foundation model you want to customize, or what are the hyper parameters for which you want to perform this customization?
+
+[Speaker 3]
+Impress the submit button. You would get something like this over here, like a sequence of steps. It not necessarily needs to be a sequence. You can also have a parallel or an a cyclic graph in the algo workflow. It's how you build the workflow.
+
+[Speaker 3]
+And then, so now end to end. If you see how this pipeline would look like? It's like, over here you have the data scientist in this gray box. You have your git repository where these data scientists are, let's say submitting the the workflows which you build through the hardware workflow, and then you have the devops managing the Argo CD for you, which is responsible for synchronizing all the Nemo microservices plus the llm workflows to the kubernetes cluster, which can be running anywhere, whether it's on-prem in the cloud or it doesn't m.
+
+[Speaker 3]
+Workflows where you have all these Lnf workflow components, plus the the workflows which are referring to these components and would create the jobs into the kubernetes cluster for running the fine tuning pipeline. So, then you would have for data scientists to pass so they can refer these components like directly to do a step by step manual. Process for testing in the notebook, which you're gonna do in the fifth notebook and or you can create the UI using Arco workflow, where it's just a click button to submit the hand-to-end workflow pipeline.
+
+[Speaker 3]
+So, this is what we are doing in the last two notebooks. The fifth notebook is, uh, once you deployed all the Nemo microservices, we go through over the the sequence sequence of steps, one by one manually of how you can fine-tune the model. Book is how you can use or how you can do that fine tuning instead of doing manually using an automation using the Argo workflow by a click button. For any any questions, because that's the the last lecture slide. And then I will let you work on these the rest of the remaining four notebooks.
+
+[Speaker 7]
+Yeah, I got one question. In the meantime, the question was, what is the entity store story? Like, what's the difference between the entity store and the data store
+
+[Speaker 3]
+So that I did explain the difference between the two yet. So, data store is the main component, which is storing your all the the models and the data sets and everything entity story sits on top of the the data store, and it is responsible for managing, uh, the models and everything. It's not entirely. A router sitting on top of the data store. So, for example, you could have multiple data stores underneath, and you want to have a single entry point to all of them, and that's where the entity store is doing that stuff.
+
+[Speaker 2]
+So, if you don't have any questions?
+
+[Speaker 3]
+So you, you can go back to your notebooks. You can start with a notebook 3. And then Notebook 4, so in the notebook 3, we are just deploying all the Nemo microservices components. And what would happen is? If this loads. Yeah, so what would happen is once you run through this notebook, so you would have in the git repositories all the the yaml files committed, and then Argo CD would take and then deploy to the kubernetes cluster. The same we are doing in the notebook number four, where we are deploying all the Nemo micro services. This is what we commit to the the git repository and then our go CD would take from there and then deploy to the kubernetes cluster. Now, imagine in the at the end of this, let's say, like this whole course or this slab, so you would have your git repository where you have all the Yammer signs and you will take that home and then you can deploy those components on any kubernetes cluster using RGR.
+
+[Speaker 3]
+Book the the fine tuning one is a step-by-step manual process of how you can use those Nemo microservices, which we have deployed to do the fine tuning of a model, and the sixth is the automation of that fine tuning process using hard overflow. Around 20 25 minutes, so you can start doing these four notebooks. If you have any questions you can raise up the hand, I'll also do paraly. So, so that you can also see what I am doing over here.
+
+[Speaker 3]
+So, the easier way I haven't tried it, but this notebook. What you can do is if you go to the camel. And say, I wanna. I just say go to the run and then say run all cells. You probably need to put the name here.
+
+[Speaker 4]
+Here
+
+[Speaker 2]
+Was
+
+[Speaker 3]
+So to explain, just to give you background. So, like, over here, the first step we are adding the the different repositories because Argo CD needs to know the reference of where I should pull the help chart from. And that's where we are creating all the the repositories over here into the Argo CD. So you can, if current way we are doing an automation using the notebook over here. But in your environment, it could be either like a terraform based or an ansible base where you wanna put things all the the repositories into the nargo C game.
+
+[Speaker 3]
+If you go back over to the Ohio CD UI, so in the settings. And if you click on the the repository, so you should see all the repositories which I have created using that cell.
+
+[Speaker 3]
+And then we just create the bunch of components. What we do is for each component. We create the application yaml file and then commit it onto the the git. See you! What you can do is you can commit all the yaml files all together like I did like, run all, and then once you are done, then you can go back to the the Argo CD UI. And then click on the the synchronization.
+
+[Speaker 3]
+If everything is submitted into the git repositories, so Agu CD will know that I have this all to be deployed on the kubernetes cluster, and then we take it as a reference and start deploying on the kubernetes cluster.
+
+[Speaker 3]
+And then in the the git rep of the tree. You can refresh and see all the the applications which you have created over here. So,
+
+[Speaker 2]
+Like,
+
+[Speaker 3]
+Under the components file.
+
+[Speaker 2]
+So
+
+[Speaker 3]
+Anyone? In the meantime, I'll let you do it. If anyone has any questions, just feel free to ask.
+
+[Speaker 2]
+To. It's our conversation is what counts arms?
+
+[Speaker 2]
+It's something easy.
+
+[Speaker 2]
+Yeah, yeah. Like, are we all know? Are they all giving us?
+
+[Speaker 2]
+Yeah, yeah.
+
+[Speaker 2]
+So, for, for all those who have finished,
+
+[Speaker 3]
+Please give us the feedback on our homepage. So, if you want to leave, I'll leave. Wanna do it at this at home, so feel free to do it, but just give us the feedback.
+
+[Speaker 2]
+So, how many of you see like this
+
+[Speaker 3]
+On the CD UI? I see you. Yeah, it's a good number. Yeah, that's a good sign.
+
+[Speaker 3]
+So it can take up like 10 minutes or something because you can see it is deploying a lot of components so it can take a few minutes.
+
+[Speaker 3]
+The microservices. Uh, using the put it on the screen. The question if I close the lab and come back after, like a
+
+[Speaker 2]
+Few days,
+
+[Speaker 3]
+Can I use directly? Go to the lab 5, yes, you can. The only question there would be if you control the sequence of the applications, which needs to be deployed because Argo CD does not have, by default, a functionality to specify sequencing steps. How you want to deploy it, so it could be possible that your Nemo data story start running before your postgres, and then it may.
+
+[Speaker 3]
+A 3D UI and say, can you start the new
+
+[Speaker 2]
+Data store? Yeah.
+
+[Speaker 3]
+So, how many of you see this? All the applications are pet running, like me, like, all are synchronized. Oh, that's good. So, then you can also do the the same thing, like, run all the in the fourth note node as well.
+
+[Speaker 2]
+Yes.
+
+[Speaker 2]
+Um, I was
+
+[Speaker 4]
+Wondering if you could elaborate on like what Nemo is? Is it a? Is it like a full ml Ops solution? Yeah,
+
+[Speaker 2]
+Okay. Um, it's the best way is, can you open the medium website or a Google.
+
+[Speaker 3]
+I haven't, um, because this lamp has only like one and half hour. So, this
+
+[Speaker 2]
+Is our
+
+[Speaker 3]
+Frames, so it
+
+[Speaker 2]
+Helps you to build, and then you can deploy it for generate API in in general, so.
+
+[Speaker 10]
+People
+
+[Speaker 2]
+So you can deploy them. So those are then
+
+[Speaker 3]
+The microservices in this example.
+
+[Speaker 2]
+That to the end. If you wanted to deploy llms
+
+[Speaker 4]
+Look and is that like Cloud hosted, but you guys are kind of run like, on-prem,
+
+[Speaker 2]
+Yes, okay, okay,
+
+[Speaker 4]
+Interesting.
+
+[Speaker 2]
+It is, and you can get it from the store, and you can run it yourself. Okay, um? So,
+
+[Speaker 4]
+It lets you build and customize them, but does it do? Does it work like ml flow where you can track your experiments over time, and stuff like that.
+
+[Speaker 2]
+Okay, so it doesn't do it itself, but it integrates. Okay,
+
+[Speaker 3]
+Gotcha. Thank you.
+
+[Speaker 3]
+So,
+
+[Speaker 2]
+At
+
+[Speaker 3]
+The end, you would see your. You have a fully like a git repository, which have all the microservices, plus all the components and that you can take home and can deploy an equipment in this cluster.
+
+[Speaker 3]
+Another
+
+[Speaker 2]
+Question for you. So, about the data curation, um, it says it can, like? Tape on structured data, and it just produces stuff to train your models. Yes. How
+
+[Speaker 4]
+Does that work you just said, you just have a data set you're like? Here's a bunch of documents look at it, and it discuss it. So,
+
+[Speaker 2]
+Yeah, there's a couple of things you can do. You can, and sort of, like, an investigative. You can create synthetices, not just the one thing okay, but it is something that you can look almost okay.
+
+[Speaker 2]
+So,
+
+[Speaker 3]
+That means that you, after three hours, the lamp would shut down automatically. But if you can come, if you want to come back, you will again get three hours and can do it again.
+
+[Speaker 3]
+Okay, okay.
+
+[Speaker 3]
+We'll try to wrap up in next five to seven minutes because dinner is a next LA or next lap, which is gonna be scheduled over here.
+
+[Speaker 3]
+How
+
+[Speaker 2]
+Many feet are already done? We, uh, did not put them five. Oh,
+
+[Speaker 3]
+You are still getting like me, deploying the evaluator.
+
+[Speaker 3]
+So,
+
+[Speaker 2]
+If you are living, just please. Let me be back, or if you want to send a feedback here, we'll be gladly happy to get it.
+
+[Speaker 2]
+Action.
+
+[Speaker 2]
+Um, this was broken, but now, okay, okay,
+
+[Speaker 3]
+So yeah, it's probably two times. Okay.
+
+[Speaker 3]
+For
+
+[Speaker 2]
+The next decision.
+
+[Speaker 2]
+Sorry, you have to leave it again because there is a queue outside. So, like, effectively, you're cutting the Hue, so it's like, fair to go out. Sorry, yeah, that's probably that means we cannot. Maybe, yeah, you won't get in.
+
+[Speaker 2]
+It's pretty long gotta show up an hour ahead of time.

@@ -1,0 +1,251 @@
+[Speaker 1]
+Today, I will be your host for the session. Before we begin the session, a few housekeeping announcements. Don't forget to download the Nvidia GTC mobile app for the latest updates, session catalog, and a quick and easy to complete session survey and more. Tomorrow morning at 10 AM, Nvidia CEO Jensen Huang will deliver the GDC keynote in the SAT Center, which is about a mile from here, doors will open at 8am, and we record in arriving no later than 9, 15 am as seeing is first come first, serve. Free, and they will be. Christian is running from the convention center starting at 7, 30.
+
+[Speaker 1]
+Also, there is a poster session this evening right after the session from 5 to 7 PM in the Civic Center. Join us there for a drink. Have a read through the posters. Chat with the authors from around the world. Make sure you check out the GGC park, which is right outside on the other side of the street from the convention center, where you'll find art installations along this area. Food trucks and land service and sponsor Activations. And finally, this session will be required. The session recording will be available to attendees in this session, catalog within 48 hours and to the general public on Nvidia on demand next week.
+
+[Speaker 1]
+Okay, let's get started. Just so, you know, we will have a few minutes after they speak for a q a, so hold on your questions until then. Let me go ahead and introduce the speakers for
+
+[Speaker 2]
+Today.
+
+[Speaker 1]
+The session title to begin with. Accelerating AI pipelines, boosting visual search efficiency. We have two speakers and restored and millions are getting. Is senior data and Applied scientists on the big multimedia team. Since joining Microsoft in 2021, he has focused on integrating the latest machine learning advancements and provinced image style. Every image
+
+[Speaker 2]
+Brings image
+
+[Speaker 1]
+Search.
+
+[Speaker 2]
+Pipeline is trusted by one model from another machine. Has
+
+[Speaker 1]
+Either let the development and implementation
+
+[Speaker 2]
+Of or aided in its optimization. Sim is a senior
+
+[Speaker 1]
+Depictions AI. He has 15 plus experience in the field of AV perception, computer Graphics, and digital effects for media and entertainment, and to both of you. In this session, we will learn how. Visual search team collaborate with Nvidia to achieve significant performance Improvement in their Cloud scale. Image processing pipelines leading to significant latency and TCO reduction. Thank you and see you guys!
+
+[Speaker 2]
+So, yeah. Thanks for the introduction. I'm Andrew and I'm a senior Davidson, Mexico. This work of collaboration between the team that I work for is the game, as well as the debt taxes from the world. A two-person presentation. I'll give a brief overview of the individual search. Well, it's kind of the problem statement and the model that we developed that needed some improvement, and then I'll pass it to William. We've been going into the individual library, so any of his Quebec or humans loaning, uh, CD Cooter for the pre-processing, and then the Onyx runtime. Saddam actual optimizational model itself.
+
+[Speaker 2]
+Um, a brief overview of individual search and how we need to search. So, let me have an understanding team we do search. Returning information per query, and because we're even understanding. This is a multi-level problem, uh, sending the timer is not running. Have you ever find? So, yeah, so on the internet, anything? We view images as just another informality research. So, when a user takes a photo, we should be able to return information for that, uh, for that query. So, if you can see it, you should be able to search it. So, let's example, here we have a user uploading an image of your control, and we want to be able to return Bernardino's information for it. So, we want to be able to return, you know, what are they looking? Give some details of their surroundings as well as you can do in that area.
+
+[Speaker 2]
+I think Google search allows you to accomplish more of what you see, so you provide an image and we provided you with information about it or describe it or explain it to you, potentially offer you the ability to shop for where you're looking at and then other tasks that are maybe a little bit less obvious. So we're allowing to solve problems or or translate.
+
+[Speaker 2]
+So a user taken images. There's a whole bunch of different ways that a user can provide. A name is binary to us so that the big app on your phone go to big.com images. There's a way to use snipping tool on your desktop or the edge problems with a whole bunch of different ways that you can provide an image to our package.
+
+[Speaker 2]
+Pixels, and we pass it through sort of the core backbone of our of our pipeline, which is understanding and Tech classification models. So, this is what we're talking about today specifically, but what will typically happen is so in this exactly how the user is uploaded, an image of a plant and this before the image that you're setting and classification, so the entire tier might be, you know, plans classification and what type of client are they looking at, so that will look at a scenario specific workflow as specific sub model, so we will have a plant plant.
+
+[Speaker 2]
+Exact energy that's been reported. And again, we don't want to run the plants. Model one in the car and things like that. So Peter all three bottles from this very foundational in his understanding model. And then, once we have details on that, then we can follow up with the user. That are interested in? So, again, I'm prevent search. So, it's that middle pillar is really what we're talking about. So, we are a search focused product. We want to be able to give an image return anything about that angels, whether the landmark in it. There's plants animal celebrity folks, uh, so sort of. In this example, if you're looking at a big photo of Sacha or Jensen, we want to be able to return that to you and give you information for that user.
+
+[Speaker 2]
+Shopping lower key element. So, if a user takes a photo of it in this example of a light, you want to be able to return not only the exact images of not only the exact. Shopping product that they have, but also we wanted to be semantically similar, so we want to provide an array of different options so that the user can have an explorative Journey to find something else in the world, and then you have a different set of solutions here for sort of a tax based problem. So, if user uploads, uh, an image text, you want to be able to allow like into Russian attack, so sort of setting things like OCR, so then copy up that text translate so you can take a photo of a menu.
+
+[Speaker 2]
+Again, we have the capabilities for solving math problems.
+
+[Speaker 2]
+So, this is the core user experience that most people see when it's on the main search, so they'll upload an image that's the one on the left and then on the right. You can see maybe at the top is a little small button to get that entity back, and then really what we're showing is this related content. So this is the model that we're going to talk about, so it takes some pixels and then return some relevant related contents again. No more things that are exact options we don't want like a hashtag algorithm. We don't want to return pixel pixel, but we want that to be similar, so.
+
+[Speaker 2]
+Similar images without the exactly? You want the user to deal with have their own explorative Journey.
+
+[Speaker 2]
+Oh, this is big surf, so it's a global product. It's served in over 100 countries. We have. Over 100 million periodic users. So, one chocolate scale here. We're talking hundreds of millions images, so any small performance game is huge and a huge performance game, and this is massive. This is the sort of core back form that I think it's understanding model. So if you take an image and we pass it through a model to get an event. So, this is what we're talking about on the last year. So, we call from from the image to an endetting and the word search product, so you go from that embedding to a pre-coated image index.
+
+[Speaker 2]
+In your favors, and then we do filtering and ranking in terms. Images that are again similar, but but.
+
+[Speaker 2]
+So, this is a problem is finding a common representation. So, if your user outpost an image of dodging ice cream, you want to return other documents. And again it search products that the user also needs to be able to type in text. We need to find a column representation for not only images, but also in text. So, that's where? Um, turning in a standard on something. So, this is a two-power tread overbridge model where one of the towers is a pixel base. It cost for mini encoder and get it embedded, and then the other is a texting model through the encoder to get it embedding perform a standard across the wall, so which one's embeddings closer together so that we query. Um, we'll be able to find similar representations of that means.
+
+[Speaker 2]
+Like, I said, it's a global products. I need it to be performing in multiple languages. So, what we're showing here is kind of similar to that previous slide is the image and caption data set that we have is mostly enactation. So, what we have to supplement that with is? English to naught English phrases. So, again, you can push those language representations, sit closer together, what allows that allows us to do is, if you can get the English non-english committing similar, and we can get image and news captions similar, then people can do it in a naught English image in a similar space that clearly does space, uh, quite quickly and.
+
+[Speaker 2]
+We have a query image of Google Maps of Seattle. So, what we want to return is something that's negative similar, so a viewer is probably not looking for, like Austin or Ottawa. Images from Google Maps are interesting and new features about Seattle because they could potentially learn the different topological maps and things like that. Ball in sort of the backbone of image search and visual search. If you remember the question answering, so again text story and we return our relevant image, or they upload an image and you return valve. But with that, we'll pass off to Williams Library.
+
+[Speaker 2]
+So, uh, yeah, so we can start discussing about the visual things pipeline for this model. That, and you discussed. So the Baseline implementation of the pipeline will sound something like this where this is calling a very standard server client GDP protocol to send requests, uh, for individual international batches for system offer. Two images, two GPU servers, and here's obviously going to be several, uh, using this servers and data Center that is dedicated for caseworker in Princess.
+
+[Speaker 2]
+Server takes on a reimage batch that you. And the first talking that he does is to start doing some image and processing, which are obviously starts with having to build the data and code. It will decided data from an image or singer and do some pre-processing, like weak sizing, crawling, and the standard kind of operations that that would normally be done for for a machine, uh, all of this, uh.
+
+[Speaker 2]
+Which was in executing when we continue electron time with the Kuda execution provider. And finally, there are no produces, uh, {question-mark}.
+
+[Speaker 2]
+This requirements as the useful. Or better.
+
+[Speaker 2]
+So, when we started working on this project together, we found several challenges, same opportunities, and the challenges are saving us. Image handling can be a bit of a model. What I showed here in the diagram is. These are histograms for file processing time and the one on the left is showing the time that it takes to view the image decoding and reprocessing, and you can see that it's very variable. So, for different batches in Malaysia between 50 milliseconds until 400 milliseconds, and it's basically a future barriers in the in the long time, which can be. It's actually actually.
+
+[Speaker 2]
+Which obviously it's a standard model with plastic shape, so it's expected that the runtime is going to be very, very consistent. Para. Obviously, we are having so many matches that are going to be consistent in a time longer than it takes up with that. For the model impress itself in, and that's just a major signal to solve. Even though it's running already or not, who now did you? This is using this Kuda execution provider, which, although it is performant, it doesn't have a lot of optimizations and data I could exploit, and so we obviously you know that it'll be even better, and we try almost catching SLL as you like.
+
+[Speaker 2]
+Collaboration with Microsoft to try to optimize image that maximum tool, and so this is how the optimized pipeline looks like, so that image knowing the coding, we replace cell in cities are encoder with any image equator. And of course, I'm going to talk about more people about calculator that pre-processing, like one cell, will pasted with AC web for definition.
+
+[Speaker 2]
+Operations. And finally, the model inference we switched forward to text, right, DX station provider, which does have this 2.4 for specific features. Like, what models, which are just over architectures and we can, uh? Mental things like Fusions and other organizations that help people specifically for MHS and consumption.
+
+[Speaker 2]
+So, going a little bit more in detail about the individual libraries that we used to deploy this. So, in the image coding is encoding, by the way, but obviously, they started clear pipeline, which set primary to loading changes. Library that was been a long time Armenian in India Olympics for many different English performance. And it also has some fallbacks to third party codex, and that will be important. Is a library that uses a unified C and Python API, so all of the functionality that's available. One language is obviously other, the other. It supports a bachelor processing, which is really important for myself.
+
+[Speaker 2]
+For efficient data movement between different standings of the Bible. And there's different ways of installing this Library by probably the easily once using the paid package manager, especially if you open the python API and increase false as shown here. Multiple image formats. A lot of them are already GPU accelerated and the ones that are not in does support several programs unless it's really important. And the reason for this is because you want to leverage something that is running efficiently. If you, you don't really want to have, like, even outside cases like, is this a jpeg? Is this a webp or a PMP and how different processes to the full event in SEO?
+
+[Speaker 2]
+Uh, of course, anything that you enjoy. So, whenever Hardware acceleration is not available or the acceleration is not available, it will go back to this kind of a CPU, usually open source standing order to provide these systems.
+
+[Speaker 2]
+So, here's an example of how to decode animation with NIH code. So, this shows the comparison of the opacity, which is the traditional way of doing data decoding on the CEO, and keep in mind that in this case will now really do the normal procedure, which will be opening files on the on a system or this instead of these are. And HPP request, so we already have data, right, straight in memory, but we have to report, and so that's what opacity has this function called iot code, but similarly, in reh4ik, we have some kind of microphone.
+
+[Speaker 2]
+The requests we build and hold their objects and meant that decoder has this semantical pickle, which will calculate this law by stream or lights object to attribute before to increase a set of.
+
+[Speaker 2]
+Something important is that we don't want to be recording this and just one by one. So, on the openc case for for CPU? This would normally happen in say, for example, California, where you have your betrayal each other. Let's say 32 images in the batch. And then, before one by one sequential mean in the resource two companies. But in any image problem, we can do all that directly to be assessing the oda method, which can take already a release of this live streams. In will process all of these images in parallel as a match, which will increase that too.
+
+[Speaker 2]
+Um, obviously, we have a decoder object, so it's mainly in a previous slide. But this is another thing that we don't want to be rebuilding anytime that we have coming through. Ideally, we want to be able to reuse the same decoding object, and you can't think of a baskets coming in a single column topic that is going to leave the lifetime of the application of this particular server instance, and then you can reuse that encoder object to. Is something that replaces the stylistic programs. In this case, I have, for example, this the code imaginary style function, which.
+
+[Speaker 2]
+That the older object is input and then. Five streams we recorded, by which we determine and then computer processing.
+
+[Speaker 2]
+Something important that happens, especially in the case of, for example, this being facial search. Is that obviously this particular pipeline is working with being able to build something, which is which are candidates from the open, where there's probably all kinds of different language types and performance, and it's not. There's always going to be those where cases are for a certain formulases, and Banks changes the same coded. For one, use somebody about it, and so.
+
+[Speaker 2]
+In matches. And let's say one of those images is somehow my formally it's corruptable either some other issue with it. It will simply normally just drop that entire match, and then it's going to waste our resources completely. Sources thing we know what we believe that, so something that village announced is to kind of separate two different processes and coming down.
+
+[Speaker 2]
+I have here, for example, a function, and that is called vars, images. Okay, so what has images does is in a slow or live streams or anybody files to keep working near the actual class of this. There's a function called code string from each point, which is kind of like parsing damage and extracting whatever industry portable data is a problem of that image. Exception, so that in one computer, initial Hills will fail early. This is a very, very good, expensive home so we can tell earning and we can somehow manage that approvalent image so that we don't necessarily have to.
+
+[Speaker 2]
+Cool batch and just failure. So, obviously, this is application, depending how you actually want to handle a model one image. But this is something that can be done early on in that process in a very inexpensive manner. Para from the images that can be pars that can be recorded by the English code. And in this case, we are attending them to the cities called strings. I hear the screens are then sent to the secondary function with limit this which this real method on the folder. This is the one that we actually do that that code will receiving the coding or in geode. And now, you can ensure that everything that comes into this.
+
+[Speaker 2]
+Is actually going to be reportable one way or the other, and then they can send out that workload and actually new phone that electric images. We felt more about, like.
+
+[Speaker 2]
+So, to show some performance results of data. Of your.
+
+[Speaker 2]
+Um, I was thinking about the 157 milliseconds, and I think, remember, this is thinking that keep going. But once we apply each coded, we can do it per image in data recovering jobs, the time by half pretty much. But obviously, if you match processing, especially because it's a batch size of the review, we are going to be able to make much better use social resources and that, uh, processing type from the job in and for you.
+
+[Speaker 2]
+Extra useful for this pre-parsing method where we're actually calling the code stream RC and the actual recording and that social increase there is likely to the works depending on the actual files. And because of?
+
+[Speaker 2]
+Is to do all kinds of financial calculations.
+
+[Speaker 2]
+And there's a basically all kinds of different operations that that can be.
+
+[Speaker 2]
+Um. Again, um?
+
+[Speaker 2]
+This is.
+
+[Speaker 2]
+So? Ultimator. So, as you can see, there's a large support for different types of operations in silicuda, which are pretty much complicated right now detection.
+
+[Speaker 2]
+So, to show some South Koreans so that operations of a CDCU, which will be in this case.
+
+[Speaker 2]
+Operations for local steps in the process. And here, I can take this ingredient by the way I understand were decoded by individual code. I can't want to make it on data, saying initial to just object from age 25 degrees versus.
+
+[Speaker 2]
+Stop that needs to be done before. But again, this is single image. The power of SIM code to use cause conduction and do a similar concept where we're obviously normally will have to be individual image for image faster by step.
+
+[Speaker 2]
+Computer office operations.
+
+[Speaker 2]
+So, to show some results of this, looks like so the stable works. So over here we have a CD and CPU massage, the Baseline, and the second row. Is this English coding plus acidicula? Different types of image sizes, which obviously that bigger than its size and more than you have to perform against me over to process, and you are confusing different speedups. So, for small emergency individual 400 by 400 is speaking, the average image size compatibus for skill coining batches. We can explain something like three for Excel improvement in the process in time or watch.
+
+[Speaker 2]
+Hundred of knowledge. We see all over six things.
+
+[Speaker 2]
+And when we were looking at a CPU time that it was taken to work this time processing. We were looking at times that were already in the range of what the actual model takes to, but now we are able to bring that down by the factual four, five or six. We're now I'm able to almost compress them right instead of image processing so that, uh, it will cover us. And, uh.
+
+[Speaker 2]
+So, the final piece of the puzzle here is, which creates the back end for model fingers, and so what ultramide is, is a library that can take monitors. I mean, when it's modules, participation format for bigger models that can bridge the gap between, uh, I.
+
+[Speaker 2]
+Backhand to be able to execute the whole debit of the difference on all of these models. Regardless of the target, the hardware Target that you want to deployment. But how does it do that for income tax or hardware? And so there is this concept of introduce, and so there's an exhibition provided for CPU. There's execution provider for GPS, which Buddha there's an exhibition provided for gpus with SRT, and likewise there's like the other movies writers.
+
+[Speaker 2]
+And so, the difference here is that the Huda, 18, is taking a set of.
+
+[Speaker 2]
+Will be the most comparable will be, but not necessarily the most performant, because it's when we be doing many organizations like the ocean or other kind of things that we do provide in extract. That's our key, of course. I guess everybody is now. These are the solution for comfortable influence, and so there exist. This SRI execution provider between only strong time to be able to to increase much orientationally that will be review.
+
+[Speaker 2]
+Suffixes don't want that. That brings this.
+
+[Speaker 2]
+And some sample code. If you show how this is working, so once you import the comics runtime, imagine you have all this conditions that are online images you create a session. This is a long session. That session you post will run, and you will state what country is done to the application that you want, and which input country you want, or you want to be. And then, we actually reduce that you want to feel into that. In this case, explain, this is just nobody thinks it's just an example. Provider. It's just a matter of changing some settings and our interests and the extension of information.
+
+[Speaker 2]
+But, of course, we are now working with non-bye images. We're working with images that have been decoded, pre-processed, much more efficiently on on GPU by much colic acidicura, and so we have all these images already RGBU in the beginning. We don't like a confident background to both memory so that we can completely sometimes. Ideally, we want to change things and the way you do that is.
+
+[Speaker 2]
+That allows us to take the images that we're giving us a consultancy. There's basically this little Kuna rate interface, and you have to go to get the actual GPU and just enter to to where those images are stored GPU, and then you can pass that up after as an audio binding by the input to try. And this creates basically single copy between all your English speakers pre-processing through the actual model.
+
+[Speaker 2]
+Interfaces for losing, not the fourth time, and perhaps the known back interface sign for order. Back, but in this case, we're extremely just.
+
+[Speaker 2]
+So, putting it all together. Now, we have a we have three percent images. We can do the English coding. We actually record the images with an image codec or pre-processing, and we do a lot of immigrants become a strong time using an entropy institution provider.
+
+[Speaker 2]
+X, which is very significant, especially if the skills that this, um. And so the speed up actually comes from enabling temperature. But obviously, a few amount of improvement also comes from the optimizing all those things, because once you have a well optimized model papers, you don't want to give it more volume and such. So, yeah, those are the results that we open.
+
+[Speaker 2]
+The core back home was one of the Downstream house. I've been on my work and they just got all you know. Fight all of the monitors around going down the street. This is the offline we need to catch up on any of the resources.
+
+[Speaker 2]
+I think we have maybe a few minutes for beautiful. If you have any questions, just raise your hand and bring them back. Thank you for the talk, um, so trade. The in-print server allows you to do analogous things, but I'm presuming that's so optimal for this implementation, I'm wondering why it's so valuable and why you chose this region, um?
+
+[Speaker 2]
+In this case, we have to take part with the original internet server. So, because of compatibility, we are using prices. We did ensure an additional members of like five or tenants additional, uh, yes.
+
+[Speaker 2]
+Because you're using this question. At the same time. So, this technical guideline was for offline. Yeah, so that person is, so we have a script that we're on at the return, so we take it into that 30 pages.
+
+[Speaker 2]
+Communication, and how many slides are occurred. How many cytobacteria after the emitting inputed? Bring the relationship. Conductivity will also be.
+
+[Speaker 2]
+Um,
+
+[Speaker 3]
+The embedding Dimension, uh, we have a small preventative range 0.00.
+
+[Speaker 3]
+So,
+
+[Speaker 2]
+We have a family. Um, it depends on which one we're accessing, but like for individual image embedding in that range. Is that a new person?
+
+[Speaker 2]
+I'm wondering, um, if you're applying this approach to videos or long-form videos or 4K images, do you have any issues with every GPU or the discuss scale independently? Um, yeah, so videos again. Now, we also have a ID video recording. And yeah, there's, I mean, you basically process a video from by time. And, yeah.
+
+[Speaker 2]
+Anyone else I think we have? Maybe time for one more? Huh, thank you again.

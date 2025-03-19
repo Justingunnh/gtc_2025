@@ -1,0 +1,284 @@
+[Speaker 1]
+In in the ethernet and networking. Division of Nvidia, and uh, it's my pleasure to welcome the GTC. I hope you all had a great time at Kino. Hope you didn't have a chance to see the keynote whether it was at the arena. Or one of the other places broadcasted, uh, even on your laptop. But I hope you had a, um, hope you had a great time and a good experience with that. A few things, the the booth, or the Expo is open now, so thank you for being here. We got a lot of hours at the exhibition, so definitely plenty of time for you guys to go see all of our partners and what we're showing at the Nvidia Booth.
+
+[Speaker 1]
+Continue on until about seven o'clock. We are having an opening reception tonight from five to seven and then afterwards. If you want, we have a nice little Market night time Marketplace that's happening. Uh, outside in the park. So, if you want to go and enjoy the food and all the fun that's going to be happening, then that's great. Of course. All this information is available on the GTC app, so you've got that downloaded. Great if you don't. Take a little time. Go ahead and throw that on your phone gives you good information scheduling updates. Uh, this session will be recorded will be available for you to be able to see in about 48 hours
+
+[Speaker 2]
+On the session catalog.
+
+[Speaker 1]
+And after that, they'll be available probably in the week. On our Nvidia on demand sales. So, with that, uh, let me get Fredo up here to do an introduction. There won't be a q a this time, so we're not going to have time for Q a.
+
+[Speaker 3]
+Thanks, Brian! Appreciate it! Hello, everyone! Welcome to GTC. Nobody's excited!
+
+[Speaker 3]
+You've all had the bio, you know, Steven's background. I'm not going to bore you with that. I'm going to introduce him. And share with you a little bit of behind the scenes. Steven Jones. So I have the pleasure of working with him. He is literally a technical. Genius literally, a rocket scientist from SpaceX. But what you didn't know is around the office. He loves to wear his Cuda hat. And he's one of his prized possessions is a bottle label, a white bottle labeled Cuda. And so he literally is a distinguished Cuda architect, and I'm so lucky to work with him on a daily basis.
+
+[Speaker 3]
+Ladies and gentlemen, Stephen Johnson.
+
+[Speaker 3]
+Very
+
+[Speaker 2]
+Much. We, the wrong button. There we go. Excellent. Yes, thank you Fred. Um, he's my height man. Um, and yes, I, so I'm one of the the Cuda Architects, which means I spend a whole bunch of my time really thinking about the platform as a whole, up and down the whole stack, how things work together. And so, you know, every year, I get a chance to to stand up here and talk to you all about what it is that we've done with Peter in the last year, where we're going with Kudos. There's plot have been called cordonia features and Beyond for many years, because I always think it's important for us going, not just where we are, but where we're going. And that helps explain why we are building the things that we built, and so we're back in this talk. I've got a lot of Beyond stuff. There's things that we've done this year. There's things are coming out this year as I'll be talking about, and I'm also going to look ahead to the future because things.
+
+[Speaker 2]
+Recruiting space. I mean, you've probably almost saw that since keynote. There's just so many things going on, but keeping up with this entire platform is, you know, the work of hundreds of people. So, I am standing here as a messenger. Because hundreds and hundreds of amazing brilliant people have worked on all these things, I'm going to show you. And so the important thing? For me, is when you hear me say, Cuda, I never mean courtesy plus plus. So, there's my vascular saw this, and he was like, you can't do that. And so, sorry, Chris, I showed it. Um, and I showed it because I, I do say courtesy plus plus, right? But who does C plus plus is not this whole story? And when I think of Kudo when I, when I, when I work on recruiter, the Cuda, the platform that I am one of one of the designers of?
+
+[Speaker 2]
+It's all these many, many different things, right? So, in every respect, Cuda is the thing that gets you running on the GPU. Whatever your application is where you, whether you're working with a python framework, whether you've got some library that matter if you does it under the cover somewhere, somehow you are intersecting with what Cuda is. You. My definition has to go to recruiter our drivers, our runtimes, the stacks, all of the pieces that work together. Now when I started this video um 2008 17 years ago? Uh, Cuda was very small. Cuda was just beginning. I was one of the first, you know, battles about a dozen of us, and at that time. Kuda very much was criticism thus, but it was good to see. We didn't even have C plus support at that point, there's a couple of libraries I actually had to work on the on the fft library.
+
+[Speaker 2]
+The beginning. Everything that you did. You had to write yourself. But that's not sustainable way. That's not a that's not a platform, right? So kuda today is much, much bigger. This is a set of boxes. I can fit on one slide. There's actually I think something like 250 sdks alone, but Nvidia produces. And that's what that would just be. The second row from the top there. Thousands of things that other people have built on it. Right. I think I got plants and high court from the very top. There's so many other Frameworks that that others have built that Nvidia contributes to. We work with we. We are involved in every every aspect of GPU Computing that we can get to, but we have this enormous stack, and we have this enormous stat, you know, because it can't be only policies.
+
+[Speaker 2]
+Big, complicated seminal AI framework before real further, right?
+
+[Speaker 1]
+Pytorch.
+
+[Speaker 2]
+Cold couldn't end to do a lot of its work. Which is compiled with nvcc and random computer runtime, right? All of these things happen when you do something in Title. The title also caused two last Direction in blue glass, has its own kernels, and kudian n has a 10 card. The point is right that all of this works together. And that's what makes this, you know? It's a platform nobody sits there and writes every single piece in Native 50 plus class, which is why, while courtesy, trust us as a.
+
+[Speaker 2]
+I spend less than half my time thinking about it because it's how all of these things connect together that makes a difference. Right? One of the interesting things here is that, as I see the sophistications of software of all the the technology style, the software stack is becoming much, much deeper. Right and, and so. There's another friend, which I've seen really accelerate in the last year or two, and it's something that I have to pay a lot of attention to when we think about what we add to these Stacks, right? This is an example of the kind of works that will be involved in any deep learning application through Frameworks through County generators. Things like open AIS Triton, which is fantastic kernel generator with the open air I've developed as there's a talk um at GTC by by Phil Tilly later.
+
+[Speaker 2]
+I'm going to take the same picture, and I'm going to highlight every layer in the stack that has a compiler. It used to be just live responding libraries. It used to be run times and things managing data. And now, literally, every single layer of that stack has compilation built in. Real seminal Chef, the level of complexity and difficulty in all of these layers have gone way up as a result of this, and so, what it also means is that compilation, like, for all compilation down the bottom of the stack here, because you usually think of it as a final thing that takes all of your code and dumps it off the machine. But actually, you've got these languages. These these these domain specific languages, the the small libraries all targeting all these different layers. Every layer now has this compilation Earth, and so an interesting question is, is, why, why are we? Why are we saying this?
+
+[Speaker 2]
+We'll say something like this. I think that it's because. Performance matters, and so optimization matters and optimization depends on the problem you're solving right. To give you an idea if you're an AI expert, you'll be familiar with the idea of a recommender system, which is limited by memory manuals or a graph neural network, which is completely limited by communication. You optimize around communication or a language model, which is compute limitancy, Opera optimizer, completely different ways. You would optimize these three systems, so if you know you're working on a recommender, you would treat it differently.
+
+[Speaker 2]
+But it's actually a tiny corner of the whole universe of all the applications. You can easily imagine that deep learning networks are completely different from scientific simulation and completely different from graphics and math material stuff and all the kind of crazy like procedurally generator stuff the graphics does. You need to know something about the problem you're solving to really be able to attack it, and so fundamentally optimization is a hierarchical problem. And it's hierarchical because you know different things at different layers of the stack. And I think this is why we're seeing the whole depth of different of the stack of the abstractions, all producing their own compilation phases. Because if I'm at the very top and I know the whole lot. Start thinking about how do I paralyze my model? How do I distribute it? Where do I put my data. I get down to individual operations, and I'm starting to think about. You know how I break these operations down as a pieces all the way to the very bottom, where you know my compile?
+
+[Speaker 2]
+Be aware of, but each layer has to be able to do different optimizations, which suit the different visibility that it has of the problem. And so I had compiled down the bottom here, but that's not true. Impalas are everywhere, and what's one of the interesting things about it? You see code generation everywhere, because the way that the compiler treats some things it takes in code, so if I've got a high land doing some optimizations, transforming something and then emitting it back out. It has to generate code and emit code back out to the next layer, which is going to take it in and apply its operations all the way down the step.
+
+[Speaker 2]
+Time, data dependent, problem-dependence optimization, and compilation going on. Everyone and? Interestingly, a significant shift in the way these programs run is that compilation, which used to be a big, offline build system that you run for hours calculation, is now in the critical path. And if compilations in the critical path and time for compilation is critical. The video we spent, you know? Every year, I I stand up here pretty much every year and tell you about different ways in ways to compiler has worked on improving compilation times because it is important whether you're online or offline. The jet calculation is especially important. A couple of things that compiler teams have done this year is to intentionally give you over the degree of optimization that these compilations, if you're offline as well. But these compilations can can apply. So if you need immediate result because you're just one of a long chain, you can.
+
+[Speaker 2]
+If your optimizations and speed for slightly for a trade-off for slightly faster than part-time, or you can even iteratively do that, you can start improving over time and at the same time, something which is extremely normal in in offline compilation, which is pre-compiled headers caching of existing compilation work. All of those types of things we have brought them also the disc compilation. Now, you know, obviously, the difference between having to compile your program or looking it up in the cache and hitting it is infinity right or either compiling or not, not compiling?
+
+[Speaker 2]
+You can't build anything. Without being able to analyze it, debug it, inspector, you know, profile it all of those things. And we're used to having these types of tools. I'll show you many of them over the course of over the course of this next next, 45 minutes. We're used to having these tools. Or code, and debugging of code and profiling of code. Now, the compilers are in the first part. We also need these tools to compile us, right? So compile time tracing heat Maps, telling you where the time is being spent. You can see on the left hand side, lots of lots of processor heading, sorry press header processing.
+
+[Speaker 2]
+To be a big help here. And then, on the right hand, side things like, we're building a thing called a compile time advisor, which is similar to what insights tools do looking at all this data and making a human readable recommendation for what is wrong and how you can fix it.
+
+[Speaker 2]
+Really. In a way, the secret of Cuda is that Cooter is not just one thing. This is something Denson was saying in in the keynote, just a couple of hours ago that it's this entire big collection of things that we've built over time. To apply to whatever. Problem that you are trying to solve. And so big thing that we have done over the last year over the last couple of years really is. We've been working hard to bring accelerated python. Passed into the pure stack as well. Because scooter is not one thing. Through the python cannot be just one thing. We cannot just have kernel all three. We need all of the stack everything top to bottom because you have to be able to write a kernel and drop it into paycheck, but you also have to be able to call Plantronic libraries and all these other things, right? So, in many ways, that the you need all of these things to work together, just like in all platform.
+
+[Speaker 2]
+It's a language built around just-in-time completion. You don't have make files and build systems the platform the same way you import a whole bunch of dependencies, and so it's dependency management, which is tricky in Python. It's a thing that I hear a lot from users working with python. They've got lots of different packages and keeping dependency straight as hard. And so, with python keeping this interoperability between all the layers is going to be a huge game.
+
+[Speaker 2]
+Bunch of a bunch of thoughts this year this year, actually, DC. Specially curated a track on Hooter and python, and so I have an index at the end of this talk of. Know if you are interested in Native python programming of the GPU or the GPU. We have a lot of material walking you through the different stages of how to do this.
+
+So, I'll I'll summarize for you, though, the kind of things that we've done in the way by thinking about it. The way we're making these Investments, right? I think fundamentally to me. Pythonic Cuda. Is not just C translated in Python sometimes. It's got to be something which is natural to a python developer that the python develops.
+
+Instincts are are right. My general, my general principle when designing anything in Cuda is that if you don't really know how it works, and you guess you should be more or less right at that. Yes, right, it should not surprise you, and so pythonic Cuda should not look like.
+
+C, it should look like Michael. We started out with the initial Cuda python binding, which was so things like Koopai hit interface without a level price, one for one mapping between platform binding. But what we have built over the last year and you can actually go to GitHub and get it right now is something we call Cuda.com.
+
+A pythonic reimagining of the food around time. The naturally and natively python. And that means more than just. The interfaces, although, of course, it does mean the interfaces as well. It means that the execution flow and the way that it works is fully in process. Python is built around jet.
+
+You should not be dropping out command line compilers or anything like that. You should be fully in process right, and one one of the interesting things this does is it reduces significantly the number of dependencies and a python dependency tree for gpus, and so this is helping that that up and down the stack picture.
+
+I was showing you a little bit earlier. No software without tools. If you can't detect and identify and analyze what's going on in your code, then there's no use. And so, we are investing heavily, and we have been over the last several years, but we continue to add more and more developer tools for python developers.
+
+Code analyzes things like the the ability to annotate your code and have it sharp and compile it with something like nvtx one of these pictures at the top here, right, and even integrating support for pi4? In like supply torch so you can get the low one of these. These are the python Trace just straight up straight out of a pipeline.
+
+And so, as well as the poor base python. There's also how I program the detail that is the point, right? The point is to take your program, your code, and GPU accelerate your platform code without having to draw a pilot platform. And we've got a whole range of different things.
+
+I'll start at the top here with something called coupon numeric. Numeric is a one-to-one drop-in replacement for numpy. Numpy, you know, the most widely used? Computational library of any kind in Python. By simply changing an import directive or your numpy code goes from running on your CPU to running on a GPU and not only to running on DQ, but being able to scale up thousands of gpus.
+
+So, in my little example, I didn't just change the import I I squared the size and it will con. It will project this outwards and run it on 1000 node clusters. Does it connect with Expos to talk about these? I, I keep reference links at the bottom of my slides.
+
+So, so whether talks, which will give you much more information about these. I try and Link that link you to them because, you know, I only get two minutes to talk about any potential topic, and you can sit down with one of with an expert for 45 minutes and really have a conversation to understand how this works and what it does.
+
+Now, a lot of Cuda programming when you think about Cuda programming in your head. You're not just thinking, I'm going to take Python and magically have it automatically if you accelerated. That's a very cool because you actually want to craft your own code and invoke parallel recruited code. The most common way to get to Cuda for all, for all of time, has been through libraries.
+
+Like, honestly, 90 of all the code that you ever need to write someone that Nvidia had. Some ninja has already tuned parallel IB functions to do an amazing job, and you would be crazy to write your own Library function. Nobody writes it before you transform these days as people who spend years perfecting the Fourier transmission, just use that, yeah, right.
+
+So, the value of libraries is enormous, and so we've taken the the library set and we put them into a package called NB math python.
+
+Obtained. Side interfaces to call the libraries from your normalcy view code and device site interfaces, so you can plug these accelerated algorithms directly into python currency. You're writing, you're telling you about in a moment. It. It also invokes the limbs heavily into jet compilation as well. In the the way the performance, the ability of a library to work efficiently if it knows what your data types are, your data sizes are, and so on.
+
+To be able to fuse Library calls together is an enormous Improvement, and before it's a huge difference. And so, because python is such a jet native, just in time compilation native language, we have built the the python math libraries to take advantage of that, and so you just naturally, just in time from compile these things just through the apis that we use with the libraries.
+
+Python runs across all sorts of different systems, so they're saying Library package can steer to CPU execution, either through the Nvidia performance libraries for for arm or through interface to the Intel and KL libraries, right? 76 it interoperates in terms of of array types, and so on, with lots of existing tensor libraries and importantly, you also plug into the multi-dpu scaling that our libraries natively have.
+
+With this with with a python wrapper, able to decide and help you dispatch what you want where you want. And it's been. It's been very successful already, right? This is this is a. This is a slide that has a pretty picture, so I like, I like showing pretty pixels, but it also has a great little example of some some scientists, uh, some researchers at Duke University and and some other establishments who took.
+
+Or an alpha program for a Space Telescope that will be launching in a few years time. They first accelerated with Koopai, and then they added. In these nvmath accelerated libraries, this was not us helping them. This was them taking something scientists who write python, who write numpy, taking this pythonic interface and being able to drop it in directly.
+
+Close to the 10th cent of the time or one cent of the time. The library doesn't have the function you need, or when you need to glue your library pieces together. We've got a couple of different places we've got something called parallel, which equates if you're familiar with C plus plus that the thrust libraries in C plus these.
+
+Fundamental parallel algorithms, which again you just pull straight from your CPU, like sorting or histogramming, and things like that. And these are accelerated Library libraries of these algorithms that you will combine into making your parallel algorithms or we have good at cooperative, which is when you're writing your python kernel, and yes, I will get that of.
+
+We are writing your python YouTube channel. You can still tap into these high performance ninja tune accelerated lighter. No one in their right mind should ever write it. Just like you shouldn't be writing alleged after you. You could be depending on someone who really knows a lot about this, who have written it perfect and perfect for the GPU.
+
+And because this sits on top of?
+
+Stuff that I showed you right at the beginning. You are not it? We didn't re-implement these. In Python, we made sure that it links in the underlying fine-tune C plus plus code, so your performance difference is negatable between Python and C. Plus, you are not sacrificing anything is a critical requirement of Cuda that we should give you access to all the performance of the DPS.
+
+So, you're going to the trouble of using GPU because you want to go fast, so you have to give you the ability to do that. You've got productivity of python combined with the ability just to tap in to the same performance that you would get as a fear of people.
+
+Before we get to the kind of authoring specifically, I'm going to refresh you, and I will tell you a little bit about how running running kernels on the dpu actually work. You who are familiar with her will already know the story, but I think I'm going to take it to a few places you haven't seen before.
+
+In general, what you do with the DQ panel. You start with an array of eight, right? You've got some bulk thing that you need to process. You're not going to use the DPU just to calculate. Want some? Very often. That's all you do. You state, you'll take a walk around data.
+
+You write a panel in pi talks or in nvidia's what, which I'll talk about later as well, or one of many other different things and that system. That population system will then take it and map it to the GPU for you and a lot of the time. That's just what you need.
+
+It accelerates you and your brain. You should never do more work than you need to if you can do it in one line instead of in 100 lines doing one line. Right, I, I'm, you know? We're all programmed. We're fundamentally lazy, and so Grant Level parallelism, is, is really an easy way of accelerating you, but it's not the only.
+
+It doesn't get you all the way there, right? You can get a lot more performance, sometimes with just a bit more effort. Break things down is you take your program and you, you break it into separate pieces. This is true of a multicultural multi-node development as well. You need to find independent pieces of work that can be worked with parallel and then for Cuda.
+
+What you do is you launch what you call a grid of blocks onto the GPU unit process. These tiles of data that I've written that I broken. I brought them into. Rock will process one or often more tiles other than one inside that block. I have up to a thousand threads.
+
+And each thread will pick a data element and work on it, and we get parallelism in Cuda on the GPU by ganging these stressed together. Each thread is doing a single element operation. And by gangling together. We get more powerful and in many ways. This is the superpower of the DJ.
+
+This, I think I think really. To my mind, this is the main differentiator about why GPU Computing scaled in a way that we didn't see for the sort of a 70 vector-based CQ Computing is because you have this this symmetry as we call it single threaded execution model where if you gang them together, you get more parallelism, but you don't have to.
+
+You can still control fine-grained parallelism. That flexibility has allowed the GPU to apply to an enormously wide range of different applications.
+
+We don't necessarily have to go all the way to thread level parallelism. I've gone from a big array of data to the final find grinder reference, but we can stop halfway through on top of the first step if I divide into title and then just take my tiles. It turns out that are very awesome.
+
+My problems, my application. My tiles are not random, Scattered data. They're structure, they're vectors. They're tensors, they're arrays of some kind, and so I can apply whole array operations automatically by taking one of a block of these threads and just telling you a compiler. Do it for me, you, you figure out the thread minding.
+
+So, my problem become easier. I'm only doing step one. I'm not doing step two, and in fact very often, the compiler will do better than I can do because the compiler deeply understands all the fine details of of how the DPU runs and so what we have is we have these three different levels of parallelism and all three, right?
+
+Remember, Cooter is about having a menu of all these different options. There is no one size fits all. There is, no, there's no, no one layer to rule them all.
+
+The the effort and the reward so? We've built a thing called, which we call coup tile, which is tile programming computer as an extension for Cuda, and instead of operating element wise at that, like at the bottom of this picture. What we have instead is array plus array equals another array.
+
+The razor structured. The compiler can do a great job of mapping these efficiently onto the GPU, so your problem just became much easier to think about much easier to debug much easier to State, and very often as I said much more performable, there's a lot of these things out there.
+
+You know, open hours Triton would be a good example, right? And, and I think that those are natural and natural fit for python programs. Rail tensor-based models. It mapped for things like tensor cores. There's a lot of parallel Hardware engines inside the GPU. And the ability now to express your problem.
+
+But here are the tenses that's to compile and say, well, I know what to do with these. I know how to put these things straight on the GPU. So we can map these things to tensor cores and one of the one of because, what, because kutana is built into Coda is a fundamental extension of Cuda.
+
+All of the Cuda portability and generational guarantees can apply and so suddenly. Your program expressed as tensors can run on any architectures, no matter what happens to the hardware. The hardware layers under the covers? Cutile is built into the Cuda platform stack. If if you've been shot high, you've noticed it's actually been there in my picture all along.
+
+And I haven't told you about it until but now, but It's, it's very important to understand that this is. This is not just another Library, what we've done is, we've embedded it as part of the Cuda language, and as part of the critical platform, which means it runs everywhere.
+
+Cuda runs, right? It has all the stability and portability guarantees it runs on Windows. It runs on Linux, um, it combines and interfaces with crewtographs and all the other things. We've got debugger tools with all these all these other pieces for where we support it. It is just a piece of Kudo.
+
+That is a way to express your problem, not necessarily at the thread level. If you can get away with something at the tensor level at the tile level, then you target problem and and coutile as a Target that you're going to want.
+
+You've been bugging me for 15 years or something to make simplified Buddha. So, Mark, we finally did it. We finally gave it given you away to simplify Cuda and still keep the performance that you would get with thread level carols. It simplifies an enormous range of applications, I think.
+
+Um, well, obviously, this is something we build, and we build it over time. And so, while initially the first release of this which will come out, um, a little later this year, we can support mixing and matching cow kernels and and thread kernels, and then say a photograph or something like that.
+
+Is to be able to make these things interoperate even inside a single column so that we could start. Some problems aren't well suited to tiles and regular arrays, others like compression or half tabled associated threads, and so you should mix and match and use the right tools for the job, even within a single kernel granularity.
+
+This thing. Hi, but I think you know, come back to our previous content this morning, previously talking about. Fundamentally more pythonic. Right? Python programmers today don't think in threats? They think in terms of a raise. Numpy is a ray plus array equals another array, so I've got a numpy example on the left hand side here.
+
+And kutana's Talent. It's a blockwise model. You explode your data into into pieces. Because it's not right. And because you know better, how to break your data up column, wise grow wise, Square rectangle, light you, you know, your problem optimization is the main specific problem, you know, the problem you're trying to solve?
+
+But syntactically, you're still performing array operations. I think it's fundamentally much more intuitive. It's it's, not what. While the first thing that we're going to put out is a python interface to it, we will also because this is the core part of Twitter, we all have a C plus plus.
+
+Extension as well to be to be able to type programming, and you can see on this is still syntax that we're developing right. You can see that these terms look very similar on the left hand side. I have. One of num, not one of numbers. Examples of the internet, which is, uh, which is a matrix multiplying in in thread level with sad memory and other pieces and threads, and other pieces like that.
+
+I think the code on the right is much more accessible much easier to read much easier to understand what's going on. It's it. It comes out to the same performance. So, what we did with this? Is, we took who child and we implemented a llama 3.1. Inference. And so we ran this out of pytorch because nobody wants to write their own KV cache, but you take.
+
+But in the same way that you can, you can. You can take um, hand rolled kernels and inject them into pytorch. We ran this thing through pytorque. On this chart, I've got as an example the standards torch ego backhand, which runs, you know. I've compared everything to qdnn. Bakutile gets actually something really close to acudian.
+
+End back end for pipeline, right, including n is, of course, written in C, plus. But more importantly, it's been, you know, it's it's hand tuned over many, many years, and we took this. And in the matter of a couple of weeks. We put this thing together and ran a llama inference that's within 10 of cantoon kunin completely in Python.
+
+Optimizations are things you add progressively over time. So? That was very exciting, but we didn't want to stop there because it's not just a tool for making AI networks. Hooter is a tool for doing everything. And so we also reported one of one of one of the the standard HPC mini apps they call it does.
+
+Um, it does a 2d fluid simulation. When we wrote this in crew tile as well, because we wanted to be sure that we're building something that is General. So, we've got different types of code mechanics going on here. Llama inference going on and the previous slides I showed you we have.
+
+We have a lot of the goal is that this works everywhere. The crew works. To be working at the weather through the work. Again, there is no software involvement with absolutions, and so the development tools also apply to the time such a good time, just hard programming. This is actually a set of Insight, compute, and Insight Systems traces for all the llama 3.
+
+Run that I was showing you before, the one that came within 10 of kudynamics performance. Right? As I showed, as I was talking about earlier the. That there's compiler Stacks up and down the whole abstraction layer. Um, every everywhere. Each everyone needs components, and so I know we know when we build something.
+
+We're not just targeting humans writing code at this point, you know, AI code assistance also right here. We're also targeting pilots writing. Is the is the name, the language extension? Which allows you to do tile programming in Kudo. We've actually built two different layers here. A higher level layer in Python and C plus.
+
+A lower level now, which is really a compiler Target which aligns with sort of the the thread path of of nvvm and PTX. So, now, in the same way that the PTX is for parallel threat execution, tile IR is the tile-based execution and all the optimizations that go around that, and so you can have compositionally tile code and thread code working.
+
+Time in your in your in your workflow. Running through the power optimization phases and coming out together into a single underlying GPU executable, and this CPU executable can be on disk, which you know you can distribute. You can get it to Future architecture support. It can, of course, be at runtime runtime code generator.
+
+So? So now, finally, having told you about how the GP runs code, I can tell you more about Native Canon authoring in Python. Right, and just like we have many ways to accelerate applications, we have many ways to program colors right. There is no one-size-fits-all and so really, fundamentally important to the ability to write any complex big application.
+
+In this case, an example of physics of molecular biology simulation combined with AI, you're going to use many, many components together. Your program work, and so always Forefront in our minds is not just what does this one piece do is, how does it do it with relation to all the other pieces.
+
+How do I make sure that I can run my Llama 3 model in pi talk with dropping in some kernels from kutile and then sending it through the auto differentiating what's in English. Is much, much more powerful than trying to figure out how to how to connect them together separately yourself.
+
+So, an example I, I talked about the the nvmax libraries earlier. I mean, you have the nvmath libraries. Not only have host apis, they have device apis. I thought that was a really interesting example of composing different types of programming model, attacking it differently like two different ways of integrating these ninja accelerated libraries into code, right number.
+
+Cuda is a low-level thread level python way of writing kernels. It's been around for quite some time. Directly from that warp. On the other hand, is an auto differentiating framework built for combining Ai and simulation. So they expose them very differently, but because again, they ex, they they go through these lightweight interfaces to get to the underlying quality, plus plus performance.
+
+The performances identical from native python code, no matter whether whether you're in C plus plus python using number, code, or wall. More because they actually did something really interesting. This year, I talked about them last year. I think I maybe even tried those same pictures. What is fundamentally a grid level?
+
+Domain, specifically, like, it's a framework really to building simulations when it has Auto differentiation, so it can naturally generate backwards passes and train AIS through these simulator. Through these physics simulations, we've built. Last year, War also has said we need more than just a grid level model. We need a tile model as well.
+
+And when it's our model so that people can more tightly integrate neural network layers into war, they confuse carnals, taking all the things that you know, I said, I did. Grade level programming is easy, but there's a lot there on the table. If you just add a few more pieces of parallelism, and they've really exploited this and some very impressive ways.
+
+The as well as native kernel programming. There's even native python tab-based programming. We can talk about now, right? My core message in this poll talk has been the one size does not fit all right. The platform has countless Opera Optical different options because it has to serve all the different applications.
+
+And so there's no one tool you're going to pick the right tool for your daughter, right? You're going to pick the option that matches what you want to do simulation or have an alarm generation or or cure raw tile programming to some of those HPC. Things I was showing you and and cut this in the bottom.
+
+Here is actually something I want to talk about a bit more countless is, you know, if you're familiar with it already, it is the way that you program tensor cores. It gives you full control full authority over every every Bell whistle and knob you can. You can get the maximal out of the tensor call to the GPU it covers.
+
+Compilational error as well, so that began native pythonic programming. It's not just C plus plus looking like python. This is all native type. Right and? It's matches through some magic that I don't have any idea how they pulled off. It matches the performance of the code generation of the C plus plus the Cutlass from title products that was 4.0 just combined the two of them, right?
+
+The productivity of python with all the performance that you are not sacrificing in any way at all. Called, you're in Python. You're not paying the price of at that time of C plus template compilation, which is very expensive. Um, there's a talk on this, uh, by several of my colleagues later this week, where they go into into depth about exactly what the, what the python interface looks like, and they'll discuss some different places as well, but simply going straight from python down to the to these IR level IR layers, right?
+
+That is so much faster, just in terms of iterating and auto tuning, and so on, compared to doing it in C plus. Plus, I really think that we would see most users of Cutlass being interested to say, well, does python make sense or just now? You have these choices, and you have these trade-offs that you can make.
+
+This is pretty, the last action because I've already got a few minutes left. Talked about the the Coda platform stack, right? For, for all of this talk, and I showed you this this set of layers. But really, we've been talking about programming atpu. I get my program on one computer and the reality is.
+
+Nobody runs on one interior. Right? You also the keynote, but then from showing giant data sets of things, I think Denton is actually right about client data centers. It's not just those things. More and more people are going to be running all of these. Weeks ago. Um, I was, I was, I was talking to someone I know from from the doe labs.
+
+Him about the the python work we've been doing because in hpcs applications, python is also becoming not completely predominant. There's definitely growing significantly in nhbc. Sense to me, and he said, okay, that's great. But what are you going to be doing two years from now? And I thought that was an interesting question.
+
+I said, well, what I'm going to be doing two years from now, is because the future is this massive data center scale Computing. I'm going to be working on multi-node Cuda. I tell you a little bit about it, and this is just, you know, this is just our early thinking on it.
+
+One of the things that that we need to think about if we're going to be talking about a runtime system that scales to the whole data center, right? There are a whole different sets of problems that you have when you're on a hundred thousand nodes and on your own one.
+
+And so we call this thing called a DTX. And it is intentionally going to be, could have built to span the data center of the scale. And so the important things for this in my opinion. You know when I think about Cuda, this is the picture really of how I think about Critter.
+
+I think of Cuda as being this, this interesting conference point where you've got all these accelerated applications at the top and all this hard way down the bottom that we pretend really hard to you is all the same part of it. It's not, and so we've got to somehow connect applications to disparate Hardware.
+
+Programming modeling for a moment. You do this with two key constructs. One is something called a machine model. Which is to say for all this different Hardware that we have g-forcers and mobile chips and data center things and hoppers and black balls and iPad. All those things? Those have to be presented to you so that they look and feel the same.
+
+Otherwise, you'd go crazy. You'd have to write your application six different times, because that's different platforms, right? So, kuda's job is to unify and and what the machine does without compromising the performance that you can get out of it. We do this in tight cooperation with the hardware designers as well.
+
+Of course you're wearing this very fortunate position that we make with the programming language and the hardware that runs it. So, as so, we negotiate what we put in Cuda and what we put in the hardware, but this machine model is fundamental to being able to treat the GPU as a GPU instead of lots of different lots of different different pieces of Hardware.
+
+Along with it is a unified runtime.
+
+To be the same. If I had to allocate memory differently on different Hardware, you'd go crazy. It's exactly the same kind of problem, but from a from a programming API perspective. So these two pieces, this is the you in Cuda Cuda is now a proper noun Earth. I think I'm the first person to actually expanded the acronym onto a sliding in a long time, but this is the unified part of Cuda?
+
+This is to bring together these core pieces of what programming this Hardware means.
+
+I think we need to think of a distributed machine model and a distributed runtime, and what are the properties of those and this, and literally telling you about something two years from now. I have no idea what the final thing looks like, but I just thought I would you know this is cooter and Beyond.
+
+This is the Beyond part right where I'm going to be when I tell you, here's what I, I think, you know, if I have a distributed machine, I need naming for resources, but topology really matters. What's next to each other matters? It's got to be resilient if I got 100, 000 node machine.
+
+Things are going to go down all the time.
+
+It happens every day. Right at the same time on the runtime. What works well at scale is not necessarily what works well on a single VPS. Don't be easy. The scheduling has to be dynamic. It has to be controlled. These are the kinds of things that we are thinking about, as we say, okay, that's let's feel around.
+
+I'm not telling I'm not telling you of any product that you can use or anything. I'm just pointing out the direction of what we believe will run efficiently on the GPU machines of the future. For distributed computing. And one of the things which I've told you about. If you've come to this talk over the years, the last several years is data center scale, distributed tooling.
+
+The Insight Systems tools have a thing they call inside Cloud this year as a colleague of mine, who's giving a talk about this and many other things, uh, linked at the bottom there, data center scale debugging, but what they're doing with Insight cloud is dropping pieces into containers, so you no longer have to run special debug containers to go and get an analytics out of your code.
+
+Another thing that we've been doing in Cooter is building system tools, system scale tools for managements. Right, and we built something called Cuda checkpoint. It's based on a Linux utility called crew, and then really the key piece is you don't have to instrument your code. You can reach in interrupt your code, snapshot it down into some memory, save it on disk, and restore it later.
+
+This is what checkpointing does, and this is what this is what created had been grateful for. For Linux CPU programs. We've extended it to be able to cope with GQ programs as well. So, now you can snatch on it and pause it and then unpause it later and one of the really interesting things you can do with this is you can migrate your data.
+
+It means I can snatch on it off one machine, and as long as another machine is still wearing the same GPU. I can re-materialize it on another GPU. I can do load balancing across my data center. I can group things onto half empty machines. I can do all sorts of interesting things now that I can.
+
+I can migrate code. My the system administration can migrate code without the code ever being aware.
+
+Learning Engineers and people behind me, while producing all this incredible stuff. I just stand up here and get to talk to you, we have. We've curated, specifically, a set of developer sessions at this GTC listed here. There's a QR code where you can jump to a landing page and see it, which covers this whole breadth of all the things that Cuter is able to do.
+
+And, of course. My final slider is always the list of talks that I have referenced here. If you want to find out more about the things that I've said about. And that's it. Thank you very much.

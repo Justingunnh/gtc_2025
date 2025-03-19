@@ -1,0 +1,557 @@
+You and I will be your session cheer today! And join me! Here is Neil Patel, our instructor for today's session. New is a senior Solutions architect focused on Nvidia Johnson and igx platforms and working to help customers bring AI to the edge. So, if you have any kind of related to Edge AI questions, feel free to reach out to Neil.
+
+Throughout the room, you all see our Tas in black Nvidia Polo shirts, so Tas, please raise your hand now, so our attendees can spot you okay, is turn around, and our Tas are out there. Thank you. So, we are here to ensure you have a smooth and productive Workshop experience, so please don't hesitate to reach out to us at any time.
+
+Okay, so. Add to our seat. You will find blue and red solo cups. Please know that they are not for drinking water or any drinks. This is our signal system for today's Workshop. If you have a question or need any assistance from our Tas, please simply place the red cup on top and then once our ta spot that they will come to help you there.
+
+Um, once your issue is resolved, please switch it back to Blue. Okay. Um, a few housekeeping Logistics items. Lunch today will be served at around 11 50 am, and our instructor knew he will let you know. When is our turn to go get our lunch outside? Um, toward the end of the day, we will set aside time for you to complete the workshop assessment.
+
+Um, at 4 50 p.m. Today, we will take a few minutes to complete the feedback survey before wrapping everything up. It will basically take you like 30 seconds to provide us feedback. We really appreciate that. About the course, you will have up to six months of access to the course materials through the DIY platform.
+
+However, your GPU allowance is limited during this period. You can revisit the content and work on Hands-On and work on Hands-On projects, but please stop lab tasks when you are not actively using them to conserve your computer resources. A big thank you to our DIY platform sponsor Microsoft. Or a DIY sessions and workshops at GTC are powered by Nvidia GPU.
+
+Accelerated workstations running in the Microsoft Azure cloud. Now, please silence your mobile devices now. And while you do that, I will hand things over to Neil to get us started, so our TVs will be in the back of the room during the session. If you need anything, thank you and enjoy the workshop.
+
+Thank you. Yeah, like I mentioned before, please don't log into the event with the event code. I'll prompt you guys to do it. Um, we're just working through some issues right now. Give me one second.
+
+Yeah, so like? When mentioned, we have the cup systems, and then we have an amazing place to help you with it. So, let's get started, and look at the goals of this course. The field of deep learning is very big, and of course, we won't be able to cover the entire field today in this course.
+
+But will impart you with a valuable set of skills and a solid understanding. On how to practice deep learning today. The main purpose is to get you guys up and on your feet quickly. We will provide tools and all the theory necessary, uh, to jump into the field right away and start tackling your problems.
+
+The goal today is to prepare you to dive deeper into your learning into your journey of. Exploring this field and allowing you to create a solid foundation of skills. But we also want you to have fun. This course should not be stressful at all. Each period section is complemented with a coding exercise.
+
+Um, but if you get stuff anywhere, don't worry, we have kids to help us, but we also provide Solutions in the Jupiter notebooks, of course. With the exception of the assessment at the end? You would also have access to the course like Cohen mentioned for six months. So, if you feel like something did fully sink in over the course of this day, you can always refer back to it.
+
+And then, yeah, just have fun. Try to learn as much as possible. Try to grasp everything as much as possible. When you when you're having fun? Your brain learns better, and there is a technical term for this, which is called relaxed belowness. You can think of this as your brain's way of going into, uh.
+
+Faith, and then a prediction phase, much like how our neural networks do. When you're stressed, your fight or flight system kicks in. Ensure that will help you make quick decisions that will help you do tasks and a, you know, very good level. But if I want to expose you to new information while you're in that state.
+
+You will not learn anything. When you relax, however, you may not want to learn anything, but if I, you know, keep poking at you. That's the best day for our brain to act as a sponge and absorb everything. There are studies back in this, so in the in the slide text that you will soon get, uh, in the notes, we we have linked to studies, so if you want to dive deeper and you know, just so you think that I'm not just blabbing about them, uh, that's proof.
+
+Nice to have you here. So let's get started. Deep learning is a subset of an even wider field called artificial intelligence. So, let's start with a bit of History and see how we got to where we are today. Since the invention of computers, sometimes humans have been trying to teach them to perform tasks, and we want these computers to perform tasks at the level of or sometimes even better than what humans can achieve in the early days of computers, generalized human level intelligence.
+
+Seemed, you know, possible to be achieved in like a few decades. It turned out that general intelligence was beyond the scope of the hardware that was available at the time. Eventually. We, we got to the point. So now, you must be interacting. I'm sure you must have interacted with some of it nowadays.
+
+The early neural networks were inspired by biology. Correlated the idea of neural networks with the structure and function of human brains. People even even achieve some level of success, uh. With using these networks to perform tasks such as? Um, playing chess or understanding handwritten numerical digits. But it did not appear to be a major path forward in solving real world problems.
+
+As we will see in the labs today, these networks require computational resources to train. And they take some time to train. Think about how long it would have taken to train a simple model or the models that we see in the lab today. How long it would have taken us to train them on Hardware?
+
+We had 50 years ago. Eventually, these early networks were outlasked and outperformed by the one Norman architecture. The basis for modern CPU? When we talk about these early? Holy computers. Intelligence in these computers was achieved through building expert systems. And so, you may ask, what is an expert system?
+
+These are high complex systems that require hundreds of Engineers to build. Uh, the computer was taught to perform any task by programming in thousands of roots. And these would fit to mimic a human subject matter experts and hence the name. The computer would arrive at a result of produce a result by iterating over a series of logical propositions.
+
+However, there's a there was some big limitations when it came to expert systems. The thousands of rules that needed to be programmed into the computer for it to perform any task. Were first needed to be understood by the human Engineers. So, in a way, the computer could only do as much as the human engineer could understand and turn directly into code.
+
+When a task is well defined, for example, guiding a person on what type of car they should buy. By iterating over their knees, whether they need a family car or maybe a sports car or whatever. This is an easy task, right? You can have five ten rules. But for Santas, that may seem easy to us humans.
+
+It's very difficult to build rules for them. For an example, look at all three images in this slide and try to describe them in your head. This may seem very easy to you, right? For example, for the image on the left, you can call it ocean, call it wave mean third wave.
+
+On the right, you can call it taxi, headlight, or car, and then the center can be get kept in an animal. This seems very easy for us humans to do to just look at the the photo and just describe it, but think about how you would teach a newborn child to arrive at the same conclusions that you just arrived at for all three images.
+
+How would you teach a computer to arrive at those? Children. We expose them to a ton of data. And then give them the correct answer. And with trial and database technique where they keep guessing and they adjust that approach if they're wrong. Learn to pick up the important relationships and the pattern on their own invention.
+
+Turns out deep learning is very much like this. So? If human Engineers have been after achieving powerful AI since decades, why did we not see their use early on? Through the 90s and the 2000s, Euro networks were being used for some tasks. As I mentioned for 100 digits and chess and stuff like that, but there were no fantastic results.
+
+There are two major factors that have propelled us and led us into this. And of deep learning that we're in today, where almost everything that we interact with in our day-to-day life has been influenced by artificial intelligence in one way or the other. The first of those two aspects is Theta.
+
+Going back to our newborn children example. Uh, we can see how data is important to learn anything. In order for a neural network to understand what a cat is, you need to provide the neural network with a lot of images of cats. And then you also need to provide a lot of images of items that are not cats.
+
+With internet Gathering mountains of high quality data and high quality photos has become very easy now, and it helps us in training these neural networks. The other major factor is processing power. Would effectively training and artificial brain. So, think about our own human brain for a second. How much gigabytes of data do you think you observed in any given setting?
+
+How much data do we process to perform any tasks? What is the resolution of human eyes? While one AI is impressive? Human beings. Capture and observe significantly more data in in a given second than any AI. And once they artificial intelligence can catch up to us is by increasing the Computing power.
+
+Under the hood. You will never make its multiplication machines. And there is another popular problem. Uh, that requires many Matrix multiplications, and that is computer Graphics. With Graphics. Uh, objects are represented as many tiny triangles working together to give you an illusion of something more. With animation, simulation, and even in gaming these tiny triangles.
+
+Are transformed and rotated using matrix multiplications. Since Graphics and neural networks are based on the same mathematical fundamentals, which is matrices? It's no surprise that the hardware that we can use for gaming. We can use it to train neural networks as well. An important invention in propelling our journey forward was the invention of parallel processor.
+
+The math required for these neural networks is not necessarily complex, but these operations must be performed millions and even sometimes billions of times. So, while a modern CPU, we have tens of cores. A modern GPU has thousands of cores, which makes it an ideal candidate for tasks such as this, and can help us with training news networks.
+
+So, what is deep learning and what makes deep learning special? With deep learning, we flip the traditional programming Paradigm on its head. Let's see how? With traditional programming or expert systems, as I mentioned. For any given problem, you would first come up with a set of rules. Then you will program these rules into the computer.
+
+And then, whenever you want to classify any new examples, you will pass this example to the computer, and then the computer iterates over the rules that you've pre-programmed it in to arrive at a category. The Deep Garden. This is a little different. You need a list of variables inputs and then outputs.
+
+You don't necessarily need to know the relation between that input and outputs, but the more accurate you can capture the data, the better it is. This is called Ortega cell. Uh, that you train the model by showing it the data set and the correct outputs. The model will take keep taking gases.
+
+And then we'll find out whether it was right or not, and eventually during training. The model will start picking up these important patterns, and these important rules to figure out how the input is related to the output. The biggest difference here is that with traditional programming? Humans need to understand the rules and program them.
+
+But with deep learning. The computer learns these rules and patterns on its own. This is the fundamental shift in the way we build. Software Systems. However, deep learning is also not always the right choice. For example. If the decisions that need to be made to produce a meaningful result.
+
+Are very clear, and you already have a set of rules that you can Define. You should just program them. The traditional way might be much faster. But if the rules are nuanced or complex? And you make you have a hard time describing them, let alone programming them for the computer.
+
+That's what deep learning is the best choice. One thing that separates deep learning from traditional machine learning. Is the depth and complexity of the macros? Sometimes for tasks such as natural language processing. The network can have up to billions of parameters. The deep and deep learning means that the network has many layers.
+
+That uses to understand the rules for any given task. These are called the hidden layers, and you'll see them in your lash together. Deep learning has only been a major factor in the last. Or so? But it has had huge impacts on various fields that we interact with in a daily bailing.
+
+The field of computer vision. Has been around for way longer than deep learning. Nowadays, we're seeing an influx of more and more tagged high quality images and with the era of Internet. It's very easy for us to access those images. The goal of computer vision is to teach machines.
+
+To see and perceive images. As well as as human beings, or sometimes even better than us human beings. Thanks to the complexity of our human brains and and our eyes. This is not an easy task, and that's why deep learning can help us too. Then we have natural language processing, which we will also touch upon briefly towards the end of this course.
+
+But this has also helped us make huge shifts. For example, in highly accurate real-time language translation. Um, as well as voice recognition and virtual assistance. Then, we have recommended systems that flood the internet. And I'm sure you must have interacted with some of them. So, one example is content curated feeds.
+
+So, if you guys are on Facebook or Instagram, and you keep getting the same. Post your explore page that that is recommended system. Then, you might also interact with them. If you use apps like Spotify for music, or if you use. Netflix for streaming any of your TV shows, and you keep getting related shows that is also recommender system.
+
+Reinforcement learning has also achieved incredible results. Such as the di alphago, which beep the world champion in back game, which is considered one of the most complex and difficult games in the world. And now, AI Bots from. Also, you can see them in popular video games, such as Starcraft, uh, DOTA, and even Call of Duty.
+
+Let's see the overview of the course. The courses split up into a series of exercises to get you comfortable with everything that we're gonna go over in the theory sections. Going to be exposing you to a lot of different models and a lot of different data types. With only one day.
+
+Like I mentioned, it can't cover everything in the finger in learning, but with all the coding exercises that we have planned out. It will give you a solid foundation, and they'll build a base that you can build on top of and continue on your journeys. Before we get too much into the theory, we're going to act like an AI.
+
+Uh, and play with the neural network right away. See if you can figure out how you went about training the model and how you went about creating this model in your lab. Feel free to experiment with the code. You can restart the kernel if you know you get stuck.
+
+And we also have Tas to help us. You start by teaching a modern to recognize handwritten numerical widgets. Recognizing handwriting is a historically important task. Like I mentioned. And is very well suited for deep learning. Good starting point. I'm gonna be working with the data set called mnist, which contains 70 000.
+
+Images of handed medical religions. You might feel that there is a lot of information digest in the first land, but be patient with yourself will go over the. Meeting the TV section and you keep leaving the layers back and filling in more details. The main goal here is to give you a sense of what the training looks like.
+
+And we'll fill in the details. Like I mentioned. Okay with that? I'm gonna share the event code slide again. So you can, if you, if you haven't already, please log into your Nvidia developer account. Um, let me share my the event codes library in second.
+
+And I just login. I hope everybody's connected to the internet either. The Wi-Fi.
+
+All right, I'll give you guys a moment to care about the photo of this, and then I'll show you where the labs are.
+
+Do you? Do you need a carpets here? Systems did not happen.
+
+Yeah, we will get you. We'll get you outside.
+
+Okay, okay.
+
+Will follow.
+
+Oh, when, when?
+
+Um. Yeah, we're still working through the issues for joining into the lab. If you've taken the photo of the event code, you already have many things. I'm just gonna give you a heads up, and it's ready to launch the events.
+
+Oh yeah, I'm good.
+
+Um, I didn't.
+
+I got Z scaling, though it's gonna it's gonna take us. Close to maybe 10 minutes to solve all these issues before you can log into the the course. Yes. Thank you for your business.
+
+That I would just quite like doing.
+
+So why we wait for everybody to log in? I was in login. I'm just gonna walk over how the Jupiter labs work. So, once you launch the course. Uh, might be on this page when you log in using the event code. Um. I've already launched the task, so I have these three buttons, but hopefully you haven't changed it yet, so you will have a start task button right there.
+
+When I let you know, uh, when we were ready to launch the GPU instances, you click that start button, and it takes maybe three minutes. Your instance to to bring up, and then you'll get the star to the task over there. Once you hit the star, it'll take you much more to that, where we have all of our notebooks today.
+
+All of the six coding exercises. So, Jupiter lag is fairly straightforward. If it's your first time working with Jupiter Labs, I recommend that you go over no book number zero. Walk into how you put an app works, but? In theory, you can just go to to read all the TV session because we have some more information there more than what I share in the presentations.
+
+And once you go over the tailing sections, you can click on the cells and then you can hit the Run here. Or you can do shift enter, and that executes the executes the quality. Here, you enter, and you get the output right there. Uh, if you get stuck anywhere, you can go to Coral.
+
+Restart the curtain that will reset everything that you, you know, play around with. You can use too much, and you break things you can restart. For the first lap, we're going to be going over Notebook number one, which is the Mness data. Second, there we go. Mention when you go through this notebook.
+
+Please keep in mind and please pay attention to what you're doing with the data and how your model is getting created. What are the layers of the model? Of course, we're gonna include. This is what the data set looks like. But once pay attention to the data set that will create, and then how the model layers are behind.
+
+And then you can also explore. We have folders like, um. If you wanted to see what happens, data set looks like we have access to.
+
+All right, maybe five more minutes or 10 more minutes, until we solve the issue. Uh, has anybody able to log into their account and get to the event page or Market? No, no. Also, one more thing I want to show you is. And you get to this page. If you scroll down, we have all the slides that I'm going over to there, and we just have all over there.
+
+So, when I say you're including links in the notes, I mean the slides, notes, and we, we have helpful links if you wanted to type people into any topic that I mentioned, and if it interests you.
+
+Yeah, not straightforward.
+
+Yeah, they just let me know that we're still working on it. So? What are you doing? Okay, we I'm just gonna pick on people. Okay, I'm gonna ask them why they're taking this course, and you know why? If anybody wants to share any? Yeah, go ahead and it's okay.
+
+If I walk through it, then you're just gonna click through it. No, we'll get. We'll get a result. It's, it's much fun, more fun. If you do it yourself, and if you get stuck anywhere, you're of course gonna help you. But it's much more fun that way. So anybody else wants to share?
+
+While they're taking this course. Want to trust them when it comes to be learning? Next swag that I'm gonna give up. So, if you want invarious swag like skills, gas t-shirts, whatever? Talk to me. Yeah. I'm trying to learn how to teach beginning horses in Eastern great. We have certification for that.
+
+Are you at a university? Okay, we have certifications for that where you can read University Ambassador. Can you raise your hand again, please?
+
+Yeah.
+
+How long am I been instructing this course, uh, two years? Yeah, my background was not, no one. When I joined in, India has been interested me, so I just started. Thinking myself and I got back to the vacation with a couple hours. Yeah, the first Simon State University. I teach parallelogy.
+
+I teach right now, so just trying to stay together.
+
+Yeah. Yeah. Uh, it's just the way that we have this course develop, but you can. You can use any frequency software, uh, you should have this. The same course we used to have it on Keras, but we moved toward python last year. You can put each other and not particularly, and people use, you know, they're familiar with some people.
+
+They do some stuff, so I am going to get the kids because you guys can try.
+
+And if you can raise your hand and then attack that all sort of yeah, she's walking around here. I, I.
+
+Yeah.
+
+Yeah, so there's, I think, every day for this week 8 AM to 9 A.M, uh, let's say, certification class outside or when you finish this course, you can ask it on front desk and then build your best guide you. Uh, you can share it.
+
+Uh, super Eastern grants. It's so cool, I'm sorry.
+
+Oh, perfect! Yeah, this is a great course to start with. And, you know, after this course, we also have other vli courses that build on top of this. So, if you wanted to, this is more like a. Um. A wider coverage, right? But we have courses that have been on top of this.
+
+You get more vertical knowledge, so if you want to explore. So, that might be a good Next Step, you know, after the school. Yeah, might be in case you were like, I walked on, um. A cloud GPU instance? Um, but these these notebooks are small enough that they also run on an indicated, but for the for the course we're using glasses.
+
+What would be the natural progression? Like, if I wanted to think about it, what was your name? So that's the best thing about this course is that, yeah, a lot of other themes for so, depending on where your interest is. So, if you wanted to explore and get into computer vision.
+
+Yeah, things like that. Then, we already have courses running for l, l, um.
+
+So, this course is basically just giving you. The fundamentals. So when you start with the more advanced course, you're not just starting from scratch. Is it working?
+
+Yes, we're gonna have multiple egg slabs. That, unlike this class, which is the whole thing, we have two hour Labs, uh, covering all sorts of developing. And I think they display it outside on those big monitors as well, yeah.
+
+I feel every developer I meet. Go to build.media.com because there's these sandbox. Yeah. One of the best things. That are built on these fundamentals, but you signed up either 2003 API, right? And it is a logically interact with television and other command complex MK, um. Similar on the Jetson side.
+
+So, if you guys have your cool injections if you don't, they're very cheap to buy now. So, you reduce the price by a lot, but we have something called the Gen AI lab. Create small interactive demos on large language models, small language modules. Play around with those and see how they work on an edge platform, not necessarily.
+
+You don't always think to have a big gym. You use some applications you security degrees for connectivity reason they need to run on the edge.
+
+In Paris, the the models. So, you want to run two oreans in parallel, so I'm assuming that you buy that you, you bought the death kit, right? So right now, I mean, you can do a pcie Lane. And do you know data transfer, uh, but we have partners, uh?
+
+The death lock. Some carrying words like that? One of them scene Studio. We have a device. I think it's called C to make or Jets and mate and whatever. Can actually put up to five modules in there. I haven't tried the VG either one, but I've tried the old Nano board in the next one to input five boarded Nanos in there, one will act as a master field and then the four will act as slaves so you can have your own cluster.
+
+Yeah, so all of the courses that we're doing here today, that also on our deep learning Institute, so you're able to take them later on a change. Yeah, you're interested. Yeah, I might not be in person all the time, uh, but we also teach these courses instructor lab online, um.
+
+Yeah, oh, okay. We're still working on the issue, so if you guys want to go out and get coffee, maybe take a 10-minute break and then come back. And you know where I'm ready? Of course, let's go down. Yeah.
+
+This.
+
+Yeah, yeah, yeah. I, I.
+
+I did, oh.
+
+Let's go!
+
+Okay, we don't know.
+
+Yeah, yeah, yeah.
+
+You are created through hotspot. I told you, my father, once I got half, of course. Okay.
+
+Yeah, yeah, yeah.
+
+Oh yeah, yeah.
+
+Yeah, yeah.
+
+Okay, you are expensive, bye!
+
+But.
+
+Yeah, no.
+
+100 watt hours.
+
+Oh, really. Oh, is it like, uh?
+
+In the show.
+
+I don't know if you don't have the same feelings, but well, and then just not just for such a brain. So it was very well, it might come get here. Oh, it's pretty much training, so it, where was the famous training you did? Oh, for the I or other?
+
+And then you can. Hello! Cars from 100 yeah, in our Wi-Fi now working.
+
+Bond is as strong as it was, oh yeah. This is actually.
+
+Most two guys in the back? If you can, first, put your blue cups on top. Um, just to start and then. Please raise your hands if you're able to log in and get to the events page. Many of you are okay, looks like most of you guys are able to.
+
+Everybody who is not able to knock any, um, try your mobile hotspot. Yeah, yeah, that'll take you to the event page and you'll be able to launch the chicken that way. If you're still stuck Facebook and then come back on top and we'll come to you and we'll try yourself.
+
+Uh, and then if you already logged in. Please start doing the the first notebook. Sure, I'll give it maybe 30 minutes to finish and then jump to session number.
+
+And healed the life. At first, I thought. I don't know. No, I just. Let's just open this another topic.
+
+Ah, double, and then. Oh, you can calculus interact with the skulls if you are very well familiar with fighter, but in a while, right? Yeah.
+
+Later on.
+
+Jump into the next. And then we'll just run and just pop also after the result. It's not like a traditional. Uh, you blocked the cold so that that was awkward for you.
+
+And when you flick, uh, just just flick play, like, like the libraries. And to see the result after it, and we just launch more of the code, then appealing on the line of the results. So, did you send one already doing no this season? Oh, I never got your.
+
+I never got groceries shut up.
+
+Because I could do this. Yeah.
+
+Right, and some depreciated Library. Hi, I'm on my battery. Sorry, I don't think so. Stop. What's going on it? Call me Chris Michael. I'm from from us, but I grew up in Turkey. Wow. 10, 000.00. Uh, yeah, all week, and I can make you tell people go to Las Vegas.
+
+I couldn't get into the confidence. Yeah, it's pretty, uh, yes, six hours, right? But I took a plane, I'm taking a plane bags here, so we, ah, I! I got a ride with a friend up here. Oh yeah, like, I hope, right? Just like my car? Fine area. You have Army.
+
+Oh, okay, let's say, surrounded by the garden, right, and not across, yeah? You would have to get through the guardians and get to the other inside. That's open. That's, but they all of you to enter or not. Sometimes we, because my friend did the language and we were north of the fire, so we were passing through.
+
+And we said, we're going that way. Okay.
+
+But they are checking their ideas or something, um?
+
+You can come and get the honest! Wow!
+
+From my hotels.
+
+I was wondering if you could elaborate on this flattening bit because I'm not quite sure what's going on here. So, we have our multi-dimensional array. We want to flatten it to this, right? But what's the point of having a list of lists if it's just a single element? Why would we not just want it as just a regular old list of numbers?
+
+I think it's not a list of lists. It's a tensor and the amount of brackets defines its shape. So if there was not, if there wasn't that another set of brackets. The shape would be different, and we require like that specific shape for further operation with it. Head search of format.
+
+It's like a metrics basically, right? But. So, it's like. Yeah. It's a matrix, but it's only one row. Yes. Okay. But you still have to know that it's the first row, but there could be more okay. I get the structure. Okay, thank you. Sorry, you turned around. Do you have a question?
+
+Oh, okay.
+
+Computers.
+
+Pulling, and you're in trouble playing. Oh yeah, yeah.
+
+Yeah, United States. Your trains.
+
+So we, we. Tomorrow.
+
+Yeah, don't forget to read.
+
+Right there?
+
+Now, it's all water. Oh yeah, it's hard. I have one year act indoor activities. Yeah, they do with the sodium.
+
+It's all service.
+
+Okay, okay.
+
+Yeah, I know, I'm thinking, yeah.
+
+Yeah, I mean again.
+
+Okay, okay. We're not missing it. Oh yeah.
+
+You're telling me a lot more stuff. That's great competition.
+
+What you can just like and see what happens? Oh yeah, just let it autoplay. Yeah, oh. Uh, yeah.
+
+Yeah, okay, exactly, and then you add.
+
+It's okay that you go through, but um, he'll explain this. Okay, that's good.
+
+Not smart.
+
+Has everybody finished notebook number one? Please raise your hands if you have.
+
+I will give you maybe? Five more minutes. It's a pretty small notebook. You can also save these notebooks, try them later on. You, just if you after the course. If you wanted to change the goal, experiment with different variables you can handle.
+
+Over.
+
+All right, I'm gonna kick off the second session. I apologize for the technical difficulties we're having. But the beauty of this course is that you still have access to the material for six months, so you're still able to go back. And you know, mess around with it if you wanted.
+
+So? What just happened in the the course in the lab, right? Let's look at it step by step. You first loaded and visualized your data. Um, you edited the data to get into the right shape for your model. Um. And then you normalize the data to get the values between 0 and 1.
+
+You also edited the answers. For them to be in a categorical form. Instead of a number. Uh, the computer learns better when the answers are in this. This format is categorical form. Create the model and train the model, sorry. Compile the model and then you trade the model on the data set.
+
+Let's start with data. Um. You receive each image as a 20 each 28 by 28 pixel image. You received it as a one-dimensional array of 784 integers. Then you normalized this by dividing each number of that array by 255. 255 is the maximum value for a pixel. Then, he took the answers and which were in the format of integers between 0 and 9 for the correct digits.
+
+And then you made them categorical. Representing them as an array of zeros. With a 1 at the index of the correct digit. Then see the model, of course. We can't fully represent the model here in one slide because it was big. But you get some of the idea, right?
+
+You had 784 inputs. Then, he had two layers of 512 neurons each. And then we had an output layer of 10 neurons, one for each digit. So? Journey with this each neuron in each layer is connected to every neuron in the next level. By torch, we call this a fully connected layer or a linear layer, and then fingers like here as we call it dense layers.
+
+That means that there are so, like, so many connections, right? We have 784 times 512 plus 512 times 512 plus 512 times 10. And over 600 000 connections. Restore information. In the weight between two neurons. So, think about how much information can be shared can be stored in the 600 000 Dimensions.
+
+But how do we get the model to store information that we want in in the network? In order to understand how this network came about. Let's look at the simplest possible model. Each Circle that I showed in the slides before is a neuron. The oldest use case for a neuron was to.
+
+Make a regression line. What is the regression line? This is the simple y equals MX plus b. Regression is when you use a continuous input to predict a continuous output. An example of this would be. Predicting the temperature of water. Uh, by looking at how long it's been sitting on the stove.
+
+For each input coming into a neuron. We're going to find a slope or wait for it, which will be. The B of Y intercept is stored in the neuron. Our goal is to find this line that passes through both points. Uh, that way, when once you have this line, which is high, it should be accurate and passes through these points.
+
+You can use it to predict the output for any incoming new example. If you're a student of Statistics, you probably know of a better and more deterministic way to get our M and D. But just like on neural networks, we're going to. Uh, approach this with a trial and Herobics technique.
+
+We're going to pick a random value for our M and B in this case. Going to start with negative 1 for M and 5 for B? Most of the time. As you guess, our guess is going to be very off. You see, it's going the object completely opposite direction.
+
+So, how do we correct this? To calculate how far off we are from our Target? We're going to utilize the concept of least squared error. That means we're going to take the difference of each estimate. From the True Value and then Square it. The sensors to two things. First, it keeps the error positive.
+
+So, when we calculate our total error, they don't cancel each other out. Secondly, if you if you have a very wrong guess, you're gonna get punished very heavily, so we need to fix it quickly, right? Uh, the mathematical formula the previous slide might look a little difficult if you not touched mathematics in a long time, like myself.
+
+But here it is in code form, which is much similar. For each point, we're going to calculate the difference between Y, which is our actual value and MX plus b, which is a predicted value. Then it will going to take the difference in square. And then we will take an average of all the square differences that you see right there in the last MS equal squared and four n.
+
+That might be the most Macky. We will get to today. If we graph or M NRB in relation to a graph? Is what it looks like on the left here. Uh, we have a surface block of our loss function. That's the error function we choose to evaluate our module.
+
+In our case, it's the mean squared error option. And on the right, we've plotted the Contours of this. Last surface. Uh, and with that? I'm sure we can all clearly see that the bottom of this. Uh, surface is an empty equals to 2 and b equals to 1. So, from an example from the start, when we took negative 1 for M and Y for B, this is the line we got.
+
+And that is our current position on the Contour strand. The goal here is to find the minimum error, right? This is a toy example, so we can clearly see that the minimum error is zero, and we can also tell where it is located. But. Uh, for a computer, it's not very easy to see that because it doesn't have human eyeballs, right?
+
+So, they're going to help cheat a little bit. Let's assume we have two levers. To manipulate the value of M and replace the value of B. Let's start with. Playing around with B and then subtract 1 from it. And this is the line that you get. Which is very cool, because now you're hitting one point.
+
+But it's still missing the other one. So, let's try changing the slope. If we, if I add one to the scope now, it's hitting. And now, it's missing both the points. But the good thing is, our error decreased from 2.5 to 1, so we're getting closer here. Your computer doesn't have our human eyeball ability to guesstimate when the slope where the minimum is.
+
+Uh, and it doesn't know what needs to change for it to reach that minimum. So, what the computer does? Is at its given location. It's going to calculate a gradient, which is a multi-day slope. It's going to figure out in which direction the loss is decreasing the most. Which is, of course, going to be some ratio of M to B.
+
+Once we have the direction in which loss is decreasing. Um, we need to figure out how far to travel in that direction. Since the computer is going to calculate another gradient at the new location, you go to. If you take too big of a step, you might end up further away from the target.
+
+We went from all the way over there in that direction all the way across. You might go and get more Terror. On the other hand, if you take too short of a step. It'll take forever for your model to train. Will unnecessarily cost you compute and will end up costing you money.
+
+How far of a trap or how big of a step we take is something that we decide? And it's in a parameter called The Learning Way. Um, so you repeat the process of calculating the gradient and moving to a new location. And the way you measure your progress is through epochs.
+
+Which means one pole path through the data set. It used to be that people would take and use the whole data set to find out the gradient. But nowadays, it's more efficient to, instead of using the full data set, people just use a sample of it or a batch and calibrate the gradient.
+
+In both cases, is when you take full data set or a batch, you calculate the gradient and you update the parameters. Depending on the energy level here. Is called a step of training. After a few steps, your journey will look something like this. The process to find minimum loss in this way.
+
+When you calibrate ingredient, taking a step, calculating gradient, taking a step is called gradient descent. A lot of research has been done. On the best way to define the learning rate and and some Frameworks already have a few tools that can help us adjust this learning rate. Example, a popular one is.
+
+Atom or adaptive momentum? Very simply put, we can take think of Adam as we can think of the law score as a mountain, and our current position has a marble, so when your error is high and you're at the top of the mountain and you drop the mountain, it's going to quickly pick up speed as it travels downwards.
+
+And to avoid local benches or local Minimas. Because we don't want to get stuck in our surface plot in a local trench, you want to reach the absolute minimum error that we can, and so it hopefully lands. Then add a global minimum. And there are other. Other Foods as well, like RMS prom, which is an advanced version of Adam that you can utilize as well.
+
+Now that you have the core concept done? Let's start building a network. Instead of having a single input. We're going to have multiple X inputs. And find each of them away. So w1w2, so on? Then, we just find the gradient for the new variable, like before. We can take the output of one neuron and feed it into another neuron.
+
+And as long as we don't make a loop, you can feel the single output to multiple inputs. So, output from one neuron is going to 15 neurons if you know, as long as you don't make a move. Now you have an idea. When we calculate our new waves, you can take the through pregnant design.
+
+You can take the waves or take the error, calculate it in a later neuron. Part of the error calculated at the previous neuron. It is connected to. One important thing to keep an eye out for is activation functions, and when you do the labs. Please, if you can find these activation functions and privacy, which activation function you're using?
+
+Right now, we're just doing a linear thumb, which. Give you a line in two Dimension, and it will give you a flame in three dimension. And it's a bit of a beast for a neural network, because the only result you'll get from adding two lines together is another line.
+
+And we want to be able to capture. Uh, complex shape. Computers, like the equation of a line, because the first step quick to compute and they're easy to differentiate. One way to add non-linearity to our? To our equation is passing a line through a non-linear function. And one of the most popular non-linear function is the value or rectified linear unit.
+
+Uh, this will set the output to zero if it is negative. Because the output of a neuron gets assigned away when it's fed into another neuron, there is a chance that it will get negative. Another activation function is the sigmoid activation function, which turns our line into this s shape that you've seen here, going from 0 to 1.
+
+Um, this is especially good, because then we can use, um, use our neurons to assign probabilities to predictions. In actuality, we were likely to have more than one input to our neuron, and this is the shape or activation functions. Gave early launch in three dimensional space. Um, linear is just like a a plane, like a sheet of paper value is going to be like a wedge, and then Sigmoid is like a a surf wave.
+
+Here is how an understanding of all of this is going to help us. Let's say we have one input, one output Network that we suspect is a summation of two waves. We can use a sine cider function in the first layer. And then. Use a linear activation function in our last layer to add the two of them.
+
+Given enough data. Our network will figure out the parameters of each of these sub components for us. Having an understanding of the shape of data you're working with, and and the relationship can help you build efficient networks, which will save you time when it comes to training. It will say we compute and eventually it will save you a lot of money.
+
+So? If we can make these complicated shapes using more neurons and more layers? Why don't we just make a super big neural network to solve any problem? Can you pink? Of what would be the pitfall from having too big of a network? An obvious one is that it will take super long to train and will cost you unnecessary compute.
+
+But there is another major problem that we need to keep in mind. Let's say I've gone out and collected some piece of, you know, data, and then created these two models left and right. Which one do you think is better? If you judge purely by the mean squared error, it's of course going to be the one on the left.
+
+So, the error is z. But what if I was to go out and collect some new data points? This time, our simpler model does a better job generalizing the new data. All the problems are not this simple, though, and it's the job of a data scientist, the job of view.
+
+To to be able to determine the size and the complexity of model. That you would need for your problems. In your lab. Remember, you have two folds of data training, data, and validation data. We have these two pools so that we can be sure of such a model is not just memorizing the data that it is learning on.
+
+But when we introduce new examples to it, it is still able to perform accurately. If the model performs good on training data, but it has bad accuracy on validation data. That is a clear sign of overfitting. So, we just went over. Many parts of the neural network. Let's see how it applies to our last lab.
+
+This was the visualization from a few slides back. Um, the Vancouver most of these components. But there is one thing that is missing. Here is the detailed version of the diagram if you remember you. Activation functions in your lab as well. We use value in our headed layers, but why do we use linear antenna?
+
+The neuron with the highest value has the strongest prediction. But how does an output neuron develop this confidence that that prediction is the correct output for any incoming energy? With cross entropy loss function, which I'll go over in a bit. Because both the output of our linear layer into a soft Max layer.
+
+Soft Max here. Is the same as feeding each neuron through a sigmoid activation function to get the probabilities. And then normalizing these probabilities. So, all of them add up to a hundred percent. Let's say. We have a group of points. That are categorized by color. Green and purple in this case.
+
+And then our task is to separate these pools to different categories. The two categories here. How would you use an rmse line to? Put any incoming new data into a green pool or a purple pool, depending on what color it is. We want to find the line that best separates this data into two.
+
+The L function that we use to calculate our gradient. Um, it's called the loss function. As I mentioned, and of course, you can try assigning numbers to each of these points and then calculating the error and going going in. Getting this MSC line, but there is a better way to do this.
+
+Most popular way to approach this type of problem is called categorical cross entropy. Let's talk about logic before we dive into the map. Uh, we will assign a probability to each point, whether it is green or not. And we can think of this probability as a confidence that this point is of a particular calendar.
+
+Cross entropy works like this. Let's say you get a new incoming data point. And you're 100 sure that it is green, so you assign at 100 probability. If it turns out to be green, you will get Z or loss. But if it turns out to be purple, you will get infinite loss.
+
+And it works in the opposite way as well. If you assign a zero percent probability to the point that it is green, that means you're sure that the point is purple, and it turns out to be purple zero Norms. But if it turns out to be green, you get infinite mass.
+
+Here is the mathematical formula for binary cross entropy, meaning that there's two categories. The log. The logarithms here are used to drive this equation to infinite loss. It looks overwhelming, but is actually not. The left half will cancel to zero if the target is false, and the right half will cancel to zero of the target is true.
+
+And here it is in the same math and code form, which I like more. Uh, y hat is our prediction whether point is green or non, and why actual is when the point is actually green or purple. And the logs. Your push are core to negative Infinity, because log 0 is negative infinity.
+
+Okay, now that we have the major mechanics down, we know how to create this model. We know most parts of the model and how it works. What's that look at the next lap? This is an interesting one, because now you're going to be working with a different data set.
+
+We're going to be working with the American signed language. Uh, it'll be in the same shape as before, so you will still get 28 by 28 pixel image fed you as a 784 integer. Um, and then we'll be skipping the letter J and the letter Z because they require movement.
+
+So with that. You already have notebooks open. This lab is in Notebook number two, so we'll start with that and maybe. Uh, 30 minutes is pretty good enough for this. This last, pretty small. Like I mentioned, please keep an eye on the layers of the network that you're using.
+
+Try to see which activation functions. Using how many, how many neurons will utilize in the layers? And then keep an eye out for the accuracy, the training, accuracy, the validation analysis. We go over that session number three. Perfect!
+
+Lab number two ESL. Find someone using?
+
+And a few minutes.
+
+Yeah, so.
+
+Okay, okay.
+
+If you do the, I'm restarting run all. Let's give you the same things.
+
+Okay, okay.
+
+Alphabetical. I'd like zero, you know how? There's 126 letters having two of them fire motion, right? So it's going to be 30 under three, right? Okay, yeah.
+
+I'm assuming they're going to happen.
+
+Either. What you did?
+
+Thank you.
+
+Yeah, yeah.
+
+Thank you.
+
+Quick question.
+
+Oh, that's great, because you don't need to worry about why I only get rid of the processing. It's gonna be happens, especially, um. And you know the model and do all the computation? And you know the batch processing all in memory? Um, can't do that with a lot of data sets, but then this compared to GP memory size these days is so small, it's so definitely basically heavy is.
+
+The model is based places, and so that is a small base and handings. Um, and so we don't have to, you know, worry much. There are some enemies where you know whatever you can do like, you know, accelerator, like, image preprocessing, and stuff like that, so things those can also be GPU accelerated.
+
+And you know, so that is the complication. A lot of their advantages, just that if you're doing your pre-processing, launching you when you need to actually do today, either through the model itself. It's already on GPS, okay?
+
+Ones. It ends up with a lot different. Yeah, so language mod is the size of the month tends to be more issues, therefore so than anything else.
+
+Situations.
+
+Stop everything!
+
+Okay.
+
+Right? It's my workplace.
+
+Please.
+
+Oh, oh, no. But even just.
+
+So, there's a lot of shortcuts. In other words, you couldn't think about it. Yeah.
+
+Oh yeah, so yeah, there's just some information.
+
+Yeah, yeah, yeah. Yes, yes.
+
+That is designed to pull special information our photos. Before we get into the network. Let's look at how computer vision approaches this problem. If you worked with, let's say Photoshop or Spain or Adobe Lightroom, edit photos. And, you know, play around. A chance that you already aware of how computers represent and manipulate photos.
+
+For example, let's learn shorten, brighten, and darken tools. The area around where you click on the portal with these tools that manipulate the photo is called the kernel. Convolution. Is when? The kernel is multiplied with the image. Technically convolution is the multiplication of one function with the with another function.
+
+But here, you can think of your image as a function of color, and you can think of the kernel as a function of pixels. Garden is just a small Matrix. From this slide. You can see that bloody is just taking weighted average. Of the pixels, and then the surrounding pixels.
+
+Sharpen brightens the pixel in the center. And then subtract sixes from, uh, from the adjacent subtract values from the adjacent pixels. And then brighten. Makes the center pixel Center pixel value higher and darker does the opposite, so it makes it lower. Let's see how kernels apply to our images.
+
+Um, in this case, we're using a simple image. With off a heart, which is not very obvious, but it is hard. Um, and we're going to step through a convolution. That fancy star operator that you see right there in the screen that is the convolution operator. And a resulting image or the convolved image is going to be a 4x4.
+
+Please note that all of the images that we interact with in in the newer worlds are still 2D images and the 2D matrices with pixel values. Let's start with the top left corner. We call this section that we're about to convolve the window. Uh, it has the same shape as our kernel, so the window will also be three by three.
+
+We will take our kernel and multiply each cell. With the respective cell in the window. And then we're going to Total out the sum of from all of the multiplication operations and put it at the convolved image. Next, we move our window over by one, so we're shifting it by one.
+
+Multiplying it and then putting the total in the convolved dimension. Then you'll repeat the process. Until we've convolved the whole dimension. You can play around with a few parameters for some convolution. Number one is strike. Stride is the second step you. That you take to move your window over when you're doing convolution.
+
+Uh, here we have chopped our image in half, so it's a broken heart. But for the sake of Simplicity, we're going to consider this the whole image, and you can see how. What output you get with a stride of one stride of flu and stride of three? With stride of?
+
+You start skipping convolution and you start. You start convolving the image by skipping one column, so this is one of the first convolution will happen here. The second convolution will start. You get two, you get two outputs. Uh, with stride of two, the best thing here is that, uh?
+
+You have less data to analyze. Once you have the convolved image, this is good in some cases, but it's not so good. In some other cases, you'll see why. Um, which start of two. Also, please note that once you do convolution in this window and then, in this window, your last column is remaining, and there's not enough data for it to be considered for convolution.
+
+So, you're gonna be missing out on that. And that is where padding comes in. Uh, if you want the resulting image to be the same size as our input image, or if we want more data. To make sure that. Yeah, we're using all the pixels in our original image in convolution.
+
+We can do parallel the simplest way to padding is zero pattern where, if you just add a border of zeros around your image. This works in most cases. But when the images are small, adding a border of zeros is going to impact your convolution very heavily. That is where another sort of padding comes in, which is called the mirror panel.
+
+And now, instead of adding a water of zeros, you're going to be replicating or duplicating the top and bottom rows and the left and right columns. So, how does all of this apply to neural networks? Before neural networks. Engineers who play around with numbers within a curvil to see if it can be used to identify interesting patterns.
+
+So far. In this slider, we've only seen three by three kernels, but they can be of any size, even though three by three works perfectly. Where, for most use cases? Researchers who try things like manipulating the numbers inside the kernel to, let's say, return a high value if it convolved a cat here.
+
+So you could have a cat ear curtain. It has a cat eye person you have cat nose curl. You pass your image through all these, and they all return higher values. Then, you can be pretty confident and guess that the photo is of a cat. So eventually. Kernels are just these devices that multiply weights to an input and then.
+
+Add the result together. And there is something else that we saw that does the same exact thing, right? Neurons, do that. Convolutional neural networks are exactly that. They map the input of a neuron to a current with trainable means. So, this is going to be our new architecture. Bit smaller than what you'll have in the lab, but very similar structure.
+
+Uh, first, you have the input image. We're going to start with a variable number of convolutional layers. Here, we're going to start with two. Three by three by one filters. Grayscreen printers. We can have as many colors as we want. And each of them is going to produce a new image that you see here, and we're going to stack these images and create a 3D image.
+
+Not 3D in a sense that we perceive things but 3D in a way where you have two images. Just stack on top of each other. We can then send this new image. To a new set of. Uh, curtains. But even though we're doing a 2d convolution here, technically will actually convolving a 3D object.
+
+Which is the third dimension now is the size of our stacked images. So, if you have two stacked images, it's going to be two, and that's why your curl size and kernel Dimensions is going to be. By three by three or three by three by two, sorry, and then you're going to be using two of these kernels.
+
+Then, once you once you've passed your image through these kernels and gotten your stacked images and everything you're going to flatten everything out again and then pass it through the network like before.
+
+When researchers first experimented with these kernels? They realized that you can use these kernels to calculate derivatives of an image. There are there is a special class of kernels that can detect edges in an image. Technically, you can Define an edge. Uh, as a place where the change in color of the image or in that plane is changing rapidly.
+
+Uh, so here is an example of these Edge detector curdles on the one on the left picks up vertical edges and the one on the right picks up horizontal edges. By combining information from both of these kernels or kernels similar to these, you're able to detect interesting shapes in your.
+
+Photos, so you're able to detect. Uh, circus triangles, curves, and things like that, which is very important when it comes to real-world photos. The way neural networks process images is very similar to how our brains also do it. Both the neural network and our brains. Will take the edge detector first and try to detect edges.
+
+Then it will pass this information to the next layer. Where maybe it's detecting the intersection between all these different edges, and it's it's able to detect textures? Then, that feeds them to the next layer and the next layer, picking up important features and important information. As it moves deeper into the network.
+
+And it does that until the whole image can be recognized. You can also do neural network perception. In the notes to these slides. We have added a link to the Deep dream generator. Which is built using a much larger Network on. On on a large number of high quality, high resolution photos.
+
+We have. We ran our image of a marble through this nephewing generator. And what it does is it enhances the patterns and the objects that it is able to detect. And here, the image. On the imminent, right? I can almost make out like a cartoon dog for. But that is me, mind reading AI, which is very unscientific.
+
+Google's Inception Network was trained on a lot of high quality dog photos. So the tools to visualize these intermediate layers? Uh, on photos or oftentimes end up looking like, you know, dream, like, now photos. There are also some other layers that are important and will help you make your model better get better accuracy.
+
+First, one is pooling. With pulling, we look at the values in our window. And do a simple statistical operation on it. For example, this one is Max pooling. What you do is you take your window. You look at the values and the simple statistical operation we are doing. Here is which is the max value, and you only take that.
+
+You put this 256 right there, and you discard the rest of them. It is helpful when you're working with large images. And you're able to shrink that image size down so you can analyze it better and use less compute. Next, we have the Dropout layer. Uh, during training, you can randomly shut off.
+
+Uh, neurons accurate that you specify. What does that mean so you can shut off these neurons so they won't be able to train during that step of train? They want to learn anything that in that step. Why do we do it? It's because we want to eliminate the possibility of one neuron heavily contributing to the result.
+
+This will help us to go oversetting. Be careful not to set the rate to one, because then all the neurons will turn off that, and there will be no learning in that training steps. So, this is the model you'll be using in the lab. We're also going to do batch normalization.
+
+Ah, where we normalize the amount weights change between layers. And this helps us with training, speed, and training stability. So, now you will be working with. You're still working with the same data set, so we're still going to be working with American sign language, but instead of just using linear layers, we're going to be using a convolutional neural network, and let's see how that increases our validation accuracy.
+
+Doing lab number.
+
+And then. Yeah, maybe 20 minutes for lap number three, and then we can break for lunch. And be backed by. Let me see. And be back by one o'clock so we can get into more interesting stuff. And the second half is, is better is my favorite. All right, lab number three, everybody.

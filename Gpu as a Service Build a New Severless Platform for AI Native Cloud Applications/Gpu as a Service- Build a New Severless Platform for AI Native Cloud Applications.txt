@@ -1,0 +1,167 @@
+[Speaker 1]
+Don't worry, therefore, surprises coming on this presentation. We're not done today. We haven't made any
+
+[Speaker 2]
+Trouble.
+
+[Speaker 2]
+Kind of overnight. Welcome to MBA GTC. My name is support students providing and resolution director here at Indiana. Tam, your host for the session, uh. Before we begin, I have a couple announcements, uh? Don't forget to download the Nvidia GTC mobile app for our latest updates session catalog and a quick and easy way to complete the session survey tomorrow morning at 10:00 a.m.
+
+[Speaker 2]
+If it is CEO gen Zhuang will deliver the GPC keynote and esap center, which is about a mile away from here. Doors will open at 8:00 a.m. Definitely arrive before 9, 15. It will fill up. You will be turned away when the end of the Granada seats parking is free and then the investor Center by 7 30 a.m.,
+
+[Speaker 2]
+My dentist, the poster section this evening, and probably just a weekend Civic Center. Join us for a drink. Have a great care of the clusters and the offers. Make sure you check out the GTC park while you're trying hard installations, Lounge areas, food trucks, and sponsor Activations in the session, recording will. Longer than 48 Hours of right now and around Nvidia on demand, hopefully next week. So I'll go ahead and announce this session.
+
+[Speaker 2]
+All right. So, whose activities entitled advancing GPU as a service built in a new building, a new serverless platform for AI native applications presented by culture? Learn about how kubernetes can be the accurate action layer to run containerized AI models across GPU providers in conjunction with running containerized application in the project across CPU variables. These features enable a new serverless gpu-based cloud computing platform for building and running API and AAA applications on kubernetes leverage like Nvidia AI Enterprise and the Lidia power AI model registration on writing.
+
+[Speaker 2]
+25 plus year Pioneer in the digital marketing and digital experience space for the background of the web and the open source Enterprise content management and digital experience platforms. He is now building multiple Global brand residence as a leader in independent cloud optical market and composable infrastructure for organizations who require, um, well, we might have about five minutes at the end for Q. A please raise your hand and I'll bring you the microphone and the questions you have to be in the session recording. So, please, wait for that microwun. Thank you so much.
+
+[Speaker 1]
+Dpc, who's excited for the kickoff of DTC tomorrow during Benson's Kia Risers win? So, yeah, we're very much looking forward to it. And please do make sure to show up early, because indeed it will, uh, we'll close out pretty beautifully. I'm excited to be here today, because this is the second time we're presenting at GTC. And if you walk with all of GTC 24, there was a big announcement around Nvidia microservices Nvidia and that.
+
+[Speaker 1]
+Were starting to make the distinction between gpus that they needed to procure and provision for training AI model and start to think about. What is it that they're trying to do with their models? What is it they're trying to power with their model? How are they looking to infer their models as part of a customer experience or as part of an employee experience to drive some sort of business output?
+
+[Speaker 1]
+Income last year was to start advancing beyond rudah and start at fiance into higher layers of the software stack. To help every developer, every AI engineer actions start building and deploying new applications, power by Ai, and doing so more quickly and more easily. Course of the year. He's seen Nvidia Pioneer, an entire integrated software staff, culminating in the purchase of run AI for all of your AI model orchestration. I'm excited to get here today is to talk to you about how we can now advance the economics to growing Market to GPU and serve it to take advantage of the whole Nvidia accelerated compute platform. Integrated Hardware software provision with a cloud service provider at life culture, so you can move forward more quickly, more easily, to build a scale. All of your new AI app?
+
+[Speaker 1]
+You know, I'm actually from the San Francisco Bay Area. Mulcher, of course, is based in West Palm Beach. You can run over on beach, but I actually grew up here in a little town called Pleasanton. That is not so little anymore. I'm not so little open anymore. Either way, so? State here at the University, and it was funny, because this morning I actually went on my standard run to prepare my day and my standard run. When I'm here in the Bay Area as I go to my old alma mater, I go to Stanford park, the car and I run the dish. This is a nice Four Mile movie and I run it every year since I was like 17 years old.
+
+[Speaker 1]
+I was sweating back that as much as things change so much stays the same. And here I am. Nearly, you know, three and a half decades later. And I'm still wearing that same blue, and I'm still experiencing the same thoughts and same excitement and the same enthusiasm from text that I did when I first got into the computer lab at 70 years old. Theater and the reason why I highlight this is because, again, the more things change. The more things stay safe. And the more times that we see acceleration impact. We can also see patterns patterns that repeat themselves, just like I will be the pattern. Every time I'm here is the Bay Area to go to Stanford, and you can run the pitch now. Obviously, I was 17 years old. When I first ran it, and you know, I'm 54 now, so I've run, you know, two 17 year Cycles since I first started running it at Stanford, and I'm now entering my.
+
+[Speaker 1]
+One liter microbi 70s, and so too. We also have multiple cycles of compute. And two years ago, we started a new compute cycle where we were starting to take advantage of Nvidia gpus to start building and deploying new applications. New payon model at scale? Very excitingly. What's happening now this year? As we'll see a little bit later is Enterprises, all of you here in the room are now starting to the very first time start thinking about industrializing at scale, how to accelerate employment of multiple new AI, native applications for supporting all of your business units and all of your line of business operations.
+
+[Speaker 1]
+You have a whole Litany of, you know, passing examples of piloting Enterprises that are doing that. And here, today, they taught what I want to explore is, how did we get here and what is the foundation that's required for Enterprises to take advantage of the full invented, accelerated compute stack to accelerate Global adoption of AIS scale? Happening. So, you know, very recently, you did a survey on the Thousand sea level executives. Out in charge of AI, decision making, and the results were quite striking. He's more like hour long interviews. We literally did a thousand of them, and it's very detailed.
+
+[Speaker 1]
+And one of the things that was most striking was not only are people accelerating and documenting right, we get that. Like, we all know that. That's why we're here, right? It was just this sheer scale. People were looking to deploy. People were looking just like hundreds of new agents in particular to support internal and external processes. The scale was overwhelming, and the scale was actually the challenge. Because we're Enterprises. We're prototyping these Doom agents photo typing these new models where Enterprises were stuck in our survey. Data was very simple. How do they actually now hit these prototypes and how we may industrialize them and run them with the greatest cost efficiency, security, and compliance and accelerate employment as quickly as possible?
+
+[Speaker 1]
+Problem of building the models. It's now a problem of how do you scale this in the most positive, effective way on a more repeatable basis. So again, what will adoption AI is happening now? And there? Could it be a better time to hear a GTC 25 to learn more about the entire Nvidia accelerated compute stack and how we can start scaling what we call here at vulture AI native applications.
+
+[Speaker 1]
+You! We built Cloud native applications. We took traditional web application architectures, and we migrated it to new, cloud-based architectures, and they filed the native architecture. Now, we're migrating application architecture and infrastructure one more time, and that next step is what we call an AI native application. And the question is, how can you scale this globally in the most cost effective, autonomous way where you can scale it up and scale it down? Ever. It's needed to respond to your end user and, of, course scale to zero when it's no longer necessary. So, the interesting question becomes.
+
+[Speaker 1]
+The pattern tends to repeat themselves. Well, what are some of the lessons?
+
+[Speaker 1]
+How did we get to a clown dating architecture? How did they build cloudhaven applications? About what we need to do next in terms of building in AI Native staff. So, that's the question, you know, how do we get here, and so on. The way they can do a little bit of lockdown memory. Like, because once again, I was that 17 year old kid stand for their Google computer lab, so I'm excited to get access to it, you know? Big son Michaels micro workstation, right? Some was the big deal back in those days, so local draft
+
+[Speaker 3]
+Versus a big deal in those days, right? I?
+
+[Speaker 1]
+Right, and you, you know, Solaris? That was the big deal, right? So, who remembers? I think these public signs SGI compact and doesn't digital evening class. These what meters in their space? At one point in time, son, of course, was actually pioneering the concept of network Computing. Believe it or not way back in the day, like early transgender of the cloud. SGI was the Powerhouse for, like visual effects. Members. All of the movies, all of the CGI. It was all done on SGI Ward stations.
+
+[Speaker 2]
+It's
+
+[Speaker 1]
+Kind of funny. Now, that's all something that you do when you laptop or your phone. You think you know something like DC? It's crazy, um. Keeping with all of these companies that were pioneering radical radical Innovation in Hardware. What happened was now? None of these companies exist. One of the patterns that tends to repeat itself in a very simple pattern. Whatever Innovation happens at, the hardware layer has to percolate up the stack. End of the day. For intonation to thrive. We have to remember our principle, which is developers, we need to drive Alpha. We need to make things simple and easy to developers. So, any Innovation that happened in the lower layer level staff always means to drive hot staff. What happens when he can his company's requires. Why? Because there were two books on just the hardware. They didn't take the hardware and services to support the hardware easily program.
+
+[Speaker 1]
+In software ecosystems. They didn't have simple to procure utility like pricing. Every single one of them shared this common problem and by being too focused of just driving it. Innovation infrastructure layer without thinking about how to make things easy for developers to accelerate, building and deploying applications that can drive business outcomes. A lot of consumability is what ultimately drove their downfall. And of course, that downfall started with the dawn of cloud computing. So, who was the greatest rock? It's pretty simple, great software with Amazon, which had this wild concept of how you make compute imminently consumable for developers.
+
+[Speaker 1]
+Amazon did a very smart thing. They hired a new application architecture that enabled compute nodes and scores nodes to be these easily programmable resources. These easily. Ephemeral resources that you can spin up and spend out. I remember my first ec2 incidents. It was 2008, I was CMO of a company called base lock or the early ability marketing Cloud and we were building a new cloud-based solution to deploy. What now? Adobe experience manager in the cloud. It was super cool. You could spit it up super fast on an Amazon easytube instant. It was awesome. Reason was awesome, is it was so consumable? It was so easy. I got the benefit of easily programmable Hardware that I can spin up and spin down. Just simple, easy to use pricing and all I needed. Access to was an API put in BP.
+
+[Speaker 1]
+Pattern of development was all about abstracting infrastructure, making certain that the resources were effortable. They could die. They could be replaced. Storage was completely decoupled, so you could have persistent volumes even if you destroyed. You know your compute node, and of course, you know, you could find your apps just assuming that everything can disappear. Is totally replaceable. All statements totally hate started alive. Everything was designed for failure and infrastructure became the first time to declarative for that. Okay, so it fundamentally changed how we thought about servers. Servers used to be these precious snowflakes I used to carry around my smart block station at a 50 pound bag and they used to have a pizza box. It was like just a little snowflake thing right now. It was now. It was just something that was cheap commodity.
+
+[Speaker 1]
+Set up the new instance of my content management system. Now to really unlock the power of this. This is where we saw the Dawn of containers, so developers can finally get infinite elasticity of computing power in the cloud, but containers themselves have this certain problem, which is immediately you have a lot of dependency problems and lots of conflicts. And even although your Hardware was no longer snowflake. Your containers became a silver plate. We still were at the point, uh?
+
+[Speaker 1]
+Defensulability. We still weren't at the point where Enterprises could at scale industrialize the level of containers to build and deploy any sort of new application in the cloud. This, of course, led to what we call the container orchestration chaos, where even if you can solve the dependency problems with computers, you need it to have some mechanism to be able to manage and orchestrate the deployment containers and the scaling computers across all of your compute nodes. Kubernetes won the day. So, kubernetes, starting in 2014 when Google released it finally made it easy. Well, I was going to make it easy. Let's be, clarify that. And, of course, I would never say, who produces and say nothing easy, but in kubernetes solved the problem of finally orchestrating container across the shooting, those completely abstracting the infrastructure, making certain that things can easily scale up and scale down. And even though it was initially complexed to set up.
+
+[Speaker 1]
+Easily. We had programmable infrastructure. We had infrastructure that was relatively autonomous and based on, you know, a series of, you know, modern green behaviors could scale up and scale down our application as we need it. Now, a few years ago. We thought into a new place. We had the dawn of the h100 super exciting time. And again, the innovation of the hardware layer. Ultimately needed innovation. In the up level staff, the software staff to make the hardware easily consumable easily programmable. So, where we are today is now in video GPU, who wound up having the same challenges as early days of Assan or SDI, you know, the resources were hard to stand up. They were hard to provision, test the nature of back-end visible infrastructure.
+
+[Speaker 1]
+Now, with the full Nvidia accelerated compute stack that's now Deployable on cloud infrastructure, like a vulture. Now we have the best of both world. We have the ability to leverage keyword enemies, you know, fully integrated software staff to? Gpus AI model. Easy to consume for a developer so they can focus on getting their work done, and they can focus on driving business outcomes versus stuck at two lower layer in the actual, uh. So again, I ask a question, how do you scale? Globally AI leader application using a full Nvidia integrated software and Hardware set. So, here's poker we have a strong, strong opinion. Not surprisingly, why? We're here today.
+
+[Speaker 1]
+We believe. That's a future is impossible. So, let me ask you a question here. Imposability is a concept very, very popular in the digital experiential. Composability is very popular for people building and employing new, cloud-dated applications. This is the principle that we need to bring to infrastructure and AI native applications, but who can tell me one or all four of the key principles of composability. Now, before everyone raises their hand, I will tell you that we believe so heavily at the posability. We have made our own mascot 40 composable as well, and this is being real Lego set.
+
+[Speaker 1]
+Four years or older, so we do need to check ID, but anyone who can answer me at least one of the principles of the plausibility, and you will get this Lego set now. We also have a hundred couple hundred of these at our host, so you can always stop by, you don't know it. Now, you can tell us later what the principal's disposability is hard and get better, but but who can tell me one principle possibility?
+
+[Speaker 1]
+Hi, we're over there 10 minutes, almost well-defined interface modular. There we go, gentlemen, get paid come up afterwards, and get the little Lego set right here. Here, it's actually a Lego version of warning. So, composability is all about four feet. Things number one. Things have to be modular. Number two things have to be autonomous number. Three things need to be orchestratable and number. Four things need to be discoverable, so the principles of proposability is related to building containerized application logic. You want the application logging containers be very, you know, modular. You would be discoverable by your your.
+
+[Speaker 1]
+Before, credible for kubernetes, and of course, everything needs to be completely autonomous with no dependencies, so. What we will be very strongly is that is the same principles. That means apply to AI native applications and the actual infrastructure itself. Modular orchestratable via Nvidia run AI easily discoverable API first. And, you know, completely autonomous, so no dependencies. If you want to mix and match storage from a DDA or from a net app or or from a, you know, a back place or whatnot. You should be able to mix in that at any storage to be able to mix and match a Nvidia GPU node, you should be able to mix and match any sort of networking and it all just work simply and easily.
+
+[Speaker 1]
+Down in our research was that nine percent of Enterprises were actually looking to accelerate AI, specifically looking at how to leverage best practices from the platform, engineering perspective and foundative applications, and how to bring that to the AI staff. How to make certain that the entire staff is orchestratable from the actual AI model to the application code to the infrastructure and how they can orchestrate the deployment of these models across a hybrid Cloud architecture called.
+
+[Speaker 1]
+Been Pioneered here. Vulture is the concept of programmatical templates. Infrastructure is templates when looking at the entire integrated Nvidia. Accelerated compute staff has nothing more than a set. Really freely available apis where you can build any composable infrastructure template and apply infrastructure is called principles to spinning up and spinning down whatever resources that you need in order to accelerate the deployment of your models. This means actually helping you build all of the pre-composed templates that defined your AI staff that can be product managed source code manage pre-built by.
+
+[Speaker 1]
+So that all of your downstream AI developers can just pick up a golden path, a golden template, something that is known to provision them all of the resources and artifacts that they need so that they can simply spin up their Jupiter. Now, complete and start doing productive work and start actually building and deploying applications. So, this means being able to advance accelerated compute, making certain that everyone, whether it's for build environment and tested environment, a production environment can automatically have at the back end. All of the compute resources that the automatically scale up or scale down to zero without the actual AI engineer, meaning to think about it because it's all
+
+[Speaker 4]
+Pre specified
+
+[Speaker 1]
+In a simple infrastructure. As code template pre-tested, pardon the Bolding.
+
+[Speaker 1]
+More. It's not just being able to spin up all of your latest b200 clusters on vulture to a simple infrastructure as the old template, but it's also all of the storage. They've got all of the storage, does that you need to spin up, spin down all the ephemeral volumes to basically support older training for your tuning or your real tire inferencing needs. When your power of all of your vector stores are your quadrant? And furthermore, all of your networking. People forget about this. Your networking should be just as composable as your storage in your compute. If you need to have a real-time connection date to your on-prem data center to start screening real-time data through to your vector store to support some rag application. You need to be able to make that as declarative as your actual compute those themselves.
+
+[Speaker 1]
+You believe here. Is that the new AI stack taking Lessons Learned from the past? Is enabling an entire? Collection of pre-composed infrastructure templates to support any of your use cases. So, when you're looking to deploy 159 agents, each of those agents may actually only use one of three templates. Takes care of all of the abstraction. All of the scaling in all of the underlying Resource management for all of your compute resources make it super easy for the AI developer to just basically say. I'm deploying an agent like Max and then the template just kicks in. The time list has been pre-killed, and that pin was responsible for automatically provisioning the entire build environment for each of the AI images, the entire integration and test environment right, and of course, the entire Global.
+
+[Speaker 1]
+Environment where you're running inputs isn't just here in the San Francisco Bay Area, but it's wherever your users live and work. South Africa, you know, Singapore, New Navy?
+
+[Speaker 4]
+And furthermore.
+
+[Speaker 1]
+To make it as consumable as possible. We also need to take the client set. Which is not only enabling you to pre-compose these templates for a third party to buy, like a like a boy or an extension of pre-compose these templates that you can leverage in your own production application. Make an even more consumable for the AI engineer. Let's hide it all behind one API. So that they don't even need to know what actual infrastructure is being automatically generated and automatically scale. By the template because they just don't care. What the actual AI engineer wants to do? The AI engineer would deferries take and wants to hurry up building prototype and let them
+
+[Speaker 4]
+Have access just
+
+[Speaker 1]
+To one API that, on the back end, from an I.T perspective. Your infrastructure team is, like, that's it. That hard infrastructure, that perfect cost efficiency, that perfect performance, the perfect security that perfect compliance, got it. But then, the AI Engineer is, just like, I know, that's just API, and I'm happy because I've taken mud. So, what we're all about here at vulture is now taking that entire Nvidia accelerated compute staff. Identify the video about AI. And put into place a global architecture. To truly enable. Applications and serverless improvement scale. So, this is the r factor. This is what's available, and this is what enables any AI engineer to unlock any model. Any Nvidia hand and take it, scale it orchestrated and deploy it and run it, training it. It burns anywhere across our 32 worldwide data center region Nvidia has taken the incredible and necessary that's what's going upstack of Hardware Innovation to software Innovation, enabling the quick.
+
+[Speaker 1]
+First time we're unlocking the power of that by supplementing it with all of the pre-composable templates to scale that infrastructure up and down so Enterprises can truly deploy new agents and new applications at global scale. Because the new architecture needs to ensure that the hardware animation, the Nvidia compute platform is supported by a layer of.
+
+[Speaker 1]
+Operation of entire new application stack through run AI to all of your Global audiences. And why do you do this because it's time to move Beyond thinking about GPU as a service? It is time to start thinking about real world use cases? How are you trying to accomplish? What is your business like, what is this that you're trying to do? You're not trying to just buy the latest GPU. You can book you can drive some value in the business, and that's what we want to help you with because that's what's now possible. With the entire integrated Nvidia stock, you can solve a real world problems to software there. Trust me, there's an entire application you can go see under food powered by data on the back end for AI powered customer service that works for telecommunications, Health Care, West Financial Services, energy, you name it.
+
+[Speaker 1]
+Spot up and spun down from a simple servos API on the back end using a composable Cloud stack template that's leveraging the entire Nvidia compute platform in the entire set of Nvidia net. So, these are use cases industry by industry. Whether you're solving for a customer service saving or whether you're looking to stream real-time data from your iot device is for things like image processing, or if you're looking to do any sort of adv.
+
+[Speaker 1]
+Individual twins in stimulation of things that you're going to be building or things that you're going to be fixing. These are all real world use cases, unlocking the full power of Nvidia Nims on an easily orchestratable composable infrastructure platform, so you can literally get started and start building right now today. Simple, easy, totally consumable and super exciting, which is why I'm excited all the time.
+
+[Speaker 1]
+Us here alter we are from 1533, we are. You know, the alternative hyperscaler? 32 data center regions around the world, offering full rate of Nvidia compute, as well as the accelerating compute platform to build and scale all of your new AI, native applications, and all of your security and compliance as well. Head-year operating history as a core cloud provider, now also operating the top of the line in Vivia g200 and the entire Nvidia acceleration future staff to help you move fast and move.
+
+[Speaker 1]
+So, with that, I would like to say thank you so much, and I will have a little bit of time to open it up for questions. So is, oh yeah.
+
+[Speaker 4]
+Extra ingredients.
+
+[Speaker 1]
+So, three times we differentiates, but first, say, stage three same security same client. So, 32 days that are reading a little more. A search for high social justice, you name it. Our primary differentiation from AWS customer service is so move on. A actress of Claudio, for example. We'll say if you help me working nine. And you can better perform it, so better performance of manager or cost. So, for example, on poor quality side, if you had say of 100 million dollar possibly killed Amazon. You should cut it by like 50 to 90 to say you're like, okay, million dollars, and that was a savings that you can invest in Innovation and invest in your new AI initiative, one possible performance. We cannot be be full stop, and that's stable over here, too. Okay, any other question?
+
+[Speaker 1]
+Okay,
+
+[Speaker 4]
+Well, I hope to see you please come bye days. Thank you.

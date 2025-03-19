@@ -1,0 +1,293 @@
+[Speaker 1]
+And I work on product articure team here at Nvidia, and today I'll be your host for this session. Before we begin, I have a concussive community announcements. Forget download the Nvidia GTC mobile app for the latest updates session catalog. A quick and easy to complete session survey and more. Explore the exhibit ball on level two, which has been open today since 1 pm. And don't miss the exhibit hall reception in 5 to 7 PM, which is a great opportunity to connect with other attendees. Make sure you check out GTC part, where you'll find our installations, language areas, food trucks, lunch service, and sponsor activations, as well as our vibrant Night Market. Open from 7 to 9 pm.
+
+[Speaker 1]
+This session recording will be made available to attendees in the session catalog in 48 hours and to the public on Nvidia on demand next week. Now, let's get started with our session. It's my pleasure to hand you over to my colleague William, who will introduce our speaker.
+
+[Speaker 2]
+Thank you well! Hello, everyone! I'm will it help. I'm a fellow Advocate at Nvidia. I work in the data science machine, learning tabular data processing product family, where we accelerate things with ideally zero code change. Uh, so Matt Harrison here. That's me, Matt Harrison here, is. We're now python data science, um. Educator, author. He is paid, travel around the world to teach large Enterprises, how to do python data science. Um, dance, Typhon coding. So when we had a chance to have Maddie to talk here, we we jumped at it, right? Uh, and just a few things. Matt has written effective XG boost machine learning, pocket reference, effective pandas, and effective pullers.
+
+[Speaker 2]
+I assume you here because you're somewhat familiar with molars with polars is an exciting new up-and-coming technology and mad here literally wrote the book on it. So, uh, that is Matt Harrison, The Graduate of Stanford computer science, uh, he's traveling. I've learned this a few minutes ago to Colombia all the way to Columbia, it sounds dangerous but exciting to teach python, um.
+
+[Speaker 2]
+Company small companies, he is founded. He worked in the industry for a long time and founded his own consultancy, metasnake.com. If you're interested so with that, Matt.
+
+[Speaker 2]
+Can you hear me in the back? Okay, awesome. So thanks William. For that, I appreciate that. Welcome everyone. So, let's get, let's get going here. So, again, my goal today is to introduce you to pullers by just by raise a pan who has used pullers in here. Who had never used polars? Okay, so we got kind of a.
+
+[Speaker 1]
+Um.
+
+[Speaker 2]
+And then we'll talk about how we can accelerate that. As Michael said, I did write the first book on polars and for those who are interested in the copy of this. After we meet outside, and if you want, I can give you a copy of this or a digital topic. So happy to be about for attending to meet up with me during the conference. Okay, so in short, what is polar? Polars is a data frame library, so I need a high level of data frame is for tabular two-dimensional data. Typically, folks are using that for machine learning, but people are doing other things with data frames as well.
+
+[Speaker 2]
+Some things that are interesting about this. The core polars is that it is written in Rust, so this might seem weird. I like to say that I sell snake oil for a living, like I teach people how to write python for a living, but Python is a slow language. Okay, so that one, like, for example or anything. So, you're yes, we know it's slow whatever you do stuff, but like pylon is a slow language and, and for someone who like makes them living, uh, saying that you maybe means something maybe it doesn't, but there are various things that we do to make python faster, right? It's weird that, like, we have this slow language, but it's like the number one language for machine learning, like, what's going on there, right? And so, typically, we're using some sort of.
+
+[Speaker 2]
+I'm being slow, and how colors does that is. Colors has this core written in the rest program in English. A couple other things. You a lot who hears you pandas? Okay, so I think almost everyone in here is just pandas. So, maybe some of you are thinking, like, I've used pandas, but maybe I should consider using polars? Is that a thought going maybe through some of your mind? Yeah, um, okay? So, so some of the things that make polish different from. Have this, of course, has lazy evaluation, whereas pandas is beard. When you do something past, you run a method and pandas pandas goes out and evaluates that and you say, I want to do a filter. It does a filter you say? I want to add new coma as an economy. Do a group buy well Group by.
+
+[Speaker 2]
+As soon as you get the aggregation that goes off them. Thank you stuff, whereas polars has
+
+[Speaker 1]
+The ability to.
+
+[Speaker 2]
+Be lazy and not do anything until you say. Okay, now you can go do this, and then it has query optimization where it can go out and say, okay, I'm reading from this parquet file, and I'm filtering out these rows. And I'm only looking at these columns, so I only have to read these columns from this. I don't have to read every column and also because I'm doing filtering. I don't even need to read all the rows. I can filter out when it's reading the file. It can do that and be smart about that. So that's something that Panda just doesn't do. Because panda is, you tell three of our K file goes out and read.
+
+[Speaker 2]
+And does this these nice things for you automatically, and there is GPU acceleration on that as well. So I'm going to give a personal example in here. Anyone here, like the mountain bike? There are a couple people so. Uh, a couple months ago, so I, I, my kids are on the mountain biking team, and so if you're not familiar with mountain biking team. Uh, we go mountain biking, like two or three times a week. Get up really early in the morning. Go on a ride for two hours, and then two days later rinse and repeat, and so I helped coach a bunch of kids and.
+
+[Speaker 2]
+Right, quite a bit during the summer. So, last summer, I found myself in this weird situation where I was. Uh, at the end, I was the sweep, so the sweep is the person who just picks up all the scraps and and basically makes sure everyone gets down safely, right? Some ironically, as the sweep I found myself in a situation where I, the last thing I remember was, I was flying through the air. And the person in front of me had gone around to switch back and like, and I thought that I can remember my top was, I hope they hear me crash.
+
+[Speaker 2]
+Okay. The next thing I remember is kind of a days, but I remember. Standing up, dusting the face off and taking a selfie of myself. Thinking, like, I wonder how many teeth I was? Um, and then some other stuff happened. Eventually, I got like I got down to our group, and they're like, we've been waiting here for five minutes for you. What happened? I'm, like, uh, they're, like, oh, you don't look good. And so, so that, that's, uh, the background. But like? They're like, were you knocked out and I was, like, I don't know, like you, well, you sound a little weird. So, we think we're gonna walk down, so I had to walk down the rest of this, but I was, like, I wonder how long I was knocked out, so I had my Strava data.
+
+[Speaker 2]
+I'm going to walk through an analysis. I'm not going to show this. I'm going to let's. Let's assume that, like, you hired medicine to do some Consulting for you or whatever. I'm going to show you my process for like taking some tabular data and what I would do with my tabular data, and we're going to do that with holders, but if I'm just going to do pandas, it would be a similar process, right? So, um. Uh, polars here, and Polaris is really easy to install. You can use pip or UV just going to make a shout out for UV. Is anyone here using UV?
+
+[Speaker 2]
+Okay, a lot of people you haven't heard of UV. You should use it, it's. It's basically a replacement for bits that is written in rest, so super fast. Anyway, in cell pullers, you can import you can alias it to PL. That's just the common Alias. I guess if you're doing two letter aliasings, I'm also importing the selectors module from that. This allows me to select columns from that and. Give you a parquet file, so I did do some pre-processing. Straw gives you a GPX file, which is kind of annoying, but you know, XML? Okay, so I, I read this part. So I made a part B file with all the state in there, and this is, this is basically what's in the GPX file, right? So, it's got, um.
+
+[Speaker 2]
+Thing, and it's got a two-dimensional distance latitude longitude speed, between which is like the speed between the previous size 2 logic and the current one, the name of the ride, like whether I'm on a bike or running or whatnot. And then I put this file name, which GPS files in which you can? Hey, so I'm going to show you my process of walking through this. Hopefully this is useful to give you an introduction to polars and some of the things you can do with it. And I'll mention where the differences are, and um.
+
+[Speaker 2]
+The first thing I that I want
+
+[Speaker 1]
+To
+
+[Speaker 2]
+Do is I want to check what types I have. Okay, so like, especially if you're reading csbs who use csvs in here, some people admit, whoa, okay, yeah, csbs! They're awesome because you can read them right, and that's about the extent they're awesomeness. Um, they don't have like type information and so often. Have you read a CSV file, you've got to go through some steps here. Parquet files are a little bit nicer, right? And you can see that I actually in this case, like I have a parquet file, and it has like a daytime in it, which is kind of nice, and so I've got like this is interesting, too. Like, yeah.
+
+[Speaker 2]
+That in this column. Everything in this column is a no value. Which is kind of weird, like, why you have almost nothing in it? Who knows, um, GPX, fell asleep. I got some Club 64s and some streaming files. So again, string is a first class thing in in polars and pandas one before the the pandas to revolution of higher back in, uh, you could use strings, but using strings are basically like using python strings, so there's not really speed of improvement, but probably give its name is, uh, strings, which is nice. Okay, so I'm, you know, one thing I like to do is just go through. I like, you know, we live in this age of AI and.
+
+[Speaker 2]
+Scientists won't have to do anything, and people will just feed everything to Ai and make worlds happy, right? Maybe that will happen, but like, I'm not seeing that happen right now, and maybe some of you have some insights I don't have. But, like, I like to do, I guess, like heirloom quality data analysis and curation, right? Manually go through my data and and clean it up, and I think, especially if you're doing machine learning. Like, understanding what is in your data. That process is manually going through it.
+
+[Speaker 2]
+So I might go through and consider like quarter integers, and this doesn't have any integers in there. But maybe we can make an integer. So, I'm going to show you one of the features of pullers that pandas is different from pandas here. Here, I'm saying, we have to run. I'm going to say select columns here. A little bit more white, but what Collins in there, but then I have this other operation that's in a chain that's called disk column. So, which column is going to say, keep all my existing homes in either add or optic columns? So, if you're familiar with the pandas assign method. It's very similar to that, and what I'm saying is, I'm going to make a new column called ID, and this is the key part of Polaris doing this. Like, because I'm saying PL call filing, so there is a column called file name in Panda, as you would refer to the series. The data in there know that this is not referring to the data.
+
+[Speaker 2]
+This column thing. And I naming it with a string, but I'm not referring to the data that's in the parquet file that makes sense, right? So, I am basically saying there will be a column and its name is file name, and you're going to do these various operations to it eventually. Build up. This is called an expression in polar, so we're going to build it with expression. I'm going to say there's a calm called file name because it is a string. It has this Str accessor. I'm going to split it on slashes that should give me a list. Now, there's the list accessor as well, which is kind of nice, so I'll list operations are obviously the successor. I'm going to say, get the last item in that list. So, this is going to split this thing in here, which is, after I split it. It should have like the the number here with the dot GP activity. The last thing in there and then, I'm I'm.
+
+[Speaker 2]
+Acid to an integer. Okay, so, so when I run this eventually? I'm not in Lazy mode, so this executes him goes out, and it makes us baggie, and you can see that this is a 64-bit integer with that ID together. Okay, I can refactor this expression through a variable again. It's not referring to the data. It's just saying that there is a column name that I'm just going to say, let's call that calc ID and then my chain down here and say, select your columns and then, uh, add in a column called ID in there, and that would work as well.
+
+[Speaker 2]
+Had how long it took me? I can do that as well. Here, I'm going to make a variable called calc elast, and it's going to refer to the column called time, and then it's going to subtract. Uh, after the Comco time, the minimum value of that. Again, this is not referring to the data. There's no reference to the data in the original data frame. This is just saying there is a column called time, and we're going to subtract the minimum of that column, and we're going to because that would be a date difference. We're going to say, what is the total seconds from that off is the DT accessor and then look at this. I'm going to say over and I'm going to do that over another column called ID.
+
+[Speaker 2]
+Strength data, but it's going to say I'm basically doing a group buy for every ID I'm getting the last. How long that whole activity took how long I was riding my bike, or how long I was doing whatever activity. And then, I'm just going to put this in a number with column down here, I'm going to say with columns. The last is equal to calculate the last. Now, another thing to note about polars is the pullers. Unlike pandas, because it's written and rust, and it has experience, and it can be smart about things, and when you tell it to make columns, they can say, okay.
+
+[Speaker 2]
+In parallel, imperative indictions in parallel generally does things in series, and so, because this elapsed column notice that the elapsed foam here is.
+
+[Speaker 2]
+Uh, the last column is referring to the ID column, which is not interrupt, right? You just made IQ right here. We cannot put this elapsed inside of this with columns up here because they will be run at the same time. So that's another thing to be aware of, polar is basically has the ability to max out your CPUs and run things at the same time. So, if you want that to basically have a check that you have ID. First, you need to run run that code there. Okay.
+
+[Speaker 2]
+That tune in 32 and so I can chat that to another 32 as well. Okay, so I would do that for my integers. Maybe do a similar thing for my floats. Apparently, now it's cool to like make everything a four-bit floating Point number. I guess that's the wave of the future, right? Everything four bits polarge, those four bits, um, it does support eight bits, but?
+
+[Speaker 2]
+It I, I can go in here, and I can say, okay, let's. Let's select all of my floating poems, so this is, um, in here, I'm saying, uh, select float columns here, right? I've got a list of those float poems, and I'm just going to say, cast all those to 32 by the quotes. I am not referring to the data. I'm just saying there will be these columns. And I want you to just change the types of all those, and that should you know when you run that, that should be the right thing, and maybe I want to convert strings into categoricals. That's another thing you can do that might save memory, so I can say, like, take these cat columns and cast those as categoricals. Now, in this case, I'm going to lump all of these into that same.
+
+[Speaker 2]
+Operation right there because these don't depend on each other so I can have them run in parallel. And then maybe I want. A period here, right down here. So, I'm going to say, okay, take, uh, the time minus the first one. And, um. Do that over the ID, and because
+
+[Speaker 1]
+This
+
+[Speaker 2]
+Is depending on.
+
+[Speaker 2]
+Um, is it depending on ID? It would again need to be after that one. Is there so? So, it has this nice functionality to build up these expressions. Again, without referring to the data okay. At this point, I feel like I've done some good maybe cleanup of my data or whatnot. I think it's, it's in a good place. So, what I typically would do with this is, I would put all this who works in Jupiter in here. And so I'm going to give you a hint for working in Jupiter, right? So what I like to do at this point is, I have to put everything in a single cell that I've done here and.
+
+[Speaker 2]
+And then I like to make a function here so that I call this function tweak. And I put all my logic there in tweak, and then what I'll do is I'll restart The Interpreter or restart my kernel and then just run this and make sure that it runs. Okay, so this is a way to refactor my code, um, rather than having 50 cells where it's like this cell and this cell and this cell, and then you come back to two weeks later, and you're like, what cell did I run, and what order does anyone ever run into that issue? Okay, now that's like, painful, right? You know who wrote this?
+
+[Speaker 2]
+Anything like, just stuff all this into one cell. Restart your kernel and make sure it works. What the words you can take that cell and put it at the top of your notebook the next time you type your notebook. You should be good to go, right, you just open your notebook from that first cell, and you're good to go a couple other things. I put this in a test, it's not, or sorry. I put this in a in a function here. A lot of data science people don't know about functions. They're like custom.
+
+[Speaker 2]
+Bob's side are like pumpkins are awesome, right? Because they allow us to do tests and things like that they, like the software people do in a sense that people like, I'm not a software person. I don't like passing other people over here are, like, yeah, you should write tests, right? So, so it's just nice. Once you have this, change the thrown into a function, right, makes it really. You need to refactor right test if you want it. Okay, um, other things that are nice. Note that I did put a select up here and a select down here, so select is just like we're going to pull out these Palms.
+
+[Speaker 2]
+As the first step, and as the last step.
+
+[Speaker 1]
+Because
+
+[Speaker 2]
+I like to leave it as a hint to the person who's reading this quote, these are the columns that I'm going to work with, and a general hint of like coding is you want to find a bug as soon as you can as soon as you find the bug, the cheaper it is to fix. Data is constantly changing or whatnot. You kind of want this up here, just to like. Check that it's something new helmet committed now again. Note that because polar's will do some logic based on what you select, maybe you might want to be specific about the column you select like, these are the minimal comps I will selector need to make these this code work. And then, I also like to put that at the output, so we're basically putting in a check there. Here's the input that I need. Here's the output that I need when you come back and read this code later. You can look at this and.
+
+[Speaker 2]
+Next step of code that just makes. I think your life as a person reading the code or your colleagues a little bit easier. Again. Um, so, so rich of you that create Rich event, the creator of puller's gabianism. I was using drop a lot. Anyone hear you drop columns. So, from Richie's point of view, using draw is an anti-pattern, right? Because we want to keep positive about what we want to use. We don't really care about. We're dropping, right? That's like the trash, and so also, the query engine wants to know what you want to use, so you should tell the queries what you want to use, not what you don't want to use if that makes sense, right? So, I kind of.
+
+[Speaker 2]
+Maybe to remove columns, and then I'll print out my columns and I'll change my drop to a select to be positive about what I like or want. Okay, so this was not lazy up to this point. This was eager. Pullers can operate any remote, but all you have to do to be lazy is you change this read parquet to scan, and then instead of getting a data thing back, what it gives you is this lady thing, and this lazy frame doesn't execute until you go on and collect at the end of it. To do to enable laziness, and oftentimes you will get some.
+
+[Speaker 2]
+Some improvements by doing that.
+
+[Speaker 3]
+Okay,
+
+[Speaker 2]
+So. At this point, another thing that you want to feel comfortable with is this notion of aggregations. And I like to say that aggregations are the things that your boss asks you for. Like, if you worked at like a candy store and your boss comes in and says, how do we do today? Your boss really doesn't want to know that Sally came in and bought one Tootsie Roll in a lollipop and a piece of gum, and then Timmy came in and bought a candy bar and a piece of chocolate. And then Susie came in about this business.
+
+[Speaker 2]
+Many people came in. 52 people came in, right. What was this grantful? They spent 522 dollars right. The average person spent seven dollars and fifty two cents. These are sorts of things that your boss wants. We call these aggregations where we have a bunch of data, and we're collapsing them. So, one of the things is going to take you from like the beginning polar level or pandas is to understand how the exaggeration works and. Is not exactly the same as Canada. That's another thing that hopefully you know everyone in here. Most everyone here is familiar with kind of syntax here is not the same as parents, right? So if you're going to use this and you're coming from pandas?
+
+[Speaker 2]
+Is some work done and like changing your code because the syntax is different, and that again, because? Motors could basically go back and look at like. These are the sort of. These are the naive things that Canada did, right, like his eager. But like, we can learn from that, and we can make a better product, and one of the things that we can do is like we can have an interface that doesn't require accessing the data, like the series to manipulate series. You need to access the data where the employer says we have a expression, and this expression lets us specify and represent what we're going to do with the data and then the query engine will watch.
+
+[Speaker 2]
+Okay, so let's assume that, like, I wanted to say, what is the distance by activity?
+
+[Speaker 1]
+And
+
+[Speaker 2]
+So, again, this is this is my Strava data. So, like, how far did I go in each activity? I might do something like this, where I call my tweet Strava function. So this is the one that cleans it up. And this is another thing that I I typically do like? Like I, I will make this tweet function and. I'll have the raw data, and then I'll have this tweak that kind of cleans it up, and then I'll work off of the results of the Tweet. The reason why I like to do it that way is because, oftentimes after, I've done whatever made a model or made some analysis. The point you had this person comes in and says, like, why did you do that or what's going on here, right? And if I have this like sweeping and I'm working from the raw data, it's really easy to go back and like, scrape through and see, like where this data came, right? But if I got, you know?
+
+[Speaker 2]
+I
+
+[Speaker 1]
+Don't know if that
+
+[Speaker 2]
+Sounds familiar to any of you, but you, you have all these intermediate data frames sticking around, and you're like, how do I get to that intermediate data frame, right? And you're, like, I don't even remember how I got there. It just makes it more of a challenge. So, just by putting a little bit of constraints about how we work with, this makes our life a lot easier. They get my raw data, let's pass it in here. And then, we'll just say, root by ID. Note the spelling is slightly different than pandas, like it has an underscore in there. And then, I'm going to say, let's do a navigation on that, and this is going to say, okay, we're going to take activity is going to be based on the name column, and I'm just going to take the first value from that or distance is going to be equal to this 2D column and print some of those.
+
+[Speaker 2]
+Offering. Pick the last value the last period we're going to take the last value over here, right? And you can see, like, this is for Strava data. You can imagine doing just some financial data or something else. Is this ability to do this and specify? This is, like, pretty nice. And again, what's going to happen when you run this? Is these are going to run in parallel? So these are going to run very quickly, so if and if you're looking for that speed up from? Pandas, generally, where you're going to get it is when you're doing Route 5 joints.
+
+[Speaker 2]
+Okay, and then at this point after I, I've done that I can say, okay, let's add a new column, and the new column is like the speed of my whole, uh, right here, and that would be calculated by taking this distance, and I just created up here and dividing it by the last time that would give me kilometers or miles per hour, depending on what those homes are in. Units are then I can sort it by a lash, or I can do some filter down here, uh, to filter it, and then at the end I can call collect here. If I'm in ladymo.
+
+[Speaker 2]
+Okay, I have all these operations I'm going to do. I'm going to go out and plan this and figure out what to do. Okay, and you'll get something that looks like this after you've done that.
+
+[Speaker 3]
+Okay.
+
+[Speaker 2]
+Um, yeah, and I think, like when I ran on on my did I think when I ran this, it was like 20 seconds on pandas, and this is like one second on holders to do that, um. Another thing that I think is pretty important is. Spotting. So oftentimes, when you have an aggravation? The best way to communicate with that pointy-headed person who might be called your boss is to make a visualization.
+
+[Speaker 1]
+Right,
+
+[Speaker 2]
+It's a visualization tells a thousand words. If you can make a good visualization, uh, you can tell a story relatively quickly. So, pandas integrates with. I mean, out of the box as map, tablet support pullers has all terrac support out of the box, and then, also, you can import HP clock, and you can get access to HP, plus so. Healthcare person, but like it, it's pretty easy. Like, HP plug, you can just tack on like an AC Club RH. We want to see, like the distance for each activity, and we would get something that looks like that, and we can grow that. So, again, one line, well, you have to do an import. But after that, it's like one line of code to, like, summarize that, and I didn't. That tells a better story. I mean, it's not the world's greatest spot, but it's one line of code to do that. That tells a better story than this.
+
+[Speaker 2]
+Okay, so let's let's talk about speeding up pullers a little bit, and that was what what I was showing you was the process that I kind of went through to clean up my data. Like, I literally did this to figure out how long I was knocked out. Um, I guess I'll cut to the chase. It turns out that, like, after I did this, I did a little plot and I found there was like, I looked at my seed over time, and my speed dropped to zero for a minute around the same time that I took the selfie and turned out that was not out for like a minute on my router.
+
+[Speaker 2]
+I was wearing a helmet. Yes, you were forced to wear a helmet. If you're in this in this bike club, but you should wear a helmet anyway, um? And yeah, anything that I say, that's erroneous or bad. Full blame on a fight crash. Okay, let's talk about speeding up pours a little bit. It is, uh, pretty fast. Like, I said, it does have laziness so we can, um. Uh, because we have laziness, but that allows us to do is when we run select, they can say, okay, we have all these operations, and it had, and it can take advantage of things like we've had databases for 50 plus years, and databases have free engines right, and they have query optimizers that know how to, uh.
+
+[Speaker 2]
+Right, and so Fuller's, just like, yeah, that's a good idea. Let's do that same thing, right? So there is an Optimizer in polars that allows you to do query optimization. Laziness also makes it trivial to add GQ acceleration and so a long story short. What's if you install polars? Uh, from Nvidia. What you can get is you can get, uh, what's what's? Like that trying to run? Okay, so if you install, uh, the Nvidia package, you will get an option to run this on the GPU and all you have to do is, say, uh, engine, and I should say, engine, not engine title
+
+[Speaker 1]
+There. Engine, uh, is able to GPU, and it will run on the GPU.
+
+[Speaker 2]
+So, this is from the Polish definitive guide that they have a whole Benchmark in there. They say GPU engine is 2x faster on the TP. Benchmark from data sets five years ago. Up to 50 years, so typically you're going to see 2X Improvement. What you might think by 2x what's 2x, right? But like, polars is already pretty fast. And if you look at benchmarks of like the fastest data frame librarys typically pullers is at the top, if it's not at the top, so it's already like peeking out a lot of performance. If to be able to so like 2x out is actually, I think, pretty impressive.
+
+[Speaker 2]
+They also have this, but you'll see the biggest games in performance when your career is our computation bound, so things like join group by aggregations, right? If you're just doing where, like, you're cleaning up columns? You might not see a huge Improvement over over that.
+
+[Speaker 3]
+Okay, so
+
+[Speaker 2]
+It, that was kind of like a short like you just attack him. Engine is equal to GPU, and you get speed UPS for free. Uh, I, I should know, like? You can run that code, and you don't need to change it. The code just works, and I think one of the nice things about what the folks in Nvidia are doing, is they want this no code change right and similar for like the the pandas accelerator as well. Like, if you have to change your code to get the acceleration, that's kind of maybe annoying or a challenge. But if you can just run it and it just works, and you get the speed up for free.
+
+[Speaker 2]
+Uh, that's awesome, and it makes it, uh, really easy to leverage. In conclusion, polars is a fast Library, right? It's, it's had fifty years, plus years of database experience to learn from. It's had 10 plus years of pandas experience to learn from, and I think what they're doing is is on the right track, right? And and the the results sort of prove themselves up. Like, I said, if you look at benchmarks of data frame libraries, typically pullers is at the top, if not in second place. Um. Yeah, and Nvidia GPUs just make it run faster again with no code changes. So pretty awesome, whatever?
+
+[Speaker 2]
+Well, like, well said, I do like. And, like, I said, uh, I, I sell snake oil for a living, right? So, I go around and help companies level their python and tabular data skills. So happy to chat about Maddox if you're interested in that, um. Also, I do have a copy of my book here, and I'm happy to give anyone. A copy of a book if they want to meet up with me right after we'll go outside out here and? Chat with you and do that if you're interested,
+
+[Speaker 3]
+Um.
+
+[Speaker 2]
+What's that's what I had so, uh? Thank you for attending. I think we've got a few minutes of questions. Okay.
+
+[Speaker 4]
+Thanks man, we'll be taking
+
+[Speaker 1]
+Questions. Oh, we have a microphone in the aisle so we can go back.
+
+[Speaker 3]
+Say a question from the fundamentals, right? Like, we had worked on this Farm data frame, then then polar is then here. Now, if you have to give a comparative picture, because spark data from this has a lazy evaluation so. The fundamentals as jvm part and Scala. Part of his is what I'm performing in polarized because there's no JV motor because it's being written in scalar. That's the first part of it. The second part of it, when we talked about. The GPU acceleration. So, is it like? You do Rapids as a plug-in, and then and then it. It seamlessly works.
+
+[Speaker 3]
+This is how I should understand this part.
+
+[Speaker 2]
+And so I think there's a few questions there I want. Is like, how do you compare contrast this part? And then, like the installation story?
+
+[Speaker 1]
+Okay,
+
+[Speaker 2]
+So um.
+
+[Speaker 1]
+Yeah,
+
+[Speaker 2]
+Spark, um, so full disclosure like I did some training on spark, like six years ago, but I haven't done much ever since my gym will take with, like, my clients is, like, my opinion is like. As a data scientist, I want to like keep things I guess. In Jensen's terms of the keynote, scaled out scaled up, like, I want to work on a single machine if I can, right? And anytime I jump to spark, right, like, because we have a cluster?
+
+[Speaker 2]
+So interesting, like? Um, so I don't know if you. I mean, if you're a spark person, you might want to check this out. Like, duckdb has a spark compatibility layer, and they've done some testing, like, for stuff that will run on your machine. It will run 30X faster on a single machine using duct TV as a spark back end versus spark, so I don't know if that answers your question or not, but like, typically, I'm I'm of the opinion. Like, let's get it on a BQ machine or do what we can on a single machines or worry about scale up. And, um, like I said, I.
+
+[Speaker 1]
+Uh,
+
+[Speaker 2]
+Scale up tools on that as far as the install. Uh, yeah. So, instead of installing polars, you installing videos, uh, pullers, and every everything just works. If you have a GPU?
+
+[Speaker 3]
+And and for the CPU particles like polar's negatively handles vectorization on the other part from the CPU optimization side.
+
+[Speaker 2]
+Yeah, so the question is is like? Like, polar's handles, like moving things from the CPU and GPU them back. And, like, I guess, like, literally, the only thing you change you. You change that, collecting, you say. Turn on the GPU and your code runs on the GPU and it just works.
+
+[Speaker 5]
+Can you elaborate on casting to categorical? Basically, what kind of a data type do you end up with?
+
+[Speaker 2]
+Yeah, question is, uh, what? Yeah, categoricals? What? What happens behind the scenes so?
+
+[Speaker 2]
+Basic. Yeah. Um. I don't remember this. We're called a specifics of. Of what's going on behind scenes. But if you think about it right, if you have? Uh, let's say, for example, my activity name. I've got like whatever half a million rows and I have four activities, because it's like every second. I've got. 4 million rows with, like, four different values in that, and those are strings right, and they're storing those as strings of some number of bytes. It's going to store for each of those, and then there's four millions of those, uh, contrast that if you did some sort of encoding where I said okay, instead of doing that. I meant to put an abstraction in front of that, like a dictionary, so mapping, where you say zero represents this one and one represents this one and two represents this one and three represents this one, or you can even do it in bed mask. You can have, instead of having whatever.
+
+[Speaker 2]
+You can have like a bit, or maybe even less than a bit to represent that right. So, oftentimes, if you convert categoricals, you? You can save like 90 plus percent memory by doing that. Now, there is a crossover point, right, where you have high cardinality like Mains, every name is different, throwing out into a hash and having that distraction actually slows things down. But for a low cardinality, you get pretty fixed, you know? So, I
+
+[Speaker 1]
+Have a question regarding if you have outside or the amount of memory. How will you handle? Like, for example, you have, like, because I know that polish is really good for like less than 100 gigabytes. Or, and how will you handle that, like you will recommend using your spark, or you recommend including a GPU to handle this kind of workload. Yeah, so question is,
+
+[Speaker 2]
+Um? If you have more data than ever so, so I like to say that pandas is a small dated tool pandas needs to fit into memory. Because pandas is naive about things and just runs things. Polars does. I like to classify colors as medium data, and this might be a mathem. But, like, I say, medium data does not completely fit into memory but might fit onto your disk. Right? So, polars, uh, does have some streaming support. So it does support, uh, going over to disk when needed. Um, and if, if that doesn't work like, simpler smokes, that should be a bug, and it should be fixed, right? So, so that should both just work?
+
+[Speaker 2]
+Working on scale out solution so that you can run followers in the cloud. So, so I think? The cool thing about this is is like this gives you a story that's like. This is a data frame library that potentially can run small data and medium data and big data right, which is kind of nice.
+
+[Speaker 2]
+That's about all the time
+
+[Speaker 1]
+We have for today. I'm sure we can continue some of these conversations with the rest of GTC. I hope everyone has agreed to GTC. Let's, uh, thank veters.

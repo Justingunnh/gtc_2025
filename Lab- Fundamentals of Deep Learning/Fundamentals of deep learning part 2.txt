@@ -1,0 +1,161 @@
+[Speaker 1]
+It looks like our model got better. But the the training and accuracy of the convolutional neural network was still higher for the validation accuracy that we were saw.
+
+[Speaker 1]
+So, it, you know, it still go. It still is for a day a little bit. Sometimes, sometimes however, it's not the model that needs wood. But your data. That means you need better data. If you float the model that data? You're gonna end up with a bad one. Just like as humans, neural networks learn from examples like these things. So, if you have bad examples, your model is going to keep performing that. The other thing to also consider is having enough waving examples. For example, to teach a newborn child, what a dog is, you need to. You need to provide a lot of photos, photos of dogs.
+
+[Speaker 1]
+There are many different. Um, types of dog, not just different breeds, but even within the same brain, you have variation in color variation in size. How big the tail is? Um. How good is nowadays, and things like that, right? For a newborn child, it it might come as a surprise that a Chihuahua and a great day belong to the same species. At the same time. We also need to provide a lot of examples of what a dog is not. Highness coyotes and wolves, even though they technically looked like dogs and belong in the major family. They're not domesticated species, so we need to provide examples of that as well.
+
+[Speaker 1]
+There are a few tools. Entries that can help us deal with our data. And you know, get? Then up the quality of your data set. One property about working with computer vision. Machine learning model is that if you careful? Making augment our existing data set to get more examples. We can use a lot of the tools you might find readily available in applications like Photoshop or Lightroom, you know. Just as an example, too, for instance, look at this model photo here. And on? Uh, even though we've changed the color Hue of our image who still clearly able to tell that there is a model.
+
+[Speaker 1]
+Many machine learning Frameworks already have these tools built in that can help us augment our data in these ways. Here as well. Not all tools apply to all problems. So? Let's say if you would if you were to build a model to recognize different types of flowers. Color is the most important factor. I would say so if you change the color of. Uh, a sunflower to? You're just unnecessarily confusing your model. Another tool available to us is flipping, so you can imagine your photo or your image printed on a piece of paper, and you can horizontally flip it or vertically flip it.
+
+[Speaker 1]
+Here again, flipping an image is not always appropriate with the American Sign Language leader said. You can flip the image horizontally depending on whether you're left-handed or right-handed. But with that mnist data set. If you take your number six and you both horizontally and vertically flip it, it'll end up looking like a nine. And that you can fuse your model. Closely related to me is rotation. So you can imagine the same piece of paper that you have to photo printed on. But instead of flipping it, now you're just rotating this. And within reason. This is also applicable to the American Sign Language algorithm.
+
+[Speaker 1]
+Because it's very hard. Uh, to get our hand at the same exact position every single time when we want to when we want to sign. But at the same time, signing at 90 degrees is pretty out of place. So, this is something that you have to keep in mind when using tools like this, because it's very easy to go too far. This is a good example. One of these tools is zooming and with zooming. It's very easy to go too far when you start losing a lot of information. Looking at this slide, we've taken the same marble image and we'll be zoomed into it more and more.
+
+[Speaker 1]
+Left to right top to bottom. And for the first four images in the top row, I can still tell that that photo is of a marble. All the important features are still present, but as you zoom further into the into the image, you start losing a lot of information. Especially in the last image. If I want to only show you that last photo and ask you what that is? Nobody will be able to say that it's a model. And typically, we only zoom into our image, not zoom out, because if we zoom out, we need to fill in the gaps for the missing pixels to keep our image size the same number of pixels.
+
+[Speaker 1]
+When, when you zoom in, you can also keep a track of the pixels adjacent to your zoomed window. And then you can do some shifting. We're just going to move our image left or right horizontally or up or down vertically. So, in this slide, you can see the center is zoomed in photo of our marble. And then each image surrounding it has been shifted either up right left thumb. So you can get more examples out of this this way as well. These ways where we can warp an image and get new examples, uh, has an underlying concept called homography.
+
+[Speaker 1]
+Um. I won't go over the details of homography, but if it interests you guys, we will do that. Links to white papers and stuff. In the link in the notes. But the the idea behind this is. Imagine that you have a camera and imagine that you have your photo. And based on the position of the camera and based on the position of the photo, you can project your photo into a three-dimensional space. And this is all done using matrix multiplication. Besides physically changing or augmenting the the photo itself, there are other things that we can try as well.
+
+[Speaker 1]
+We can adjust the pixel values of each pixel. Making the image darker or lighter in terms of brightness. This is a good tool to consider for real world images, because unless all the images in your data set were professionally short, it's very hard to get consistent lighting in all of your photos. Again with this tool. It's easy to go too far, and if you adjust the slider too much and make it too dark or too bright, you're going to start losing important information.
+
+[Speaker 1]
+Up until now. In all the lags, you only work with grayscale images, but in the. Upcoming. Glad you're gonna start working with color images. Um, combat images are 3D objects. Where the third dimension now represents different color channels. Uh, called gradiently. Each of these color channels has their own independent value, which can be manipulated by doing Channel shifting. So, for example, if your red Channel value is 255, green is zero, and blue is zero. Your pixel is going to be right, and it looks something like that one on the top. If you have red 125, green 0, and blue to 255, it ends up looking coordination.
+
+[Speaker 1]
+There are also non-color channels. Like the alpha in rgba. If you're familiar with rgta that just represents the transparency of Epixel. So, with all the tools available to you that we just went over, you saw how it took one simple image of the marble and got so many new images out of it. This is an extremely powerful tool to get more data and enhance your existing data set. So, if your data set is small, then you need Linux varied examples. You can use any of these tools to, you know, make your data set stronger and better.
+
+[Speaker 1]
+Let's look at model demands before we jump to our next lab. The model expects a particular input Dimension. Sure. In our case, it was 28 by 28, right. But when you deploy this model in real world, it is very possible that the images that you get from the real world environment is not always going to be 28 by 28 pixels, right? You have 4K images now. Uh, so it's going to be different than what your model has has been trained on. Then also Frameworks nowadays typically assume training in batches, meaning that it's not going to take one image and then train it and then take another image, drain it, take another image drain. It's going to take so long.
+
+[Speaker 1]
+So we train in batches, meaning it trains on more than one image at a time. If the incoming data is? Uh, that we want prediction is of a different size, different shape than what our model has been trained on. No problem. We can reshape the data to get into the right size that are modern expects. With the color, the image coming in from real world is a color image, and our model has been trained on grayscale images. We have tools to do the conversion to grayscale. An easier manual way to do it is to just take average from the red, green, and blue challenge.
+
+[Speaker 1]
+And then. Finally, you can turn the single image into a patch by adding a new axis along the First Dimension. Simply put, you're going to add. That bracket on the on the exterior of your image so you can pass more images to the tree.
+
+[Speaker 1]
+Okay, let's jump to the lab, uh, now you're gonna be doing lab number four. Um, and you're going to see how data augmentation takes place privacy. If you can get more examples out of the lab or of the the code sets?
+
+[Speaker 1]
+Oh, there is also two notebooks here, so you're gonna do four a and 4B guys.
+
+[Speaker 1]
+Section number five. So, sir, this is my favorite thing. We're going to be talking about.
+
+[Speaker 1]
+So, before we get into it, let's go. Let's take a moment. One second, let's take a moment, uh, and forward a few. A few Concepts we've learned so far. We have the learning rate. Which is the amount we change our parameters during gradient descent? Uh, then we have number of layers, which is the depth of your network. Um, then we have neurons per layer, which is, you can think of this as the width of your necklace. Then we have activation functions that can have efficient non-linearity to your model. Um, and then we have a Dropout, which is when we randomly shut off neurons and a specified rate.
+
+[Speaker 1]
+Which helps us with overfitting. And then we have data, which is our examples we use to train the model. And it is like we saw on the previous lab. It is very important to have good quality data. And varied examples for your model to get good accuracy. So, there's so many, so many different parameters that we have to control. There's so many things that we modify. You know, you can have one model with different learning ways. Things like that, right? So many factors. Wouldn't it be good if we did have to do any of the work he just went over?
+
+[Speaker 1]
+The great news! Is that nowadays more and more researchers are making their models readily available so you can just steal these models and put in your applications? There are websites like Nvidia NGC. Hugging phase bite launch of tensorflow Hub, where most of these models are available and they're production ready. Tensorflow and pytorch also have modules built in. Um, built-in business and framework where you can load a module into python. If you have the models URL on tensorflow Hub or Pi dot shop. And Keras comes with these models being packaged. In the lab going forward, we're going to be using one such model and the one that we're going to be using is vdg16.
+
+[Speaker 1]
+Btg, 16, was proposed in a paper title very deep convolutional network for large-scale image recognition. It was a winning architecture for the 2014 Imagenetic challenge. So, what is image? Net imagenet is a database of millions of high quality tag individuals. Can categorize in thousands of categories. These categories include animals, people, trees, fruits, you know, what? Have you? These models have recently achieved. More than 95 accuracy, and in some cases they're able to classify things. Better than human beings. So, we're going to use this model. And since vdd16 is already has a category for animals. Um, it makes it a good candidate for our next lab.
+
+[Speaker 1]
+Um, in the next lab, you're going to be designing an automated doggy door. So, what we'll be doing is we want to create a doggy door for your house, let's say, which detects our friendly dogs and keeps animals like tigers are. I don't know where that would be in use case, but Net has high quality pictures of animals, so it's a great. Great model to start with! In the lab again. There are two notebooks. After you've finished making your automated doggy door? We'll take on one more interesting challenge. The new problem is going to require something called transfer learning.
+
+[Speaker 1]
+Let's imagine for a second that we have been hired by the White House. And the Secret Service wants to use our automated doggy door, but they want to enhance it. To only let o n. This guy. Both is a Portuguese Water Dog that served as the first dog with President Obama. And the secret service has provided us with a few photos of Mo. Not a lot, but good enough. We can't use bdg16, as is because there is no specific category for both. It can detect if it's a dog or not, but not differentiate between dogs and food.
+
+[Speaker 1]
+But since bg16 can already tell what a dog is, it's a great starting point, right? We just have to do a small brain surgery. So, thankfully, only on an artificial breakage is much easier than at temperature. Uh, we can take a vtg16 model and cut the end of. And then use it to build our own layers on top of it. Technically, you can slice and dice. This model. Any which way you want, but there is a reason why we choose to use the bottom layers are left to right emphasis, and we build the top layer. So the right, most layers?
+
+[Speaker 1]
+As you move from top to bottom or left to right? Uh, we saw that the model goes from being more generalized to being more specific that you saw in previous lives. The top of the convolutional model somewhere here. It detects edges. The text intersection between edges, so textures and stuff like that. Um, and then each layer adds on interesting features as it keeps moving forward. The more layers in a model, the more specialized those shapes will be. And I got a few questions on if you can have a model building a lot of layers. You're gonna start getting too specific.
+
+[Speaker 1]
+The early patterns in the in the early layers are more generalizable so we can use it as building blocks. And add our own layers. To extract features that are important to us, maybe in case of both Navy hits is black fur, right? Another thing to consider is whether you want to freeze the weight of your old models when you're doing transfer learning. Freezing. The weights means that the layers were borrowing from our old model, the vt16. We can make these layers untrainable, so when we are doing a power propagation and calculating error or whatever. Rates will not be updated during frame.
+
+[Speaker 1]
+Doing this can help your new model. Avoid overfitting on this much smaller new data set. Because maybe we have 50 images a wall, but the model is so big. So if you train the whole model on 50 images, it's 100 multiple. This is also a good time to talk about data bias. Data bias is when a subset of our data is over represented in our data set. For example, if you set out to create a model that? Classifies and categorizes different types of motorcycles. And your data set only has. A lot of photos of Harley-Davidson Cruisers. Your model will have difficulty in identifying and categorizing sport bikes and dirt bikes.
+
+[Speaker 1]
+Uh, if the data set is biased, which in this case was 100 images of. Harley Davidson. There may be two images of sport bikes. Your model is going to turn out by a schedule. And our new model that we create after the surgery will pick up old biases from our previous model. So, if vgg63 has data bias and its bias towards one category. And if we use that for our? New model using transfer learning is going to pick up those biases. I'm not saying vdd16 has it, but just to keep in mind. One fun experiment that you can try after the course is, uh, is called dreaming.
+
+[Speaker 1]
+And we went over this briefly. Uh, in Seattle, when we covered cnns, and we saw that cartoons like the options. This is done by speeding an image. Two layers of a network, but instead of minimizing loss using variant descent, we're going to maximize this loss using gradient asset. And why we do that is to maximizing loss. It's going to exaggerate the patterns. And the features it is able to detect. In the notes, we've linked a tutorial on how to do this. So, if you want to experiment with it? Please go ahead after the course, though not right.
+
+[Speaker 1]
+Okay, let's get to making our doggy door and our special dog door for the White House. Be doing lab number five and five B.
+
+[Speaker 1]
+Uh, architectures and different types of networks that we also have. The goal of artificial intelligence is ultimately solved problems. The more we try to find practical uses of AI. The more we should understand how human brains. Pinque nombre on any piece of paper. For most of today, we talked about. Vision applications AI Vision applications. But we only scratch the surface. Many breakthroughs in computer vision. Have to do with a better understanding of our own human aspect. Why do you think the computer has three color channels for red, green and blue? In our eyes. Uh, we have special cells called photoreceptors, and these photoreceptors have a function of picking up red, green, and blue light.
+
+[Speaker 1]
+So, when the RGB did, RGB data structure was proposed for the computers. It was done very much with human eyesight now. Let's look at another field of AI, where artificial intelligence is excelling, and that is natural language processing. Uh, the goal here. We make an intelligence. Understand and generate language like us humans. The, uh, there's some interesting stuff here. To start with for a computer to understand anything. It needs to be represented as numbers. So, how do you represent these words as numbers? And the other thing is with language. Words are important, but the the more important thing is how these words are arranged. So we get a meaningful sentence.
+
+[Speaker 1]
+So, how do you capture? Sentence structure with numbers. Just like computer vision, we're only able to scratch the surface of this in this section, but it's it's good enough. For you to be build a foundation so you can further your journey and explore this field. So, let's say we want to make a model very simple model. That campaigns or finishes the sentence if we provide it with the first few words. The first thing to figure out, of course, is how to assign numbers to all the words in our sentence. When people first approached this problem, the solution that they came up with was to have one dictionary where you list down all the words.
+
+[Speaker 1]
+And then you assign a unique number to each word. Then you run your sentence. Through this dictionary and get a number assigned for each word in your sentence. There are functions that we have that, do this, and they're called tokenizers. Let's start and create a simple model with one output and one one input and one output. So, it's going to take one word as input, and then it's going to predict the immediate next word that that comes after in a sentence. Given our dictionary, we might predict that after the word dog. The word? Or the word eight makes the most logical sense, right?
+
+[Speaker 1]
+Here, even though we've assigned each, uh, each word a number. It is still a categorical variable. To treat it. As such, we will assign each word to an input neuron. Okay, this. The computer will assign the input word a 1, and then it will make all the others a zero. Uh, this is called one hot and holding. For the outputs. We will assign a percentive chance that the output word follows our input board. If you have a small dictionary of what we have 12 words, this is okay, right? But the natural language has millions of words.
+
+[Speaker 1]
+So this would result in you having millions of ways and then your dictionary will just be massive. A trick to handle this? Is to make an embedding. So, for example, let's say we want to create a dictionary for all the animals in the world. And you may take two numbers. To broadly categorize these animals. We can describe them by. How big or how small they are, or by how domestic or how wild they are? If a if an animal is totally domestic, we will assign it a negative one on the domestic widescape. And if it's a totally wide animal like a tiger, we give it, uh, plus one.
+
+[Speaker 1]
+This is called an embedding because we're taking something that is in the higher Dimension, which is. However, many animals we have in the world and mapping them into a smaller Dimension space here with just two numbers. Since we are using two descriptors here, it's called a two-dimensional impediment. Whenever we go from higher dimensional space to a lower dimensional space, technically that is anesthetic. In simpler words when you go from.
+
+[Speaker 1]
+Uh, technically, when you go from. A layer with higher number of neurons to a layer will lower your number of neurons that is an environment. And the embedded size is how many neurons are in the lower Dimension. So, in this case, maybe it'll be the size of the bearing is. Now that we know how to back our words to numbers, let's look at how we create sentences in capture sentence structure. Earlier, it used to be that these models would take in sentences and predict one word at a time. But now, they've become much more sophisticated.
+
+[Speaker 1]
+For example. Look at this, uh? Lyrics to a song here. Can you guess what goes in the green box? The answer is right there at the topic. The first sentence? This looks like a long song with dots here. So, how do you how do you think the, uh, our neural network remembers this information that it got from the first line that it can fill in to where maybe that's the end of the song?
+
+[Speaker 1]
+Let's say we have two neural networks. To give us an embedding for a tokenized word. The output embeddings should be the same size in this case. Let's say the embedding model outputs three numbers for a given input order. Let's call this the query and the key to keep the system. For each word there, you would get two, three number encodings. And for five words, like, in this case, you will get two Phi by three matrices. If you take transpose of one of these Matrix? You can multiply them together to get the attention Matrix. This represents how each word in the sequence affects other words.
+
+[Speaker 1]
+Uh, and tension Matrix might look something like this, of course, not with colors with numbers. Um, but? This is a good representation. The more a word affects another word, the higher their intersection value is going to be. 5x5 is an awkward shape to work with. Uh, if you wanted to create another encoding based on that potential relationship. So, let's make another 5x3 Matrix, and we'll call it the value Matrix. By multiplying everything together, you're able to get the attention score. And then you can use this attention score in variety of natural language processing memories. Large language models, which are pretty popular now. They use attention to Canada in neural lack of architectures. I, uh, called the Transformer.
+
+[Speaker 1]
+Part of the most famous models to use, uh, use this architecture is is called bird b-e-r-t. It stands for bi-directional encoder representations from Transformer. You will use bird in lab number six. And you see how it uses embeddings and attention to predict sentences. Word is not the only famous model to use this attention mechanism. Llama 2 and gbd also use attention Transformers. If you want to dive deeper into how they work and how this attention affects words and helps you to take sentences you, we have a link to this white paper also and other helpful links in the notes. If you wanted to dive deeper into the mathematics of this, you can do that too.
+
+[Speaker 1]
+Okay, let's look at some other problems AI is solving. So far, we looked at Vision applications and natural language processing. Auto encoders. Is a great next time that came after embeddings. One of the goals here is to take higher dimensional data and be able to represent it in a lower Dimension. Here is the strategy. We're going to make a model that's like a mirror image of itself. With a lower dimension in the building. Then, we're going to take our input. Maybe a flat screen image and use it as an output as well. The same image?
+
+[Speaker 1]
+In this slide, you can see it's like a flattened base scale image. You might think that that is a waste. Alpha model, right? Why? Why are we training this model to get? Give you the same in or same output? But. If you cut this model in the center like this?
+
+[Speaker 1]
+You when you have a trained model, you are going to get an encoder and a decoder. If your model is accurate, you can store large amounts of data with only a few numbers. And you can restore your original data by using the decoder. A great use case for this type of architecture. Is something called the normally detection, which is useful in security use cases, medical use cases, and then also in fault detection? For example, if if you play a highly accurate Auto encoder? Uh, and you deploy it on your data set. And there, there are some inputs for which the output is significantly different than the input, then you can be sure that there is something wrong going on there, and that means more attention. So that way you can do.
+
+[Speaker 1]
+Maybe a manufacturing language? After the invention of Auto encoders. We've got the variational model. We can use these as genitive AI for images. Um, we could train and Auto encoder on images, so we create an image. And then you can use the decoder to generate images providing, let's say, maybe the lower Dimension is going from image to text and then put text to image. So it can be used. Generative AI for images.
+
+[Speaker 1]
+Similar to variation of water encoders. Diffusion models and what they do is they vote by taking a noisy image. Uh, and they slowly remove small amounts of noise at a time until the entire noisy image could be generated. You might see, uh, you might see these type of diffusion models in famous image generation tools if you use them, such as stable diffusion Dahl e. Things like that. And that last topic that we will discuss today is reinforcement learning. Reinforcement learning comes from an idea from psychology called delayed rewards, where the idea is that you can put off a reward for now in hopes of getting a bigger reward later.
+
+[Speaker 1]
+On the left here. If you have a photo of a cube orgy with a tree on its nose, and it's tried very hard not to eat that tree, because it's hoping that if if it doesn't eat it, we're gonna give it more treats later, right? With reinforcement learning. There are two systems at play, the agent and the environment. Uh, our neural network lives in the agent. Where it will predict the best course of action to take based on the information it is getting from the environment. And then the environment will also change. Based on the action the agent is taking.
+
+[Speaker 1]
+We also need to give our neural network some memory. So it can learn from its past mistakes. And then we have to give it a sense of curiosity so that it can try new things for the sake of learning. This field is known to have wide application in robotics and even some Finance applications.
+
+[Speaker 1]
+But it is also a great way. To understand how human beings think and how human beings learn anything. As we discussed way back in the beginning of this course, when children take a trial and error based technique to arrive at correct inclusions that is sort of like a reinforcement plan. That takes us to the end of this session. We have one more lab to go. Uh, lab number six, where you'll be using world to predict sentences. Uh, and just explore natural language processing. Perfect lap number six, everybody! And then, once you're done with that number six, you also have.
+
+[Speaker 1]
+Once you're done with lab number six, you have the assessment where you will be trading a model to categorize different rules.
+
+[Speaker 1]
+So, once you download lab number six, please go through this assessment. First, assessment doesn't have any solutions. Yes. Will testing you? Uh, once you're done with the assessment, you can go back to the course page, and I think that check mark right, there is assess task. Uh, so once you've done with assessment, you can click on the access task. And if your model is good, we'll give you a certificate if it's not good, then try again, please. All right, let's have lucky.

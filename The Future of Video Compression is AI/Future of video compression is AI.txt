@@ -1,0 +1,137 @@
+[Speaker 1]
+Your house for the session? Begin a few housekeeping announcements. Don't forget to download the Nvidia GTC mobile app for the latest update tomorrow morning at 10 A.M, NBA CEO Jensen Juan will deliver the GTC keynote at the sap Center. Just one mile away from from here. Stores will be out in at 8am, and we recommend arriving no later than 9, 15 a.m.
+
+[Speaker 1]
+As seating is first come, first served. Parking is free, and there will be shuttles running from the convention center starting at 6 30 a.m. The poster reception this evening from 5 to 7 PM in the city center. Join us for the drink, have a read-through posters, and chat with the authors from around the world. And make sure you check out the GTC park where you will find our installation Lounge areas, food trucks, lunch service, and sponsor activations. The session recording will be made available to attendees in the session catalog within 48 hours to the public on Nvidia on demand next week.
+
+[Speaker 1]
+Now! Now, let's get started with our session. The future of video compression is AI driven. Our speaker, Mario. Sorry, our speaker today is Sharon Carmel. Sharon
+
+[Speaker 2]
+Is
+
+[Speaker 1]
+The CEO of Beamer, the founder. She's he's also the founder of Beamer, a leader in video optimization, serving top median companies like Netflix and Paramount and winner of the Emmy Awards for its contribution to the television industry. Please join me in welcoming Cheryl.
+
+[Speaker 2]
+That's my
+
+[Speaker 3]
+Biggest crowd ever. All right. So, future of video is AI. I think you know, everybody knows, you know, that we are going through an AI resolution, and I think that video is no exception. And. Being, you know, I have a contributor to this industry for 30 years. Now, I can tell you that we do not even start to understand the magnitude of the opportunities and the interrelation of video video compression, which is our expertise and AI. And this is I, what I would like very much to share with you today. My name is Jerome Carmel.
+
+[Speaker 3]
+I said, I'm the founder and CEO of Beamer. Beamer is publicly traded in NASDAQ. Um, I was also a co-founder of two companies called emblaze and being sing. Around the the video space just with the blaze. Um. In my previous years, I was developing the first application called processors for Samsung mobile phones back in 1999, so this is going really, really back, and I witnessed a few Revolution at a revolutions along the way. And, uh? So, the first authors of the streaming protocol also today, you know, it is hls. But we started that probably a decade before hls, and I will share with you some more information about that. So, a long history with video and yet, you know, I think we are now witnessing the biggest Revolution ever.
+
+[Speaker 3]
+So, just a little bit about, you know, the previous Revolution that I was experiencing. There were many, but streaming media as you are experiencing it today. It is actually taking a file, a video file, placing it on the standard HTTP server, but it is sliced into many, many little pieces. Fest, that manifest is the list of files. And then, when you have a player, that player will fetch that manifest like a playlist, and it will start receiving those slices from the player. And that player can also see, you know, what is the internet bandwave and whether it has enough, uh, networking condition, maybe to up the resolution or down the resolution?
+
+[Speaker 3]
+And this is how streaming media works everywhere today. And this is a pattern that my team and myself, uh, submitted back in 1998, 1998, and it was granted in 2002. Less became a huge standard when Apple, of course, went behind it in 2009. But, you know, being a part of these revolutions, you know, is, is amazing, you know, in retrospect. And I do believe that we are now witnessing even a bigger Revolution. So? Video content is booming. Everybody knows you know that there's lots of streaming media, and there's lots of video being captured on mobile devices. And this is growing exponentially.
+
+[Speaker 3]
+But it is beyond that. Because it is not just a video that we are capturing, video is now also being captured, not by humans. It is captured by by machines, right? You have one billion surveillance cameras around the world. They are capturing video 24, 7.
+
+[Speaker 3]
+There are no viewers for that, right? There's no one billion people watching this one billion streams. It's pretty boring. So, what actually happens is that machines are are looking at these videos. Machines are interpreting these videos and machine are deciding, you know, if there's anything you know important in this video? Being generated using machine learning, you know, and llns, so you can use today a text code to create, create a video, and that's pretty amazing.
+
+[Speaker 3]
+Ai can actually generate. Specific experience to each and every one of us that will be actually fitted to what we are interested in. It's not just custom, uh, commercials, you know, to monetize it is, but not just for that. It is also for other purposes, like making specific content for us. So now, when video is being actually generated by AI, this is. Coming endless? And. The amount of video for storage for networking reviewed, but also the compute and faster in all of these videos, you know, from Storage to compute is also massive, and it takes a lot of time, especially when you're talking about very big data loads, and I will share with you a few examples.
+
+[Speaker 3]
+This is a number from 2022.
+
+[Speaker 3]
+There are actually 82 years of content uploaded to YouTube. That's a number from 2022. And this is public information. But we also know, and I can share with you that other social networks if we're talking about Facebook or about Tick Tock and other Giants. They are generating hundreds of years of video every day. The amount of years that people are spending watching these videos every day is orders of magnitude bigger. If you think about, you know how much networking is actually being? Consumed for that. And there are many numbers of how much of you know, the the networking is, is uh consumed consumed by area?
+
+[Speaker 3]
+This number I could find is just above 50. There are numbers that are subjecting 80 percent. This is like the the largest media type that we are dealing with. And this media type just became so much more. Smart. For example, video is no longer strut unstructured media. You can search video today thanks to AI. So, from unstructured, this is how I was raised. Okay, if you have text fields in a database, this is structured data. If you have images in video, this is unstructured. This is no longer true. Now, video is structured information, which is amazing. I get the chills when I talk about it.
+
+[Speaker 3]
+Another very important use case, and definitely we can see dozens of companies presenting, uh, autonomous, uh vehicle, uh capabilities, a GTC. Would, did you know that there are one million hours of captured video in order to train an autonomous vehicle? 1 million hours. This is equivalent to about 100 petabytes of video. Now, let's start thinking, you know, let's do the math, right? So, one petabytes of video. Do you delete it, you know, after a month. No, because if you train with it, you know, for regulatory, right? Uh, purposes. You will need to keep it. So we can occupy storage for a very long time. It wouldn't take forever, but for me everything that is over five years is forever. So it's for a very long time.
+
+[Speaker 3]
+And then, when you're training with this video, you need sometimes to manipulate it. You don't use this full resolution because gpus cannot support the full resolution yet, so you need to create versions of it to lower the FPS, etc, etc, and also when you're doing that, then you are keeping these videos as well. And these videos are traveling over the network and fed to the gpus. And when you actually capturing these videos, you need to have cars running around and capturing these videos. By the way, they do not capture 1 billion hours. You're using, uh, Omniverse and the digital twins in order to generate most of the content, but you need also to capture some of this content.
+
+[Speaker 3]
+The amount of video is just mind-blowing, and then all of the cost and the mechanics, you know, just moving it around. Let's say I want to train on five petabytes of videos, and it is of my main Cloud. I need to move it to another Cloud. Whether I have this gpus that I need for for this cluster to run very, very fast. To move of this data around all of the costs and the operations around massive amounts of video is is mindful.
+
+[Speaker 3]
+And again, this is not just, you know, the cost of the story to the cost of the networking, even whether it is inside the data center between data centers through a CDN to an end user. It is not just watched and perceived by us, it is actually being studied and understand by machines. About all of the computer. That you that you have to deploy in order to run these amount of data. And by the way, if you have smaller videos, they will travel faster, right? Let's say that these videos are smaller. They will actually, uh, the the gpus will wait for these videos to be consumed much less time, so there's less less weight. So, all of that has so many cost components, but also how many, so many efficiencies that we need to think about?
+
+[Speaker 3]
+Just, you know, to touch on a few different areas. It's not necessarily a specific application, but again, this video needs to be extracted. Sometimes it's not that simple, sometimes delivering those few terabytes a day. The of video captured by autonomous car to the data center that's a process. You have like 20 or 30 cards going around. Shooting these videos, you get half a petabyte end of the day. You need to move it to the cloud, you need to take all of this information you need to label it. You need to put it in a database that's quite a big of an operation.
+
+[Speaker 3]
+Then, in some cases, you can make this video personalized, and you can, actually, you know if, when it's not autonomous when it's user generated content and other stuff. Then, you can personalize these videos to the user. You can enhance the video capabilities and capabilities. Thanks to AI, we're demoing, for example, a super resolution. So you can take a standard definition image and make it 4K. And then you create so much new data that wasn't there. You can take a whole archive of all their videos that were shot in standard definition and make it HD in 4k, which is pretty amazing. And all of that can run on gpus.
+
+[Speaker 3]
+Is the object detection, but also the contextual understanding, which I'm very excited about, because again, video is no longer structured data. It's the beginning of a journey, and you need to know what you're researching and kind of, you know, fitting it. But again, you can now know what's in the video, so if you run a video surveillance, you can create a search that will accommodate video surveillance if you're shooting this type of videos of your lectures with slides, then you can create a search that will fit that, and it will not just go through the, uh.
+
+[Speaker 3]
+Will also see, you know, what's in the slide and extract information from there? And if there is a table with formulas? It is searchable now with video. So this is, this is pretty amazing. Still, this is so primitive today that it's unbelievable. Again, it is difficult, because again, videos are a large data type, and you need in order to have the efficiencies you need to sometimes manage it in sinus or pipelines. Today, if you're running Ai and video, you usually have two different pipelines. One pipeline will be for maybe video compression and the other one will be for video analysis to see, you know? What's in the video to determine this type of stuff?
+
+[Speaker 3]
+Let's take user generated content, for example. So, for user generated content, okay, you will probably you need to know that the video is legit. If you're not infringing on copyrights, uh, you want to know what's the perfect placement for this video, so that will be a pipeline that translator AI or a couple of pipelines, and there's another pipeline running the video encoding with some of the larger social networks. They have what is called gpus, video processing units, and they are actually specifically tailored.
+
+[Speaker 3]
+So, what really happens is that you need to load these videos twice? You need to decode them to memory twice. You need to place them in memory twice. Then, you run in your analysis and encode. And then you convert on the point. You think these two different pipelines because they're running usually on different compute environments to make your informed decision, and you move down the pipe, you know for distribution or whatever you're doing with this Earth? Is wasteful. You're actually running two platforms. Doing most of the things redundant redundant, you know, just for doing the essentially, you know, uh, different things. But, you know, it's just one block in this, uh, in this pipeline.
+
+[Speaker 3]
+So, just, you know to, to give it some more order. So, the GPU, of course, will do. For example, the content analysis, the compliance, the copyright, you know, it can do some audio analysis for copyrights, Etc. Then the GPU or CPU or vpus will run the process of video transcoding, and it will actually compress the video, and this is again, it's. It's a heavy thing, you know, you all know what 4K is. So, when you see 4K video, 4K video is half a billion pixels every second. My God! So, you need to to have some massive, you know, compute that can run that. You can always get the best performance from software, but when we're working in masses, then you need Hardware acceleration. You can be GPU Hardware acceleration, which will I totally? I will talk about shortly, but it can also be specific silicon called vpus that will well discussed for you.
+
+[Speaker 3]
+But this is what you don't get when you're running them separately. The video encoder knows things that can actually make our AI model so much better. It knows. For example, when there's a scene change and the same change is not just theatrical, when you have a long shot coming to a close-up. Can be also a car moving from an underground garage to the outside, and the lighting is changing. The encoder knows that, and it calls scene detection. If your recorders doesn't have that, that's bad. But, uh. But, but again, this is something that decoder knows, and if it will let your AI model know that this just happened, that's a big plus.
+
+[Speaker 3]
+Same goals, you know? For areas of action, there is something called motion estimation in the video encoder. It knows where the action is. What's moving doesn't know about the object, etc, etc, but it knows where the action is, and you know, it knows, you know, how much action is happening on which part of the of the frame, which is again, yet another very important data point that AI can enjoy.
+
+[Speaker 3]
+Go to knows when nothing happens. Okay, it has some handles inside to know that these are, what is? We call skip blocks. There's there's nothing happened really. In between the frames, you don't need this data to be encoded again and again. So, AI obviously gives its own benefits, right? It has region of interest. It can identify the object. It can enhance the video. It can do all sorts of things. But actually, if we know from AI, you know what's happening if we know you know the the theme of the video? We know what are the objects if you know if it is said or happy or whatever? Okay, the video encoder can take at least some of this data and make better decisions.
+
+[Speaker 3]
+Because it will have more context of what's important. And if it has more context of what's important, it can make better encoding decisions. So, when we are running separate silos? Okay, we don't get all of that. If you run all of that on GPU, you will get not just, you know, running those two pipelines at the same time and get all of the efficiencies at speed and unsynchronizing. An unsynchronized will become synchronized, but you can also get better video encoding and better AI decisions.
+
+[Speaker 3]
+So we gpus. You can actually have that. Again, it's going to be faster. It's going to be better trying to cost you less. And it works at scale, because again, gtues are accelerated platform by by definition, and they can run massive loads of video.
+
+[Speaker 3]
+This is my favorite slide because this is Magic. And I think you know that I know some faces that I'm already familiar with in the in the crowd, and some of us have been in the video encoding space forever. It is unknown truth, at least until now that if you're running software encoding, you will get possibly better results, because which software you can run all of the options that the video encoder has, and you can get to the best quality. We also know that it comes at the price. This is for some scenarios. It is very hard to decide, you know, when would you go with software encoding or Hardware encoding, because when you are having harder, accelerated encoding that you have with Nvidia?
+
+[Speaker 3]
+It's called nvx Nvidia encoder nvng. You are making some compromises when you are reducing a technology of video encoding to Silicon. That because you have restrictions of how big the silicon can be. So, you need to make some compromises to decide what goes to Silicon as a part of the standard, and what's not going to cylinder. This is the general truth. You know that you can achieve better quality with software video encoders. However. About three. Almost four years ago, Nvidia approached B1 said. You have this content adaptive bitrate thing. We wanted to run on GPU because it will make our GPU so much more efficient, and maybe it will level the field between software and how to accelerated video encoding.
+
+[Speaker 3]
+We said, we can do it, but it's not really just up to us. You will need to have new drivers, and you will need to Define new apis, and it's going to be a lot of work for you, and it's going to take you 3 years. And they said. Fine. So we said. And it took us three years to to make this happen. But this is what we really get. So, what you see here? On one hand is the latest standard that the nvx supports called ag1, and this is a 1080p movie that this graph represents each and every point on the graph. We represents different working point and the different bit rate that you can see on the horizontal X. It can be it's easy. It is in kilobites, so it's a six megabits down to less than one megabit and what you see also on the vertical X is a subjective quality measure that we are very fond of in the streaming media.
+
+[Speaker 3]
+It's great, and 40 is really crap. So this is kind of, you know, the end of the of the of the equation? But the same in in the this is, and this is the magic the same end the egg. Now, he can actually run with content adaptive from Beamer, and it can be on average 40 lower, but you can see it's not just moving to the left each each, uh. Uh, graph as a corresponding point on the white graph. It is not just smaller, but you can see that the quality is slightly higher. Which is again. And if you know that there is, this is the same Hardware encoder. How come, well, yes? It actually happens if you can control the hardware encoder and make it have better decisions.
+
+[Speaker 3]
+This is what we do, and this is the magic that you have. So now, Hardware encoders are really so much more capable. And this is why I'm saying, you know, it's leveling the playing field with software encoders, and that again, not completely. There's always use cases where software encoder wins. Okay, I was doing that for a lot of years, and Beamer has its own software encoded. But again, the the gap, I would say, is closed. And that's what you need really to take away from. A little bit about how it works, because this is important for all of you. This is the bigger implementation, but you can also enjoy the fact that you can control NVA and all of these smarts that you can get between the GPU and coder and the AI that you're running on Cuda, for example.
+
+[Speaker 3]
+Very, very important for everybody here. So, nviq is, of course, David, the green rectangle. Uh, that you see here. And what Beamer does capr is? Content stands for Content adaptive B3, and this is a system that is comprised from two from two parts. One of them is a control player that controls nvng and make it actually making better encoding decisions. For those who are more knowledgeable about video, this is more like a rate control. And there's another part, which is a perceptual quality measure. Of what we do is that we can actually mod. We create a quality measure that is very close and has very high correlation to human vision, so we know what type of distortion the encoding actually inject into the video, and we can control them. And we can tell the NGA can folder how much it can push compression without introducing any additional artifacts that are viewable to deliver to the user, and this way we can actually using the control algorithm of.
+
+[Speaker 3]
+We can actually guide MVAC to make a the best decisions per frame, so it will have exactly the quality that it got to the source. But at the smallest bit rate as possible. So, this is how it works. And our paste, by the way, runs on Kundal. So, it's running in the same memory space, as I showed in the pipeline. Okay, so again, all of the bits are in memory. You don't need to copy them, and you can run your AI processes on the on the Coda cores while nvng is doing the accelerated video encoding, which is fantastic.
+
+[Speaker 3]
+The result will be smaller videos that look exactly the same. For those who are more skilled in the art of video encoding, we have what we call the stereoscopic or or a multi-view decoder. These are actually two decoders that are running in parallel. There are frame synchronized, and there's a needle that you can move left and right, and you can see that this is actually not losing any important detail. So, videos can be sometimes much more than 40 or 50 smaller. They can be five or six times smaller, but still, they are, uh, very uh, very small. And, you know?
+
+[Speaker 3]
+The averages are still 20 to 50%. So? For those of you who are using, for example. The hyperscale compute. Usually, you have only Envy deck, which is the Nvidia decoder. But many other models they have nvng. They have the Nvidia accelerated encoder that can run massively massive amounts of video encoding so.
+
+[Speaker 3]
+Since the release of these apis almost two years ago. Uh, this. Nvidia media SDK 12.1 and 12.2 can can run these interfaces, and you can run this optimized encode on this multiple cards, and it is backward compatible, uh t4s are from are the touring platform touring architecture. So this is gpus from 2018, and you can run, you know, even an older gpus. You can run this new stuff. You know that you can have a unified video encoding Piper and data.
+
+[Speaker 3]
+Or bumper. Of course. You have also the F4 l40s and l40 that are one of the eight eleventh architectures. They all have MDX. Whatever you run on the desktop, enjoy the GeForce series. They're all support MDX and some of the edge computer you're using, like the RDX 4000. They are also supporting ndank, and they're supporting this type of Technology. The second thing that you will need on top of, you know, having a capable? Uh, a video you need also to have the platform, which is the software environment that you can use in order to run that.
+
+[Speaker 3]
+So, one of the platforms that Nvidia offers called Hollow scan for me and Hollows came from media is a software defined broadcasting platform made of gpus and also some networking cards that can run actually interconnect gpus in the alcompress in Lane very fast. It's kind of mind-blowing using protocol to call sp2110. That can run massively parallel amount of video recording and run the AI at the same time. So, if you think about broadcasting, you can. Get your ingest videos inside. You can have your closed captioning running in real time. You can have this superimposed kind of graphic that will say, you know, who is the player where he's kicking the ball, and what are the odds that this is going to be a score and all of that is happening in real time running on GPU and at the very end. You can use also Technologies that will optimize that bitspace. And this is, uh, an environment which is very, uh, Rich in its capabilities and.
+
+[Speaker 3]
+It can actually. Help you build a pipeline that has all of that, including video optimization at the very end of it. Another platform that supports this is Omniverse. So Omniverse again. If you have 3D Graphics if you're doing. Um, um, digital twins, even with Cosmos today. When you're creating content for autonomous vehicles, all of that? You can run a omniverse and you can export smaller videos. Uh, Nvidia. Blueprint. This is again what makes? Video searchable, so you can also run that platform, you know, together with technologies that will handle your video in an efficient way in for massive amounts and in optimized way. So again, it will be a unified Silo that runs at the highest quality, and there's also a service from Beamer called Beamer Cloud training on AWS and oci and under the hood. It is 100 GPU enabled. It runs on T4s, a10s, and L4s.
+
+[Speaker 3]
+So, this is all a scam for media. One thing that allow skin for media has that you cannot do with software encoders is live real time video broadcasting. Running. With all of that, you know, uh, super imposed, kind of layer and with super resolution. And also, you can run optimization anymore. This is the only platform that I know that is capable of doing only that. So it's good for Vlog, but for life, it is the only platform that you can really achieve. One of that at the same time. A second example is Omniverse. This is a video that demoed that at sigraph.
