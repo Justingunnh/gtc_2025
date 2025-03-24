@@ -1,0 +1,200 @@
+[Speaker 1]
+I will do some housekeeping announcements before our speakers get started. Don't forget to download the Nvidia GTC mobile app for latest updates, session catalog, and quick and easy ways to get around the whole convention. Don't miss the Quantum Computing panel hosted by Jensen Huang, beginning at 10 A.M. At the Civic Center.
+
+[Speaker 1]
+They will also be live streaming on the GTC app. Um, this fireside chat brings together the whole Quantum Community of computing Community. For an overview of this existing technology exciting technology, you can also explore the exhibit hall on level two. It opens at noon today, and there's a exhibit hall reception from five to seven.
+
+[Speaker 1]
+Sure to check out the GTC park outside. There's art installations, music, there's food trucks all day, and then also, there's a night market that starts at 5 p.m. Sorry. 7 P.M from 9 to 9 pm. On the session. Recording for this will be made available to all attendees at 48 hour hours after the session.
+
+[Speaker 1]
+The session today that we're going through is Enterprise mlaps 101, and I will let our speakers introduce themselves. It's Michael balant and.
+
+[Speaker 2]
+Thank you, Hannah. Yeah, so we, we don't really like, uh, formal intros. We'll introduce ourselves, um. Uh, I'm Michael balance, um, I, I call myself a sort of reformed data scientist. What I mean by that is all my academic background is in what, what one would call data science when I was in school that you know that term didn't exist? But when I joined Nvidia. Um, I saw lots of challenges around actually getting. You know, platform software and platforms built for data scientists so that they didn't have to do all of this hard work, uh, to actually use the compute that was available to them so that that started. My passion for mlaps and I'll introduce my, but my colleague will introduce himself here. Thanks Michael, so I'm will Benton. And like Michael, I was sort of motivated by sort of trying to manage complexity. As an undergraduate, I encountered this quote from Edgar Dykstra to the effect of the central.
+
+[Speaker 2]
+At, and this is kind of motivated me throughout my career, and before joining Nvidia, I built ml Ops tooling to make it easier as sort of an outgrowth of how to let people extend their software involvement here. I've been trying to make sense of this ecosystem with Michael, so. So, on that topic, you know, we often hear that emlops is confusing, uh, you know, some things have stabilized, but every time there's a there's some stabilization. There's a whole new area we find of demo Ops. No surprise. Why is using to people? I mean, you'll you'll see just tons of of charts like this, that, um, you know, they might, uh, give a particular representation of what emlops might be, maybe?
+
+[Speaker 2]
+One might be focused on just the process or just the software. Involved, or perhaps the, you know, the people that are involved in the whole process? So, there are just so many representations that we see, like us, of what emlops is, like, um, you know, it's kind of hard to. Uh, to pull apart. You know, what is the essence of mloafs, and um, even even more so, when you know you get a lot of folks that are trying to create software and solutions that are in the hevelop space. You can create just enormous maps of everybody that is involved or even tangentially involved in mlaps.
+
+[Speaker 2]
+You can have, uh, Graphics like this as a result. So what, what we'd like to do is just kind of go back to first principles, um. At Nidia, we really like to understand the use case and first. Uh, you know, in this park will actually pull through several investment cases and then backtrack to graduate and losses. And then, how more opportunity in a new era of genuine? I just let's go back to like the overall General process of building ml building AI, right? It involves a lot of different groups of people, data scientists, business analysts, data Engineers, ml Engineers. Some of these roles might be merged into one or, you know, several, but we're breaking them apart.
+
+[Speaker 2]
+Through the context of looking at like an Enterprise building AI. Um, so the very first step is actually to just Define the problem and set certain metrics or expectations for how to. Uh, judge the AI that we're building. This is to avoid any sort of bias in, you know. In the first place, we need to know how we're going to grade ourselves and what we're actually trying to achieve. And um, this is primarily the role of data sciences and business analysts to do this. There's a process of actually collecting. Uh, data to solve, uh, to use to solve the problem.
+
+[Speaker 2]
+Um, actually sharing that data, Federating it across a team cleaning it. You know, labeling it? Um, and generally getting it into a more suitable shape. Then there's the process of feature engineering. Uh, will will actually. Uh, this. This term can be brought in to more than just like features, like calling your features. But, um, and think of it as any sort of, um. Tracks of the data that actually might be usable, or it might be interesting to use as an input in a model. Um, then we're finally getting. Now, you know, to the model selection training into new phase, right? Like, I think, uh.
+
+[Speaker 2]
+Lot of us are very excited about this phase, but there's just so much that goes into the process beforehand. That that, oftentimes, this, uh, you know, the the selection, training, and tuning kind of overshadows everything else? Uh, once we have a a model. Will actually validate it and simulate. You know how, how is it performing? Then we'll deploy it into production, and then we're not done, because there's continuous monitoring and validation as we discover how the model is performing in that production phase. So, it's also important to note that, like, you know, although this is depicted as a sort of sequential linear, uh, kind of progression?
+
+[Speaker 2]
+Messy, and you could return to any sort of Prior stage in the process, so you need to have have as you're building software and your teams. You need to think about how you can flexibly go back to any aspect any any previous part of the process. So, let's walk through some example ml systems and life cycles and. You know, one case study that we have, that's near, and due to our hearts at Nvidia is autonomous vehicles. We do a lot in terms of building models for AV. You might have heard the recent announcement. The Jensen had in his keynote for GM.
+
+[Speaker 2]
+So, we work with a lot of, uh, of different Auto manufacturers to provide. You know? Self-Driving technology. In their vehicles. So, this, this is a very data intensive type of. Uh, you know, AI, to be building for, uh, you really have to start by collecting a lot of camera and video data. Radar, lighter data depending on you know who you are. If your Tesla, perhaps not the lighter data, at least not in in production, at least for Drano, and then GPS, uh, gnss data. All of these serve as inputs and. Uh, it's a massive amount of information, uh, right? It's a challenge just to ingest all of this data. And, uh, curate it in any sort of manageable fashion, so?
+
+[Speaker 2]
+Once, once we go through those steps, there's also another challenge that's often very human intensive, which is actually labeling the data so. Taking all of the camera video data and labeling where stop signs are where? Uh, you know where the road actually, um, you know? And the reporters are where there might be pedestrians walking in the video data. Um, and you know, once we have it labeled, there's also a lot of data prep that has to that. We have to go through. Um, until we're ready for model training once we have. Once we have the data ready, then there are lots of experiments that we might run. We're not just, you know, this is not just like a one and done kind of thing, but
+
+[Speaker 2]
+There are. Many, many permutations of models that we are actually. Um, building, and seeing how they might perform. And then we'll validate the model. Well, uh, you know, the model in itself is one aspect, but there's also a lot more software that goes around the model. Um, you know, before it's actually ready to be deployed in any sort of, um, you know, production environment. And since we're dealing with AV? You know, you can't just go out and deploy to production. You really have to have more phases of validation, where you potentially simulate, um, you know, the model, and then.
+
+[Speaker 2]
+You, you try to, uh? Sorry, we're losing our. Um, you try to stimulate the model in a sort of offline sense, and then you'll, um, you'll you'll actually have, uh. The model and the whole system deployed. Um, has vehicles that you that you use, and you, um, you see how it's performing in AdSense? Finally, you're able to deploy it in production, and there's a lot of additional data that you collect Telemetry log data. And also be an input into the next phase of. Of of training and even better model, right? So, we're continuously going through this process.
+
+[Speaker 2]
+And you know the question, um, you know, a sort of corollary, or like addition to this is, um, you know? How? How does how's genai helping in this era of, uh, this? This whole area of like AV? Interesting modification. Um, you know, especially in some of the? Um, areas where we have gaps with data. Like, for example, perhaps we have a lot of, you know, video feed data because we're in sunny California, uh, but there's not a lot of. You know, rainy or overcast kind of situations. Um, you know, so there's, uh, we we want a way to be able to generate, like, additional, uh, data, to train the model with, um, so this. This is where synthetic data generation, um, having models that can actually, uh, produce that supplemental data or enormously beneficial another area.
+
+[Speaker 2]
+Uh, it's actually not depicted on this, but for data labeling. There's, there's a lot of automation that can actually accelerate the human Auditors. And then, I'm sorry. The the, uh, another area is for actually validating the model, having a digital twin having something like Omniverse. Where you can actually simulate the? The full AI system in a real world and see how it's performing for the offline validation is very, very useful. So, these are all genai augmentations that are making the whole flow less human, intensive or supplemented data, or actually helping, um, us? Test the model in a safe environment.
+
+[Speaker 2]
+So, with that alternative over the low for the next case study here. Thanks, Michael. So we're going to talk about retail recommendations, and I want to ask before I get started out here. How many people have bought something that the internet has told you to buy? How many people are lying, right? Uh, so this is not a laser death case, like autonomous vehicles, but this is something that's enormously economically important, and I think critically, it also really exposes some interesting machine Learning System problems right away. So, the problem statement is basically that we'll talk about retail, but recommender systems are important in a lot of other areas.
+
+[Speaker 2]
+The recommender system is going to look at the things you have in your cart. And tell you some other things that you might want to buy. And this is great for the retailer because a lot of metrics that they care about are Downstream of increasing that median order size. And it's great for you, because if you buy a vacuum or a camera or something. The recommendation is going to be. Here's the bag that you buy to refill your vacuum. Or here's the battery that you buy to have an extra battery for your camera, right way without you having to figure out what that is.
+
+[Speaker 2]
+Going to look at this in the context of a technique called session based recommendation, where we basically take a lot from user sessions, user stream of user actions and turn those into user sessions. So, here we have three different users putting things in their cards, and we're going to look at those sequences and basically use those to predict what's likely to happen next.
+
+[Speaker 2]
+Given these sessions and a whole lot of other sessions, we can then train a model to predict, given what a user has look at or added to their cart. What other items might they look at or add to their cart? So, that's an interesting problem, right? But, like, Michael said, if we just focus on this problem, this model we're missing out on more of the system. So? There are a few steps from turning that recommender model, where we retrieve the relevant items into recommendary system. So, we're going to borrow some technology terminology from the Nvidia Merlin project who've made it really easy to produce production recommender systems.
+
+[Speaker 2]
+We have four steps. The first one is just finding these things that are relevant. The second step is really important, because if we're running a real business, not everything that's relevant is something we actually want to recommend to the customer. We might have a relevant item that's out of stock. We might have a relevant item that we can't legally share to your address. Item that is under an active recall if we don't want to put any of these things in your recommendations. Um, and a model is really the wrong tool for the job here, right? You don't want to have to constantly be retraining a model with what you have in both have in stock. That's that's an if statement, right? So you want to use business rules for this.
+
+[Speaker 2]
+We have another model, then that takes the things that are available. And relevant. And ranks them in terms of How likely we think they are to be relevant to the user. Again, that's a model, because that's a prediction based on some information we have about the user about the behavior of similar users, and so on. But that's not the last step because we may have other concerns that override how much we think a user will like. And we ordered these based on business criteria. So, if a customer is buying five things, and they all come from one fulfillment center, and we have three things that we can recommend to them, one of which comes from that same fulfillment center and one of which comes from somewhere else.
+
+[Speaker 2]
+Push the one that comes from the same fulfillment center pretty hard. So we save on shipping costs, right? Um, a lot of other similar examples, you know, I recommend higher margin items. We want to reckon items that are being paid to promote, and so on. So, we take all these steps. Finding relevance, excluding unsuitable options. Scoring, and then ultimately ranking based on business rules. And then we're going to aggregate. User data to train this pipeline. And we have something that then we can use in production. This is not a whole machine Learning System, right? This is this is a system already, and this is not a whole machine Learning System.
+
+[Speaker 2]
+We need to put this into production. We need some way to take that live data and aggregate it and reliably serve this whole pipeline of this system and produce these predictions and return them to users. We need a way like with the autonomous vehicles to continuously validate. That what we're doing makes sense, so we're going to have a metrics database where we can track historical predictions that we made, along with sort of ground truth data about what people ultimately bought. And we can use this both to improve our model in the future. As well as to?
+
+[Speaker 2]
+Sort of identify where it's going wrong before we retrain it, right, because sometimes the predictions will have a pattern that indicates that something's off.
+
+[Speaker 2]
+On the training side, we need a way to take our historical data and train. Both of the two models that we use, as well as refine the business rules that we use in the two phases that are that are rule based in our system. You know, continuously based on new information, so that when we get new information about what users do when products come out when new user Behavior patterns emerge, we can capture those. We need the support, our data science team. They're going to be experimenting with new approaches. They're going to want to improve the metrics that are Downstream of increasing that order size, and they're going to want to improve the order size.
+
+[Speaker 2]
+Need access to this data and access to these models and access to environments where they can collaborate together to try experiments? And then. I'm going to take feedback from production inference from that metrics database and send it back to our Global storage historical data so we can use it to train. Future iterations of our model. This is getting a little more complicated, right? It's not just a, not just a black box, that we're putting questions into and getting answers out of, uh, but it gets even more complicated than that, because this is a software system, right? So, all the things that we have to do to make software in 2025 apply to this as well. We're running on multiple nodes on multiple virtual machines, um, in multiple containers. We need a way for the application components that expect certain contracts from the machine learning components to work to.
+
+[Speaker 2]
+It gets complicated pretty quickly. But this is sort of, even in the simple picture. We have a lot going on, and this these are the kinds of challenges the machine Learning Systems have to deal with, so, uh, like the way Michael did. I want to sort of talk about an analogous situation that involves genitive Ai, and I'm going to start with a question. Has asked a chatbot something and gotten hilariously wrong answer. Who has done so trying to get a hilariously wrong answer, right? Um, okay, so I want to talk about retrieval augmented generation, which is a way to sort of try and make chatbots more capable of not giving hilariously wrong answers, and we think about what llms are good at. Well, they're really good at following instructions when they have sufficient information and context, right? If I ask to write a Limerick about Jack Dawes I get, I think the scans I think it Rhymes if I get a little Limerick about Jack Dawes.
+
+[Speaker 2]
+The model to do something that it doesn't have sufficient information for something that's after the knowledge cut off or something that is, um. You know, deals with private data. It's not going to have a good answer, and so I don't recommend that you determine what's a permissible expense with your employer for your GTC trip by asking JBT to write a Limerick about whether or not you can expense something. Doesn't know. So, retrieval augmented generation is interesting because it's really analogous to recommend your systems, whereas with recommender systems, we add relevance to search by surfacing the most relevant things, processing, and filtering those so that we can ultimately get a set of recommendations.
+
+[Speaker 2]
+Be a generation. We have a similar path where we find. Relevant things. We rank them based on their relevance. We send them to a large language model along with a query to produce a response, and then we maybe post-process their response, perhaps by interacting with the language model some more. And in terms of a system. We have something that looks like this where a user is talking to an application, which is talking to something that orchestrates interactions with a language model in the middle, so we'll walk through step by step. What this looks like in training and production?
+
+[Speaker 2]
+When we have our private, we're new data. We have a pipeline that ingests data. Into an embedding model and stores those in Medics in a vector database, so that when we have a query from a user, we can look up documents that are relevant. When the user interacts with the application that causes our chain server to orchestrate interactions with the language model and the embedding model. These interactions might also interact with the re-ranking model. So, basically, this is a way to sort of program multi-step interaction with an llm without the user having to do anything.
+
+[Speaker 2]
+So, the consequence here is that we thought when we ask a question, like, write me a limerick about the headline on phb2 of today's New York Times. Uh, the we will look up in the. Vector database what we have that's relevant to the page B2 of today's New York Times. Return it to the chain server, which will then task this back to the language model and use that as context in a prompt to ultimately produce a limerick. Again, I don't know what's on. Hb2 today's New York Times that with paper today, but hopefully we we actually have this in our database. We can answer this question.
+
+[Speaker 2]
+We got a lot going on machine learning systems, and like Michael said earlier, it's really easy to confused in this space because people who are trying to explain ml Ops kind of from a particular perspective, and they focus on what they know or about the tooling that they care about most, and so you can get a skewed picture pretty easily. Case studies and these concerns we've talked about. We want to go back and look at what mlops is actually supposed to do. And I like to think of mlops as the systems, processes, and culture that make it possible to try and build these machine learning systems more responsibly.
+
+[Speaker 2]
+And understand them once they're working. So? I often come back to this picture, which I'm borrowing from a famous paper that's almost 10 years old now. Uh, the hidden technical debt machine Learning Systems, the argument of this paper, is that? Machine learning techniques. Are relatively easy. Machine Learning Systems are relatively hard. This green box in the middle is a model. How many models can you name you need one hand to count them two hands of a toes, um? Models are celebrities. They capture the popular imagination. People know what gpt40 is. People know what the journey is. People know what dolly or llama is right.
+
+[Speaker 2]
+But in terms of the actual engineering effort. If you're building a machine Learning System, the model is only a tiny part. As we've already seen, there are all kinds of other things that you have to worry about, or else that model is going to be useless if you can't reliably serve it. You can't get predictions in production. You don't know that your data quality has changed while you're running the application. Then you don't know that your application is going to misbehave. And there are a lot of different challenges, so a lot of times people who talk about mlops will say, well, I have a really great solution for part of the space, and that's at all Ops.
+
+[Speaker 2]
+It's not all of nlaps, right? So, like, Michael said, if you like to go back to First principles of Nvidia. So, let's look at how people build machine Learning Systems and think about the kinds of things that they need. What should moths do to support the humans? These systems to make it easier for them. And. All of these activities that we want to support are human activities. We're not going to tell you how to do mlaps because we don't know how you do machine learning, and we don't know how you build software. Uh, but I'm pretty sure that you didn't get to how you do machine learning or how you build software overnight, and you didn't have someone say this is the only way to build software. Why these 10 tools?
+
+[Speaker 2]
+Them together, right? You started with some basic things that met your needs. You outgrew some of them. You found that some of them weren't ergonomic for your team, and you move forward from there. So, we're going to look at a number of categories of Technologies and tools that sort of fit together. To support this workflow, we'll have concrete recommendations for a few of these categories that we think are most important, both in the sort of commercial and open source spaces. And we'll see how they support machine learning systems. Just basically to give you the vocabulary to talk about this space and think about what's most important to you.
+
+[Speaker 2]
+Now, machine Learning System is our software systems, so everything that you have to care about for software. Is also important for machine Learning Systems, but we're not going to talk about any of these things anymore today, except in that you should think about how they work with your mlr systems. So? Again, taking a holistic look at the whole Space.
+
+[Speaker 2]
+What? What are we talking about here? We have basically. Groups of things on the top. We have these things tools that are focused on supporting practitioners who don't have to care about infrastructure. And these tools also don't care about infrastructure. If you're a data scientist, you want a Jupiter notebook. You don't care if it's running on bare metal or on a virtual machine or. You know, on a cluster of Raspberry pies, right, as long as it does what you need it to do? Um, and so at the very top of this, we have what we call end-to-end ml platforms now end to end. We have to clarify this, even after clarifying it is not a value judgment, right? This doesn't say that this thing is going to do everything you need it to.
+
+[Speaker 2]
+Is that we have a tool or a product that sort of spans multiple life cycle phases that enables cross-functional teams to collaborate and crucially provide sort of a control plane for this stuff, and so you wouldn't use two of these things together. Right, so you could imagine that you would augment an ml platform with a tool that had a narrower responsibility, but you wouldn't use two ml platforms on the same project, and that's sort of why we think of them as end-to-end. The next category down is data preparation, and if you're dealing with structured data, this is going to be analytics. This is going to be.
+
+[Speaker 2]
+Uh, label. This is going to be sort of structured query if you're dealing with unstructured data. It's going to be more focused on labeling, but this is really sort of in that really phase of getting data ready for machine learning. Uh, in the next category, we have ways to manage development environments, which includes managing software dependencies, making work reproducible and shareable, and giving practitioners on-demand access to resources. The food category is a really important one for that data science inner loop. It's experiment management. All of these techniques are sensitive to how we prepare data and how we try and train models. And there's an enormous space of options we can explore.
+
+[Speaker 2]
+Automl is a family of Technologies that builds on experiment management so that we're not just saying, hey, I know how to reproduce my work, but I have a way to systematically explore this space using machine learning. On the bottom half of this picture, we have the components that are more infrastructure aware that provide an interface between higher level applications and infrastructure and that support the personas or also more infrastructure aware. The specific mlr concerns are out. Data management include governance versioning. And making data available in motion and at rest scale. The next two categories are sort of different approaches to similar problems. Both of them say, sort of, how can we deal with this process of going from raw data?
+
+[Speaker 2]
+Data to Features to models. And feature management is an approach that uses a tool called a feature store. To enable data scientists and production ml Engineers to collaborate on how they've defined features from our data. Pipeline management provides an interface to declare the jobs. That turned raw data into features and then features into models. Uh, beneath those two, we have model Ops, which covers everything related to publishing, serving, and. Sort of understanding models in production. And finally, at the bottom level, you have the operating system for our operating systems, infrastructure management, and scheduling. This is this is your kubernetes, your run AI? This is sort of where you have a way to.
+
+[Speaker 2]
+Use the resources you have to orchestrate your ml system. So, one thing that people want to know is. What do I need
+
+[Speaker 3]
+To do for LL hospital? Doesn't everything change with all the mops? And the answer is fortunately
+
+[Speaker 2]
+Something's changed to throw away what you know about animal Ops. Just because you want to do generative AI, but one thing that does change is that often you're not pre-training your own generative AI model. You're starting with a model or an API that someone else is giving, so your workflow is necessarily a little shorter.
+
+[Speaker 2]
+An actual generative AI application, though actually defining success, is often really tricky, right? Getting your evals right is, is very hard, so that problem does not go away that you have someone else's model. Other workflow phases we have? Some sort of overlapping responsibilities where we sort of refine these. Techniques to include more llm specific techniques. And. As a consequence, we have a lot of overlapping responsibilities. In these categories as well. Where we're not just managing? With experiment management. We're not just managing model hyper parameters and feature extraction approaches, but we're also managing prompts and prompt genes, and so on.
+
+[Speaker 2]
+And obviously with model Ops. We have a lot of additional concerns around the challenges of L and inference, and the challenges of guardrails. So, I'm going to turn it over to Michael at this point, who's going to start leading us on a tour of how this ecosystem actually looks. Yeah, so now that we have our definition of envelops and all the categories that go in it, and uh, a better understanding of how to get to words LLA mops? Let's let's, uh, let's go through each of these categories and. Uh, have some concrete suggestions for what it's going to be used. So, first category is end to end.
+
+[Speaker 2]
+This is really. You know if I if I see, like a customer or someone who's asking? You know, what should I use? Uh, what should? And I don't know what to get started with at all, um? How can I get started, uh? I usually refer them to an end, or I'm all platform. And so. Uh, Solutions of balance. There's tons that the CFG the csps are offering through stage maker vertex AI Azure ml. We're a big fan also of the hybrid Cloud offerings. So, Domino, Thetaipu and data robot? These are great Solutions, especially because. Uh, you can use these Solutions also in an on-prem environment.
+
+[Speaker 2]
+Or in a in a different Cloud, right? Like, it gives you the flexibility to kind of move your whole envelopes operation, uh, very flexibly. And then there's also, uh, you know. Important to note that, like, all these other categories that we mentioned, where we'll give concrete examples. There are solutions that are expanding to become end-to-end all the time. And a good solution in the open source space is, you know, pretty famous. At this point, cute flow, um, it's. It's been expanding, uh, for the last, you know, three to four years. In the space, and it's a it's a great way to get started with an n10 platform.
+
+[Speaker 2]
+Um, so in this space where we're now thinking about lm Ops and generative AI? You know, there's augmentations to end-to-end platforms that are? Um, you know, often, uh, very useful. I heard the term, you know, recently, like ancient agent Ops, or, you know, agentic AI Ops, you know? So there's always this kind of new phase that we see an elops expanding into, um, according to whatever is the hottest topic, uh, at the time, and um, what's what's really hot right now is? Of piece together multiple different tasks or phases of an agentic AI system together.
+
+[Speaker 2]
+Um, into a sort of workflow or blueprint, and this is what I would use in a gen AI application America. So, data who's LMS allows you to do this? Also, a data Loop and Purcell, which is very famous in Cloud. At this point that you could use, there's also a lot of Open Source tools. So, defy Lane graph llama stack. All these Solutions are great solutions for this. And in, um? Moving over to, you know, more concrete representations and specific areas of experiment management. Um, you know, the the spalware and the space has been wasted biases, um, common, ml, and AI are also really great solutions to offer.
+
+[Speaker 2]
+You know, similar functionality? Um, really, think of this area. I think of this area as your Version Control for AI. You, you need something, um, in this space, so very important to have. So, as there are a lot of end-to-end platforms that don't have this kind of functionality, and it's, it's very, very important as, uh, your project matures. An offlower encountered are also, you know, great offerings. Open source so you could use those as well. And in this space, uh, you know, for llms for genai? You know that, um, management and optimization became becomes the augmentation, right? So, how, having a way to?
+
+[Speaker 2]
+Store all of your prompts and all of your experiments with different prompts. Um, this. There. There are folks some of the same folks in the experiment management space have augmented their solutions for us. So, weights and biases, and they'll flow common. Ml, um, all, all great Solutions, and then they're open for Solutions would just be all length used skillable.
+
+[Speaker 2]
+So, turn it over to features. Yeah, future management is another thing we think you might outgrow from them ml platform, and this was really just ways to sort of collaborate on features, and if you, if you need a feature store, you probably know you need a feature store because your use case? It involves a lot of feature engineering, a lot of collaboration around this. Offerings that we know about are hopsworks and tecton. Um. A lot of people are keen on sort of trying out open source. First, Feast is really a notable open source solution and a lot of times, people will try and roll their own approaches, um, with a fast sort of p-values for, like reddit, just during beaker, I really do think that something's purpose built for future stores will provide you a lot of value over just using a database.
+
+[Speaker 2]
+Llm side the analog to Future management is really, how do we manage embeddings for additional contacts? How do we manage change, have sort of sequential interactions with? Llns and and other models. How do we manage agents that can autonomously interact with the rest of the world? And there are a lot of vector databases in this space we've had. Unfortunately, we can't recommend the talks to you because they were earlier this week, but go back to the session catalog. There are a lot of great efforts in this space. From
+
+[Speaker 4]
+From folks that we work with. Um.
+
+[Speaker 2]
+And then on the agent side, there's a lot of innovation in the open source space right now. Lang chain llama index Haystack are great sort of Frameworks to sort of build up questioning, answering question, answering applications as well as much more. Something we've seen get really hot lately. Is mCP the model context protocol, which is a way to sort of describe a service that does something in the real world to a language model, so the language model can interact with it. This is, this is going to be an important part of building these egenic apps going forward.
+
+[Speaker 2]
+Another big area is model Ops, especially in this era of, uh, you know, agentic AI. I see a lot of folks that are just very focused on monologues because they can take a foundation model and they can run with it. It makes you know some. Cases through fine tuning, and we'll just have the just be very focused on just the. Uh, the process at the end of the life cycle. And so, for there's. Many areas that constitute model Ops. One big area is just model serving. So, we have a lot of solutions at India in this space. Whether it's Nim Triton trt, you might have heard the Dynamo announcement, um, so all of those are solutions for model serving at scale performance.
+
+[Speaker 2]
+Then, for monitoring the monitoring aspect of. Of model Ops, uh, there's great Solutions through Fiddler, Verizon, and Bento ml. Um, there are other solutions of, you know, what's confusing about this? Space is like, there are other solutions that don't fit neatly into categories. And you know, so wasted biases in ML flow also offer, um, you know, uh, some functionality in this model off space, specifically around managing artifacts? Their Solutions. You can do experiment management, but then also. Uh, trap all of your artifacts, including your models, and they also offers the model monitoring as well. So, um, for all, on specific model Ops, uh, for, for?
+
+[Speaker 2]
+Uh, you know, I mentioned this already. But, you know, Nim and Dynamo are really laser focused on, uh, llons. In particular, there's some unique challenges to, uh, serving llms and making the most out of your compute use. Open source and print Solutions, your SG laying field, and HP. We work with a lot of these Solutions, and that there's a lot of hosted offerings that will allow you to bring your own models. Or use a very popular models, you know, either in the cloud or on their? You know on their Solutions, so replicate together. The fireworks are some of these Solutions.
+
+[Speaker 2]
+Uh, the observing guard rails are also very important aspects of follow-ups. And, uh, so we have a whole Suite of Solutions in this space, uh Nemo microservices is, is really the the big ones you could think of this as a whole Suite of different? Services that that offer guardrails. They offer a way to build your data flywheel a way to customize. Um, and ultimately a way to deploy, uh, your your LM, as a Nim. Other observability solutions that are available through weights and biases like views and dilipin. Awesome. So let's just wrap up with what we learned about today. We saw a lot of different pictures of the machine learning ecosystems, and it can be really hard to understand that. All of these apps are of the same territory.
+
+[Speaker 2]
+We went back to the source by looking at a couple of Representative machine learning workflows that exposed a lot of the problems people see and tried to figure out how we can take a machine learning system and build it into a machine learning software system. And then we looked at. How the brain works and tools in this space support machine learning practitioners doing their jobs well. So, I've had a lot of fun spending an hour with you this morning. The bad news is, we do not have time for questions. The good news is, we have time for questions at the top of the hour in a connect with expert session with a lot of our colleagues. Here are some other sessions you can check out if you like. Photographing slides this is one to photograph, uh, 2 p.m.
+
+[Speaker 2]
+Today, Michael and Nick will be talking about building agentic apps and some of the interesting challenges you see, deploying those at scale at 3 pm today. We have a great collaborative talk between some of our call. Exit Nvidia and sort of Renza data IQ on end-to-end workloads. Workflows for direct Discovery using generative AI. We also have a DLI box on devops for AI app development at 3 pm today. If you scan that QR code, it'll take you to the restaurant mlap sessions. We have some great sessions from our friends at jfrog, uh. Wasted biases, so have a great rest of UTC, and we'll see you again.
+
+[Speaker 2]
+Thank you for joining this session. Please remember to fill out that she circles in.

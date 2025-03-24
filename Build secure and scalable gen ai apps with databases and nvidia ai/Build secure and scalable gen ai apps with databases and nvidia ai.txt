@@ -1,0 +1,353 @@
+[Speaker 1]
+Before we begin, we have a few housekeeping around twins and every session number one. Download their media GTC app for all the latest updates and session catalog a lot number to the setting. Recording will be made available within 48 hours and also when, um, public on this video on demand experience.
+
+[Speaker 1]
+First, we have. Bob is a principal architect for the Microsoft Azure data team. Bob has worked for Microsoft over 30 plus years on every version of SQL Server, including Azure SQL, which is also a well-known speaker who are compresents on new releases, internals, and specialized topics such as AI, Bob is the author of books Pro SQL server on spondylex, SQL Serv1 2019, Expedia Azure SQL reveal, uh?
+
+[Speaker 1]
+Uh, next, we have Bozeman. She's a theater and AI leader are going to South Azure, specializing in deploying demanding data workloads as a principal of PM. She has extensive experience in week data now Computing and AI, a LinkedIn learning instructor, and of course breaking bias in Tech and ml research software are globally used in EKG machines.
+
+[Speaker 1]
+Without further Ado, please give it up for your speakers Bob Marissa.
+
+[Speaker 2]
+You know this event? You've probably heard in the key of your Jensen. Say this, you've probably heard us about every session I heard the last session here. Well, not data. What is AI like? You cannot do anything with AI today without data. Maybe after the engineering team, we actually think there's Solutions with databases with AI, for that's our attention in the session video talking about that. I bomb order principal architect you've heard from Microsoft. Actually, it's been 31 years now. If you are younger than 31 who want to talk to your day. I'm sorry, uh, not going to happen. You know, we're very excited to be here at the Nvidia event, a couple of Logistics where we get started here, is a session number one. Do you see this link right here at AKA dot Ms Bob board FS. This will appear again at the final.
+
+[Speaker 2]
+The devils we're going to do are recorded that we'll voice and talk over with you. But the cool thing is, the devops are in the deck. So, now you go back to Sunday and take a nap and listen to this drone Auto. I don't know the devil we're showing here in this session today, so that's pretty cool. We have some resources also at the end of this session. We definitely want to answer your questions, so we intend to make sure we title again to address that. But I think when the last session of the day, so we'll also stay on an answer. Any questions you have in this session?
+
+[Speaker 2]
+What I'd love to do is have plasma talk a little bit more about what she does at Microsoft and get things started plasma.
+
+[Speaker 3]
+Thank you, Bob! Hi, everyone! I'm Barcelo! As you mentioned in Nitro, I leave the SQL AI strategy for developers, and I also lead the Azure SQL database business from product side. Really excited to be here. I have been doing AI since my first day out of the college, I really get to build products with AI today. So, why we are talking about AI? This is something you've seen. Really excited and was mentioned back in the day when I graduated. I did that is detecting heart attacks in English around the world, so that is, what was she learning did? And we all see the evolution of AI, and as Jensen mentioned in the keynote, we have seen the machine learning go to generator to agenda Ki to now talking about physical AI, and we are really there today, in this session, we are going to talk a lot about your data, your databases, and how it going.
+
+[Speaker 3]
+You're in the right room. Now, you've seen this. This is a like eye opening, right? I was in a hugging face section earlier yesterday, and they mentioned that every second. Every other. Second, there is a new model that is coming out here, only back. There are about 1.5 million open source models and having phase today, and that's just a hugging face. So, this diagram shows you the evolution that we have seen in the last few years, and it was there before. Also, you can see, starting from 30 per year, three drinking, but this can only go home, right? There's more, more models, being very people like you are bringing it. Customers are coming to us and asking questions around.
+
+[Speaker 3]
+I use case, and that is a real real problem, so I go to Bob, who's been doing data for a very long time databases and ask, how are you seeing both AI being used in databases? Yeah,
+
+[Speaker 2]
+Thanks. For us, it's interesting both of us have actually been traveling around the world for almost like two years now talking about this topic. Developers. How about AI with your database, and they're like, what do you mean, like, use chat DDT, even by database? I'm like, well, kind of a little more than that. This is our view of the world. Our view of the world is that we can take databases that, you know, today, like relational databases, and take embeddings and store them inside securely in the database, co-livlicate with your data. What does that line up? Well, you know about rack pattern applications, right? So now, some sort of rack out, which could be an agent and a could then send a prompt, uh.
+
+[Speaker 2]
+An embedding from the problem. Compare it with their weddings in the database and do a vector search which you might heard today where databases great. At search engines, you can combine them with other searching criteria to build what we call a hybrid search. Of course, you can just do that all day long and get great searches. We call it smarter searching. Pattern. You can take the results from that Vector hybrid search, feed it to a different model that you all know and love. Getting back that automated response and build some equal applications. Now, one of the things I love about this is the fact that the prom often, and you're going to see the demo contains words.
+
+[Speaker 2]
+That you understand that is not in your name, and that is the beauty that we have seen from AI models. We development this simple diagram is now what we tell developers all over the world, what they induce with their databases. There's some challenges and be here. We hear from developers, cios, ATOs, and Architects. Here's a couple of them. How about security? Everybody tells us they're very concerned about security and privacy with their legal AI. And we think with the solutions that we have and we can help solve some of those things. I would say Ada is only good is the quality of the day itself. I said I started the session talking about the data, how important it is, look. You have poor quality data. How's AI got to actually help improve that for you, but be searching them and go up here, uh.
+
+[Speaker 2]
+Is certainly a channel you see people taking on, and then for sure the scale and availability. Another reason why the trial recession we leave data. You can't provide that because they're great at that. They're great at scale and availability law, right? Now what, but at Microsoft, we're the Azure data team. So, if you thought about databases you could use for these Solutions, what's possible?
+
+[Speaker 3]
+It is possible with all the options that you have in Azure. We have our Prime services such as Azure SQL database, so if you have any issues with that, I am the GPU for it. Please talk to me about that, and I do also have other databases. If you have a documentdb, if you want to be OCS proud, like we have Solutions and you have three pillars and you can see on the sliding yeah, intelligent, integrated, and trusted. That means we need to make sure that your data is stored in Azure can get connected to your favorite trans.
+
+[Speaker 3]
+Extensions and all of the stuff that we are going to show you in demos today and also this expert on impression platform. It's up to you to Define how your security boundary is, and that's a big, big concern from all the customers. And we're going to talk about how you can read this
+
+[Speaker 4]
+Applications,
+
+[Speaker 3]
+Which are secure and reliable, and what do you think for on-prem work?
+
+[Speaker 2]
+Well, it's interesting 31 years, right? So, uh, look at this picture. I never thought I would build a budget office. I sort of just get back in the day. Think what was the technology we work on as one of those database choices with a new version of SIM card around prep SQL summer 2025.
+
+[Speaker 2]
+We're going to show you a demonstration how to use AI with an on-prem model with an on-prem database, but it also exists in the cloud exists in Linux, kubernetes containers, and even exists a new product called SQL data makes it better. That's my law. All that stuff. What the cool lesson below is safety, SQL language, and we're going to use T SQL to do the devils with AI to show you how to use AI? The same data makes engine powering this for security. Fail. The same tool set co-pilots for assistant. You'll see a small demo of out of here and the ability to do this to build these AI applications and develop that one that's deploy that everywhere for what they do. We call it Enterprise ready because we've been known and trusted from a long time as an Enterprise ready database for customers, so we blame with what we built out of the product network Enterprise, a hybrid with the features we're going to show you.
+
+[Speaker 2]
+Again, security is still. I put this slide together primarily because so many people said they're so concerned about security. We have been doing security. It's equal for 30 years, and we're pretty good at it. So with AI now, if you use SQL, you control access to all the security of AI itself. You use the AI models that you want to use on premises in the cloud, wherever it exists, we'll show you some examples of that right, and then look at features like road level, security encryption, Dynamic data Master. These are features have always exists in the engine.
+
+[Speaker 2]
+Database, you get ticket data from all these features for security. Okay, well, how do you put things together visually? I'm a visual person, as who also knows, so this is kind of like my view of how we would do this based on that diagram. I told you earlier as soon as it's a table inside your SQL Server databases and assume this gray square is the SQL Server engine, the security blanket. So, first of all, we're going to be able to talk to the model of your choice on-prem or in the cloud, you recognize. Some of these icons are very popular with your embedding model you'd like to use. Create embeddings using the SQL itself and.
+
+[Speaker 2]
+Then, of course. This prompt app or AI agent can send a prompt to the database using SQL commands. Generator medic is equal for that, and then do that comparison with a vector search. And then, of course, add on any filters you can pass that. All of that gray box is the SQL Server engine, helping build an application to do this. So, now, if you're concerned again about security. You control the models you control, the security of how people use it, and you're going to use a popular query language that everything else and loves. See what it looks like, like, what are we doing behind the scenes to make this possible?
+
+[Speaker 2]
+We worked with the video before we came to this conference. We said we had a model that we showed them we're like, well, why don't you use milk? We're like, really, how does that work? Well, we've got a really cool system, where an in a Dominion dip container contains everything you need a model and a Triton infancy endpoint that you can connect to. So, if you use mim. It's very optimized to make that happen. And here's how we did it. We built a VM with the help of Nvidia that has him inside women and bag.
+
+[Speaker 2]
+Just open AI compiler. And we're like, great, that's really cool. Well, we we require https, which is kind of like a more secure proxy or a secure protocol. Like, how do
+
+[Speaker 3]
+You
+
+[Speaker 2]
+Do that like? No problem. Put a reverse proxy container like ngidx on it, and you're good to go. Before that diagram, we can do everything we need in SQL with the side. But did you hear the announcement this week in this conference? Microsoft and many have partnered in what we call Azure AI Foundry that you can now deploy these Min containers in a managed way or even and deploy to VS you. Just go to Microsoft and say, I'd like to then container with the model on my choice, and then you start using that model. Just like you could use here. You don't have to set the VM yourself. Good thing I love about this. I install any Nvidia drivers I include to enable anything. It was all done for me. What's what's?
+
+[Speaker 2]
+To build that application, I showed you the very first diagram. But, hey, you gotta see how it works, right? You gotta prove yourself well. This is inside my VM. I'm using a secure shell to show you the container if I deploy. So I deployed two containers. I deployed the Nvidia bin container, which has an embedding model to come with it. Avoid the reverse cross, because again, the proxies needed to do that secure Channel, passing it on to this. If I'm going to use Azure by boundary. By the way, I wouldn't have needed that. This is a Nvidia command. I could not seen it before that allows you to test your GPU Cycles.
+
+[Speaker 2]
+This command looks like in SQL, but I'm just doing a test for embeddings and proving inside my VM. Am I actually using gpus now, it's not a lot if I really, really crank this up and did a lot more. I would push more gpus, but I wouldn't improve myself that when it gave me that I had the optimize and set up was already taking advantage of gpus to generate these effects. What does all that SQL code look like to make this possible? This is brand new. This is in sequel 25 private review today. This is an actress equal salt sequel databasing power. We have what we call our final definition, where you declaredly say here's the name of a model I'm going to use in my code. Here is an end point, which is that input to that proxy, which is using a nymph container. Here's the type of, uh, it's openingapping pattern. That's the protocol. Here's the name of the model. And here's a credential which this case is a certificate.
+
+[Speaker 2]
+Now, what do we do here? We store that as metadata in the database so that you can reference my open AI capac of any model of your union. Well, what do I need? Well, I'm going to build a table in my database as a set of keys that point to the text data in my database, but in there. In that same table, I'm going to use what's called a new vector type in SQL? This is where we're going to score those embedding values, so it's called embedding. That's a vector type, and then this is how simple it is. I can use a new.
+
+[Speaker 2]
+Function called get embeddings.
+
+[Speaker 1]
+Get
+
+[Speaker 2]
+Embedding you use that model definition. Taken. I name a description that I pulled a query for my database. And insert that into that new Vector type into this tape. So now I can do a query and join that table with all the other data and use the vector type for vector searching. Now, the next step is to build the vector index. We have new Syntax. For that, I can come in. We're greater indexing this evening so I can build a new Vector index on top of the embedding Vector type using what we call the disk and algorithm Microsoft.
+
+[Speaker 2]
+So, with this index in place, which is a guess line bettings itself, I can do these Vector search scenarios. Model definition, embedding store co-payment, my data, and now this index up top. Well, what does this search look like? Guess what? It's more SQL code. But before I do that, I'd like to go look at these events. Did you know that the most popular people tool in the world ssms as a co-pilot? Everything that Microsoft has a coupon, right? So, here's a pill file with me interacting with the SQL database as an administrator or a developer, and I'm going to go and say, do I have any embeddings in my tables in my database?
+
+[Speaker 2]
+It goes back, and it says, you know what you sure did. You've got a big on a table with a vector type you can use. But what I'd rather do is go scroll and explore what these embeddings look like. So, a natural language statement for me to use co-pilot and say, sure, are the top 10 rows for these tables. It knows my schema. It knows how to join that table of embeddings with the text and the descriptions in the table. Do you see in my database that I've got product names and descriptions in multiple languages?
+
+[Speaker 2]
+Well, that's gonna be pretty cool, because you know what embedding models like, what? I'm using no multiple languages, so you're going to find out I'm going to be able to search my data, not just to English language, but any language I need based on the store in the database. This is great now. These numbers, by the way you see here if you've not studied the concept of embeddings. They don't mean anything to you, but you know, now, the story of your data. Now, why do you care about that, because these numbers, what you're really in a binary format is what a embedding model understands. So, with these numbers in the database, I'm going to do something like this.
+
+[Speaker 2]
+I'm gonna build a stored procedure in SQL that I'm going to use in my app to search you by Vector searching by smarter searching, you know what I'm going to do? I'm going to pass in that prompt, a naturalizing prompt. And then I'm gonna filter it with other types of things like stock items, or like the top results that I want to, or I can even kind of use something called similarity to change how I want to see the similar results. That's the magic.
+
+[Speaker 2]
+I get embeddings function again as a one shot. Give me back a number, a set of numbers for that prompt, and then a new series. It's all about SQL using a vector search function. The index I built, and I'm taking the prompt, which is a set of numbers. Of preparing and searching with all the numbers in my database. What are those numbers represent all that text data I showed you about, which are names and descriptions of product in my database? Definition. I couldn't get into my table. I got a bacteristics. I've been a procedure I can use now to go query.
+
+[Speaker 2]
+Now, before I play this, I want you to look at this. It says, show me the best product for writing on rough terrain. Do you ever walk by crevices early on with my diagram and said, I'm going to be able to find things where there are words in the prop not founded by data. Because I'm using AI models which understand natural language, so let's try it. Let's go and say, hey, show me the best products for writing a rough terrain, but only ones where we have stock levels 100 or breaker, and give me the top 15, right? That's that hybrid search piece.
+
+[Speaker 2]
+And hearing the results. If you notice here, like mountain bikes, off-road riding and stuff is the word terrain in the data. Nope, but a language model stands the word rough terrain for meaning as you and I would know for like Opera rocking and mountain biking so far.
+
+[Speaker 1]
+But I
+
+[Speaker 2]
+Showed the lawsuit, she said. Bob, what's this other problem you put in there? I said, you know what?
+
+[Speaker 2]
+Well, how would I do that because in my data, our product names and descriptions in Chinese, the problems in Chinese, the embeddy models understand Chinese, and now I can do the same thing to happen without like making any changes to the code to make it work model definition loading in bags, creating an index using a vector search and a procedure. Now, all of that is done inside the engine. To a model running on premises in a net container, put them in the cloud right, using SQL Server securely and the control to all of this happens with you. You control security everywhere.
+
+[Speaker 2]
+I don't know. What do you think
+
+[Speaker 3]
+This is great,
+
+[Speaker 2]
+So take us further a step wasma. Take this building block and think more in terms of like a wider type application there. Like, how would you try to put it together? Yes.
+
+[Speaker 3]
+So, whatever Bob showed you is entire DNT sequel, right? So, if you are comfortable with SQL, you can write all of this. In SQL, you can write steps. You can write them. T is equal one. It would be a berry get get the bearings in the model definition and vector service, and all of that. Now, if you're a developer like me, you must be using python or some other language, right? So, how do you take this into an app and then use some other frameworks, such as light chain or semantic learner, or maybe a frontier diagram. So, I'm going to take this same exam.
+
+[Speaker 3]
+What I've been actually is a document Edition system. In this case, I had about 130 000 resumes. This is a categor data set that you can all download all the code. Everything that I'm going to show you there will be an AKMS link at the end that you can download right now without that mobile with all the prerequisites, Etc. Spell sheets. We all have mixer seats everywhere, right? We have data stored in Excel series for documents websites everything, and that's a real struggle with our customers, right? Because they want to build knowledge base all their data that data is scattered across multiple different document types, right? So, how do you actually put a real art that you find documents that you're really looking for to make your employees your your end users more productive, so I've taken that you basically take the same Concepts and get that store their weddings in SQL. I'm using an Android.
+
+[Speaker 3]
+Communication. It takes a text and video, and audio and other parts of the document out and stores that and call the same and get them adding functions stored in SQL, but you can actually do that through it as well to a small language model. A large type and model that actually can detect for us can do that either way. I'm using a managed service in this case to do that first step. Once they value car is the sequel, then I do the same steps that Bob showed you to do the varying do the vector search. Find the relevant information and then basically do all of this in five.
+
+[Speaker 3]
+Is, I'm using Nvidia's YouTube Cloud. You can do again the same thing with them as well. The same container can be deployed with all those models locally or could be used in AI company, it doesn't matter. You just need a borderline going to connect you to actually do this. Let's see this in action. This is the I'm not a front-end developer. I mean, by no means I can. I can actually write good front-end code, so I'm using a framework called radio. It's very simple if you lighter code, you can print something like this if you don't know from that.
+
+[Speaker 3]
+I. What I'm doing here is a resume search for the IX sites. You will put any input in there. You can put how many results you want 5, 10, 15, 20, 30, which children, which is actually the top 10 or top 20 that that go up to your idea and all this right hand side. It will give you the chance of the document that are the most relevant what you're searching for, but you can do the full rank cycle in additional air science. Buy one card that that is actually relevant to what you're searching for and some other five.
+
+[Speaker 3]
+So, let's see this code, right? Okay, all of this is in this Lake akms and media SQL AI app. This notebook is available for you to run everything and help me with a free breakfast. So, what I have here is, I have some reward statements, but anybody support, you know? Maybe some questions by Reddies? This is where I'm calling the idea GP Club. I am looking at the open source model llama 3, the 70 billion one for the AI inside spot. The first step, I definitely need to do, is the embedding of the input prompt, right? When I write software engineer that needs to be converted to embeddings of it. What is stored in my database? So, here, that's what I'm doing. And this is the Crux, right? This is where I'm using the vector distance.
+
+[Speaker 3]
+What is stored and what the input is coming from? Uh, do you think the district score there then? This is my prompt engineering again. I'm not an air engineer, but some player engineering here. When I'm saying to the model that you're intelligent, funny assistant, give me this result if this format when you give the result. Tell me why you thought this is the right answer. And of course, add a Microsoft related interesting fact about yourself. It just for fun, right? Then support parameters. If you used any of those models, you know these. These are important to know how accurate the results are going to be. And finally, this is the few lines of code to actually show the output.
+
+[Speaker 3]
+When we actually go ahead and run this, you should get, uh, this is learning locally. You can run in the notebook itself, clicking on that it should show you, uh, the same page. And here, you can go ahead and download search. Now, I'm going to go ahead and search for software engineer again. This has been indexed on all of the 120, 000 resumes all of those through the document ingestion, have it stored and embedded in my database. Now, it's because we are using a try. Super secure is asking for my credentials.
+
+[Speaker 3]
+And with a few seconds. You have themselves so you can see that it provided a top three file names. The top three resumes that match or what I'm searching for here in terms of software and today. It also points into the relevant section of the resume, which is talking about software today. It gives me the the similarity score and business score, so you can actually use that to filter out the resource. That doesn't make sense for you in your less than certain number and then AI. So, based on the provider search results,
+
+[Speaker 2]
+Here are my talk few responses and the reason
+
+[Speaker 3]
+Why the.
+
+[Speaker 3]
+Is great with JavaScript, which makes it a good candidate for a software engineer. It also provides me the summary again. They are content generic and a Microsoft related. Interesting fact in this case about visual Studio. Very simple with like 15 or 20 lines of code. I was able to pair this application using the concepts of database what the definition and vector search with your SQL, then all of the code is available for you to try it out. I truly believe that you, as a customer, as somebody whose access to any of these data sources can be released.
+
+[Speaker 3]
+That showed. And if you really connect to where, it's really sure that this person has a JavaScript experience. So, what? I just showed you is basically let you an example of taking an architecture application using your favorite planet by python. You can do that with JavaScript and intuitive.net and your qualify the languages as well with with any of the source data that you have access so.
+
+[Speaker 3]
+Database's future. So, Obama allowed to talk about this a lot to talk about. The strategy where the world is going and the AI use cases are going, so we really believe there is a large use case of the GPR acceleration with this. There are other sanctions we are talking about vector indexing also using. Gpu is to actually offload the vector creation and exit creation on that as well. So, that's a great use case. If you have large size vectors, you can look at that. Are use cases in terms of how do you optimize these Firefox? Because this power is required, depending on how large the data set is how, how much of the resources you have? You need to figure out those kind of cost benefits for you. As a customer. We do want to mention all of these scenarios that we see that from our customers. They are there, but the most important part here is the deployment choices.
+
+[Speaker 3]
+Is to actually host these models in Nvidia Cloud. You can posted in them in a container, definitely Andrea family, and all of that. It doesn't matter. As long as we have a big access is to your SQL data, and that is the main thing that we want you to understand that how we are thinking of integrating our systems with these AI systems. Everybody has the same access and quite a good forward into the Super Bowl. Well,
+
+[Speaker 2]
+Yeah, we've been talking. We were talking attorney this morning about this.
+
+[Speaker 2]
+Best as a way to talk these modeling influence. Here, right now that you saw us, we haven't shown this. But Azure open AI is one, of course, that Microsoft we use all the time, like, that's a very classic one. Typically, that's going to be, as we think that Azure SQL scenarios or SQL database and Factory. Is many of different common endpoints in being one of them. With Triton server, you name it BLF, even taser Val, even Obama are supporting ultai compatible endpoints. It's a very common way to do it. We study this very carefully, so that's basically one of the choices that we're going to revive. I had to get a great extensibility, and then I think Obama himself is one we're actually looking at as well because, as it turns out, each of these endpoints has a slightly different variation of the protocol against for the payload, which is talking to about four.
+
+[Speaker 2]
+But one thing I wasn't told in the Victorians here, we didn't talk about this because they called Solarium. That would be like your next level. Like, what is that about God? So,
+
+[Speaker 3]
+So we have this. Uh, is the story procedure actually, it's called expandable rest, and why, which can connect to any this plenty of access to. And we do out of this before AI became a thing, and we didn't know where I was coming, uh, at that time. And the idea was that you can actually call any rest standpoints and let's say you have, uh, service. If you want to have a file like?
+
+[Speaker 3]
+Be calling for rest, right? And that's a way for you to extend your database for this kind of operations can be even based programming. It can be anything. And now, with AI, that has been the key feature, which has been enabling our customers to connect with any world of students.
+
+[Speaker 2]
+So well, I think, what are you and our work together on the session, and you should have you? You can use this great model.
+
+[Speaker 3]
+Yeah.
+
+[Speaker 3]
+Like, there's so many other scenarios of customers have asked or asked you. We have their client services all of that all is to rest. They are an employee. They are an a we can access that, for example.
+
+[Speaker 3]
+More so accidentally. If somebody S5 is your name and you got a rest, you can have another layer in that call. You actually call Common Save at the endpoint. What that countries you can't want to do is actually all the pii need up for you. It will be shown as a starx, and then that will go to the game actually. So that is one way to actually save card, your application to any kind of, uh, pii, kind of information that's getting lead to the models. The reverse is also possible once you get the result from.
+
+[Speaker 3]
+Champions also do harm detection, and violets are the type of things as well. So there are a lot of interesting use cases. We have great samples and examples available, right? Yeah, Sports procedure. So, again, you're reducing
+
+[Speaker 2]
+The SQL security model to the side with your developers who has access to run them. Yep.
+
+[Speaker 3]
+We have one more slide, which is the road ahead. Why do we take this water, and this again a conversation we have in our team on regular basis with our with our partners and other places, uh, we really believe that customers are the employees. Models will become more and more kind of specialized for, let's say, Healthcare. Another case, there's a lot of fighting examples of data is currently storing is stored in some database somewhere, right? So that need to be part of that equations. We are really thinking about how do we build those Integrations?
+
+[Speaker 3]
+Real-Time processing is a big thing that we hear security. Compliance area is a big big thing for us, right? This is something we hear from our customers on on. It's not daily weekly basis, and it's really important to make sure that we we have first class solution for that. Anything in this that stands out.
+
+[Speaker 2]
+I mean, once again, is our customer assessment of the time about responsible Ai, and at Microsoft, we literally have this entire website about how we do AI responsibly.
+
+[Speaker 3]
+So, I
+
+[Speaker 2]
+Asked, love, how are you doing? Like, what's your company called? Cuz, we're teaching all these Con.
+
+[Speaker 2]
+Whole responsible AI taxes within your company. So, take a look at the responsible AI website for Microsoft. You could pattern that within your own organization. Decide how to use AI. Yeah,
+
+[Speaker 3]
+And the great thing about that is no piece of code that gets checked in in our Azure devops, which doesn't go through that jacket. So, FUB support that touches any kind of AI. We have a very strict kind of guideline to make sure that we are responsible and principal via responsibility at Champs and everything, so we know we do take that very, very seriously.
+
+[Speaker 3]
+Connect with us. We still have about eight minutes, and as promised earlier, these are all the links. However, you can find our documentation samples, examples, logs everything that my team and Bob and everyone that we actually.
+
+[Speaker 2]
+Buggish!
+
+[Speaker 3]
+So,
+
+[Speaker 2]
+Yeah, I think it's okay, uh, the time for questions. Yeah, thank you.
+
+[Speaker 2]
+Hey, thank you
+
+[Speaker 4]
+For a great talk. Um, so in practice, what I've found is sometimes the vector similarity searches are not in no defined relevant of documents from the database. So, what we've been using is, like, rebankers, essentially. Are there any plans to allow, um, like calls to re-rankers directly from the sequel.
+
+[Speaker 3]
+Yeah, great. Great question. You're going
+
+[Speaker 2]
+To get that question. Yeah,
+
+[Speaker 3]
+Yeah, I did add that in the demos so much. Still, okay? Uh, so? We had a full text search before again, yeah, and he became something he actually used again 25.
+
+[Speaker 3]
+So, nowadaya. What you can do is, you can do web research and for text search, and you can do basically, I think, or track, only rack redirecting to use your ID. I think region, where basically you can choose and Define the weight between the two and decide which one you want to take. You can do the hybrid by doing both or give away to it. So that is a possibility and your second question. If you want to use kind of a model to do, rewriting is again the same concept with this radio, uh, component that you talk that you can call S.
+
+[Speaker 3]
+Everyone, and then choose. So it is, we are in the samples. We have a great example for that, and in a simpler.
+
+[Speaker 2]
+Next question
+
+[Speaker 4]
+Nice talk. So, uh, can you share some instruments about the economics of, you know, this morning from the Enterprise perspective, uh, specifically, like in the news and readings, so we have done some significant storage. Uh, so we need storage, and uh, you know, performance, especially when you're inserting up creating another. Um, so welcome back to the quick database, you know, UI in your managing, like different, different.
+
+[Speaker 4]
+So, can you share some insights on these things? This
+
+[Speaker 3]
+Is a great question. And then, this morning, actually, I was telling Bob that this is a question we should expect people to ask. So, in theory, what happens is like databases are meant like all of our databases. No matter what database you choose or today, they are all going to scale up and scale up right, and they we've been doing that for many, many years. That's the kind of verifer of how any data visit is now. The the clerks of your question is that when you actually add an embedding comment?
+
+[Speaker 3]
+There's an additional overhead that you take from processing that. That's a good work, right? So how the data goes to a model comes back to the model. It comes back to the database, and then there's the storage cost of a zero cost of storing it back in the database, so those are the two additional things. If you as the database owner has to understand, basically, think about your cost, total cost of ownership, basically what we say TCO. So, what we have done, uh, some work on the embeddings, especially on like 1 million extra sizes, uh?
+
+[Speaker 3]
+Size of that same column. If you take it takes additional 0.4 x in terms of storage,
+
+[Speaker 4]
+So that's something
+
+[Speaker 3]
+You need to realize that your table will grow if you do that, and we have recommendations. Like, for example, we are recommending people to not score the same. Table, but with another table, and then do a joint at that time. It's going to be work for cost efficient for you. Now, put that on the table
+
+[Speaker 2]
+On a different file on you. If you want to
+
+[Speaker 3]
+Exactly so, we have recommendations like that. I'm happy to talk much more detail of how to do that again. This is something we should Vlog about, and we should write a blog in terms of fun for you for customers. And this is an idea will take backwards YouTube to write that, but there's something we really considering and thinking about because this is all what our customers are
+
+[Speaker 4]
+Asking. Thanks very
+
+[Speaker 3]
+Much.
+
+[Speaker 4]
+Actual open my eye itself. It's good a lot, so when I first started like it's very high, the early last year, and now, like when I get home a lot, don't win. Quite him right now. So, my question is me, too. Kevin of my secret of that place from Asia. So, if next week I get back, I go back. And then, I like, feel like more. Poc. My favorite. So, where should I start okay or excuse me just real? Quick question about POC. Is it with my sequel?
+
+[Speaker 2]
+You want to do this or for Azure SQL.
+
+[Speaker 4]
+Or does it matter?
+
+[Speaker 2]
+Bye
+
+[Speaker 4]
+Bicycle,
+
+[Speaker 2]
+I I'm not. So, the question about Visa when we see, I don't know if bicycle has now inside Azure, the whole built-in vetting concept, you know, I don't
+
+[Speaker 3]
+Think they have it. But now, you single, you can do that again. You can go to one of these samples and take, and then a really good example end to end. Then you can take and run it. I think my SQL has a way to AI extensions, uh, from the USS. Yeah, so that's something I can follow up with you, but First, part of the question was the opener is changing, and how does that impact any of these? The way we are doing is, have you talked about? It doesn't matter, because at the end, you just get to rest all right. So, if open AI changes the thing, the way they talk to us, then it doesn't matter from that perspective. So,
+
+[Speaker 2]
+I think that's the critical and future improve concept of SQL, at least, so those models evolve and stuff. There's a brainly models do you see now there's other models of support? No problem. We have a very extensible way to plug into anything you want to do.
+
+[Speaker 4]
+Uh, the second part is sunrise so much money. If Anna is an index, the second is, if I have a an application doing a traditional, and so now, I want to enable a semantic structure. How it's like, like myself, so well, what should be the engineering work, uh, so an existing schema existing table take add-in Vectors arm is enough. Column at this thing, or, you know, migrate over to another thing and just go certificate. So, I'm curious on what's the reasoning, or in fact, you were involved in doing that?
+
+[Speaker 3]
+Yeah, so this kid is a Microsoft. It's a this kind of many people know about it. The skin is the same index that big uses for their main searches. So, it's because divided by MSR, and it's open equals right. So, in Microsoft, across all our databases. We have to use TV post, whereas mycillars are SQL.
+
+[Speaker 3]
+We are all supporting your skin and the scanned as rp07, but in some cases, some other databases like Apple stress currently supports other like, actually, s, w, or other. Texas as well. We and SQL team are supporting this Caden as our first index in future. We might, but give us a feedback if any other document taxes or not.
+
+[Speaker 3]
+That's the first part of your question. Now, going to the second, but a question about, do you want to
+
+[Speaker 2]
+My my thoughts on your second qualify onto that right? Is that, for our existing assistance, customer customers what we're telling them is that first out of the gate you may have existing, like text stated in your database. Here is a very simple way to now without doing a lot of engineering work using a SQL language you already know.
+
+[Speaker 2]
+Bring it down to solar researching in your database itself. What we're seeing is, though some customers are saying I got a whole new project where I've got documents unstructured data laws. All this stuff that are text based. They want to start bringing that now in a sequel to actually support this because they think and they love the scalability security of SQL.
+
+[Speaker 2]
+At 75, I've seen both scenarios coming out there from our customers. And don't forget, we think for SQL summer 2025, which is, you know, previewing, they've been on prep totally when you got to also a new model that some customers are thinking about, like, I'm not ready to do to the cloud.
+
+[Speaker 2]
+So, for us from our ground, if I? Just want to do wherever your SQL exists where you want it to be. I don't know if I think we're out of time, I think so.

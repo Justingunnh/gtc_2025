@@ -1,0 +1,296 @@
+[Speaker 1]
+Um, so please, if you haven't already download the mobile app, you get any updates and fill out this survey for this session. It's very important to get feedback to the right content coming. Exhibit hall is today. Ah, there's a reception tonight. From five to seven, please make sure to go to that food drinks. If you didn't get to go to the night market last night, it's a lot of fun out there. That's a good time that will be open from seven to nine. There will be in this room. There's a session reporting and it will be available 48 hours after this. For all of you who have attended so you can re-watch this session here.
+
+[Speaker 1]
+So? We'll have a little bit of time for questions at the end. I'll come around with the microphone, but without further Ado, I want to introduce Abdul Rockmans, who is going to present to you on cyber security. He's from Deloitte. They've done a wonderful job integrating some of the base gyms that we have, and he's going to tell you all about it. It's obviously one of the most important things public sector. So, over to you, sir. Thank you.
+
+[Speaker 2]
+Good afternoon.
+
+[Speaker 3]
+Um, the title of my talk. Is about lateral movement detection, and we're going to talk about lateral movement as an AI model and then enabling it with Mims Nemo. For different kinds of workflows. We've been working on this for. About two years now, enhancing this model. It's a deep learning model. It's built
+
+[Speaker 1]
+On
+
+[Speaker 3]
+Multiple hidden layers. Um, I can spend like two hours just talking about the model itself, but we want to talk about how we operationalize the model, so we'll talk a little bit about the model. Talk about other things I want to mention my. Raiders Depot in Canada, who are really, really critical to this works. We all work.
+
+[Speaker 3]
+Um, so this agenda is. For you, and it's for me to kind of keep us honest. The clock is ticking. We have about 30 minutes. We're going to take the first three parts to really set the stage of things that you may already know, but just to sort of level set on nomenclature of what is that one inside of these species? We're talking about recipes, and this is really important thing I get right, and detection is hard. So, we're going to talk about what's so difficult about detecting it and why? AI is a good candidate here.
+
+[Speaker 3]
+I promise it will not mention agentic AI once, so it's not a date, but I, I have a little bit of humor sprinkle through here. That's, uh, through some pain points, then we're going to kind of pivot and talk a little bit about how we operationalize the model with names of Nemo. Talk about Utopia, right? How we can take this model and actually have it. Do something useful in in a broader scan, and then talk about generalizability, right?
+
+[Speaker 1]
+Okay.
+
+[Speaker 3]
+Here we go, so.
+
+[Speaker 3]
+Miter attack framework from the far left. On the far left all the way to the far right. These are what are called the bookends. In the middle, you have what you'll call the books. Network detections occur on the red part. Right? Endpoint detection occurs in the middle. So, the key thing that you need to know from the standpoint of minor attack the way that many look at it is, including myself. Is that in order to, is it possible that they got a pointer? To detect network behavior, you need an nvr Network detector respond. You need sort of a network sensor over here. Usually, louder occurs a little bit further on in the campaign. This is a representation or a good representation of overall adversary process as they gain initial access. And as they're moving through your environment, so typically they'll find information about you about your organization through a variety of different methods, whether it's LinkedIn.
+
+[Speaker 3]
+Upon how well funded they are and what they want to go for. They'll usually start with initial access and right at this point. This initial access really is the dmarc point between Network and endpoint as we progress, right? I've gained access to your environment. I want to be able to just like a cold if I was safe, or like, back in the day with covid, I want to spread my virus or spread my love to as many people as possible so I can do a lot of things that are malicious. But if I'm on the offensive side, these are really not malicious for me. These have to do with my campaign.
+
+[Speaker 3]
+Is not like extracting data or exfiltration. This is a key pivotal part, right? So, if you want to fix your roof, you need a ladder, right? So, consider a lot of movement as part of what you need in order to do any kind of Advanced capability like data exfiltration, compromising the control, or in most cases, just establishing the football. So,
+
+[Speaker 1]
+In
+
+[Speaker 3]
+Many cases, the low and slow case where we're going to compromise. We want to spread out. We want to gain football after we've escalated.
+
+[Speaker 3]
+Some definitions here, but just know that we're going to come back to this picture on, you know, minor attack to basically say, here's where we can establish our malware or our software that does malicious things. And then, once we do that, we want to be able to connect to a whole lot of other machines, so I want to talk about two key points here, and I hope I don't run out of time. First, key point, which is really, really critical, is that lateral movement is very much like how people make Exquisite meal? Ingredients. They have different styles, right? So lateral movement per attacker per nation state for apt, per bad after changes. And that's one of the reasons why it's so difficult to detect, right? Some people decide that they want to escalate privileges in this way. Some people want to change ports, so there's no fixed method or no fixed stand for doing that and to translate in cyber terms. It's difficult to establish or apply machine learning as it stands or rules-based detections if there is.
+
+[Speaker 3]
+Right. So, the general thing that I'm going to get on this slide is there's new standard pattern for establishing model. So, if I want to spread my virus across. I'm not going to put in extensive amount of thought, but I want to evade, so I'm approaching this as a bad actor, an offensive person. How do I evade cyber detection? How do I evade not, you know, getting any sort of alerts in the Sin?
+
+[Speaker 3]
+Is, how do I incorporate lateral movement as a capability into my broader detection, architecture or detection plan? Most times, we usually see the effect at endpoint because we've paid for endpoint or we paid for Network detection. But what you need to understand is that combining both modes gives you the ability to give you what they'll call defensive debt or a broad spectrum cyber. So, this is part of what we're going to talk about a little bit. Set up this slide and there's three parts. There's a wallet text at the top, but I'm kind of going to give you the I talked for for college for like nine years. So I knew that if I could get people to like, listen to me, I can teach them something. Maybe they'll Inspire to do the whole thing, so there's a little bit of homework that we'll do do here, which is really, really important. Okay, um, this talk is not about any of this great stuff. It's really about this portion, but in order for me to conduct a campaign.
+
+[Speaker 3]
+Take your data. I want to take, you know, your money or your assets. I'm going to need to be able to have all those other things in place and in most sophisticated, well-funded organizations. These are all compartmentalized into different teams, so the team that's building a lateral movement strategy. They are assuming that everybody Downstream is showing up to work and doing their job is when they put the campaign together. This is what they're going to end up doing as they move across. What we're trying to do is use our lateral movement capabilities to search for other resources. Search for other assets. Look for other things. Be able to look for other privileges and to help us in our campaign plan. What do I mean by campaign plan? The goal is to build a map of our Target, and through that map, we may not know everything. So, we may, you know, do some low and slow Recon, where we evaluate information, gather information about different hosts. We'll determine the credentials that we can get onto those hosts.
+
+[Speaker 3]
+Determined that the crown troll what we want might be two networks away, so we'll compromise hosts that are one to three networks away so that we can take our time with it, because if we're not detected, we have the advantage of time so. The idea here is once we're inside. How do we spread and the purpose of this talk is? How do we build AI that can detect label movement, and how can we operationalize all right? So I've spent like five minutes telling you. Standpoint. It gets more interesting. Okay, this motherhood and apple pie. I am not going to spend 20 minutes talking about this, but suffice to say, even with all of this good everything, that's here, everybody. They may go to RSA and go to all of these great vendor talks and communication.
+
+[Speaker 3]
+Lateral movement is still difficult to detect because people use different methods, different approaches, different methodologies for constructing it, and so if you can detect lateral movement. Oftentimes, you have a path of detecting a zero-day thread. What is a zero day threat? It's a typically malware that has no known intrusion. No catalog intrusion set. There's no rule for it, but oftentimes, if you're dealing with someone that's very sophisticated in terms of a group, the only.
+
+[Speaker 3]
+For malware will be detection of lateral movement and a command and control path. So, you may not see anything show up on your sin. I don't mean to scare everybody the safest place to be in 2025 is not to use a computer. Uh, that's what I tell my mom all the time. Don't use a computer, don't do anything. But even with this huge onslaught of millions of dollars of budget, this is one area that once we get a foothold, you're not going to find me, um, because that's the way that things are today. But, moreover, if we come up with a clever ways to operationalize this and then include this in our?
+
+[Speaker 3]
+You know? The clients and the organizations to be very, very successful. Okay. So this is. These are the things that I want to do, but these are some of the challenges, and I talked to about it, right? Um. I have very difficult time getting contacts from different kind of random patterns of connections, right? There are three primary context connections that, um, a lot of people have done right. They've built rules for new logons to machines they've built roles for failed logons to machines. We build rules for, uh, strange times of day to connect to machines, and all of these become rules. But these end up being cases where there are a lot of false positives. In other words, it creates a lot of alerts and.
+
+[Speaker 3]
+Through all these events, and this is what causes event 15. So, what we want to try to do is reduce event fatigue, and I've talked a little about high volume, talk about other things, but essentially. What we end up doing is we can't detect it or we can't detect it well, and so we just bypassed that. We focus on the end point. We focus on applying rules and listening to threading until hey, we end up with sort of a half Bank approach to or detention strategy. Dating with anybody in here. Oh yeah. Just want to make sure.
+
+[Speaker 3]
+I get paid to build Skynet, but oftentimes my clients are like, whoa, whoa, whoa! That's, uh, that's too much. Just stay within the realm of what we have and what we can do. But this, I think, can definitely help. Okay, so um, this is a little bit more detail around challenges, right? So, I'm just going to kind of buzz through this really quickly because I've been talking about it. We don't have much contextual analysis, right? Signature-Based methods, right? I'm going to write a rule that detects how many times someone fails and I'm going to use it. It's going to be my alert for lateral movement. The next one is people that are sophisticated. They don't want to be caught, and if they don't want to be caught? They won't be so. They're going to come up with Advanced methods to connect. They're going to hijack different protocols, push things through standard things that are open https or HTTP or other things that people use DNS so that they can connect to other hosts, um, delay detection response. They'll use time to their advantage and disadvantage. They'll use.
+
+[Speaker 3]
+14 leagues, and so this is very difficult to detect or to determine if this was a real connection or bad connection. And then, finally, it's the the volume of alerts. Okay, so now we're talking a little bit about the model here, and how to go about doing it all right. So this is the first part of the talk, right? I have 20 minutes left. I'm going to convince you that we have cracked the nut and solve this to some extent, but there's some ideas here that are important. So, this talk is like 25 percent about awesomeness of AI, but 75 percent about how you can take a really, really robust AI model and actually give it Force multiplication. So this?
+
+[Speaker 3]
+Really. What we've been using to describe, kind of like an end-to-end architecture, right? This model that we built for lateral movement is trained on authentication models. And by authentication locks. We look at whenever someone connects to a host. We've built eight features for raw data from authentication logs. We've written a paper on it. I have the link at the end, and there's all of the details that you've ever wanted to know that you might want to go and print it out and read it before you go to sleep tonight because it's so exciting. But what you should know is we've done a lot of the work to think through. What are some things that cybers speeds might be looking for at tier three tier four of the sock when they're trying to actually detect real real album movement so?
+
+[Speaker 3]
+To work with someone that's on the front line that's trying to stop, you know, a bad actor from getting in. We take raw features, and we build domain specific engineer features. These eight, we aggregate data, and then we basically call what the binary classifier, and that's a fancy way for those people who are not data scientists to say. Is it lateral movement or not? Idea. Here, we've built a robust model. We basically can label attacks, and then this portion all the way down at the end where it says operator review and planning. This is really where the integration where with generative Ai and large language models come into play. This is really where we can operationalize things, so just think for a moment if.
+
+[Speaker 3]
+To take the results of lateral movement, and then they had to basically. Uh, you know, grep, for lack of better words through threat intelligence. Look for selectors and kind of make the connection. I've shown that on this subnet on these hosts, running these operating systems with these patches that there's probably a lot of movement occurring, which is a precursor for maybe some kind of behavior that's going on. Is there anything in threat intelligence that can confirm? So know that notice the workflow. AI gives you the binary classification, but contextualization. Happened today in a manual way.
+
+[Speaker 3]
+That means that you're going to be burning you to calories. And Joe, the sock analyst, is basically spending a ton of time combing through all these events and trying to figure things out. While people are still moving, uh, willy-billy, through the environment. This is about the AI model, right? Um, so everything on the left is around data, right? So, we basically collect authentication logs, net flow logs. We train our model. We moved into where we're basically doing this feature engineer, feature engineering, and data science is like the phenomena. We want to measure everybody is familiar with, uh, Microsoft Excel. You want to build, uh, a model like that does like linear regression, uh, we take the column headers that's label data, and now we want to look.
+
+[Speaker 3]
+Building a future for best fit line. The features are just the things that we want to measure, and in this case, we're measuring eight specific things related to lateral management. Now, what we've done here is? We've taken our model and see where it says Deloitte's lateral movement detection model. That could be any robust model in the Morpheus framework, so we've been working with morpheus and optimizing our models and our workflows on top of Morpheus, and we've been getting a huge performance Improvement on runtime. We have. Drank the Kool-Aid to such an extent and proved out through several benchmarking exercises that you can obtain a rules-based detection and an ai-based detection, imperative meaning. If it takes one second to give me a rules-based detection, I can find an AI based detection in one second. That means I no longer have a delay of minutes to determine this kind of behavior, and so we've done a lot of work on this with this kind of platform. Configuring this working with the Nvidia team to do this, and this is specific to the AI model and.
+
+[Speaker 3]
+Key thing is, this is kind of the flow in the architecture that we've come up with here. All right, um, and this is some performance data, right? Um, and I like, kind of fell off the scene. I'm kind of a skeptical person. I'm like, no way. Let's do it again. And only like 15th time. Everyone is, like, hey stop. We agree that this is real. We agree that these numbers are right, but what do you need to understand is that the acceleration is the pickup time and the speed up that we get from Morpheus gives us cost savings on Computing storage. So, while we may be leveraging a GPU, which costs a lot because we're discovering things faster. We don't need to use use.
+
+[Speaker 3]
+Architecture with doing this, and we've run a bunch of studies and a bunch of our models. Through this, another model we've done, I gave a talk last year. It's streamed. We talked about zero day threat and on zero day threat. We also put it on Morpheus and we got even stronger results. Okay, so I've talked about an AI model, right? I am an AI mathematician person, uh, my colleagues. You know, they kind of cringe when sometimes I'm like, I want to talk for three hours just about math and statistics. They're like, but that's not what customers necessarily need. And that's not when necessarily customers want to buy. They want to understand how to protect their environment. So, while my stuff might be cool, my flu might be awesome, uh, nobody wants to buy it. So, we're trying to figure out ways to take mathematics, statistics, and Ai and operationalize it in a way that customers can protect their environment.
+
+[Speaker 3]
+This is sort of a little bit of a segue, right? So this is kind of like we cut, we go to commercial, and we come back. We're in a total viewframe now, and the idea is, I want to summarize. Threat alerts. Right, and he could consider an output of an AI model to be a type of alert, and so one of the things that I talked about is lack of contextualization. We talked about the last, you know, too many false positives. We talked about a ton of response difficulties. He talked about underfunded sock environments we talked about. You know all of these things that cause all of these different issues and our ability to actually take data?
+
+[Speaker 3]
+To make the best kind of decisions, so we call this in data science in particular. For us to take a model result, we want the results to be interpretable, which basically we want to help explain the relationship between features and predictive responses, then also the explainability, right? So, this will help us kind of get to this place where our model results. Whatever it is, in this case, lateral movement will help us to achieve greater detection. Now, I started in the beginning by saying this. It's very hard to detect lateral movement, and so. Operators to say, well, I saw 16 lob on attempts here from this subnet and three were failed. This is what we're going to do today to detect lateral movement, and that's basically like confirmation bias. But in order for us to come up with a generalized approach for detecting the lateral movement. We have to think a little bit more broader, so here's some ideas about how we want to go about doing that. Um, we'll, we'll want to do something about threat detection.
+
+[Speaker 3]
+Response, we'll want to do something about increasing trust. Oftentimes, I've worked with clients and in the software, like, hey, I don't believe the AI don't use that use all the rules. We've paid a lot of money for the AI people to build those models, but we don't believe in it. We don't trust it because there's a lot of false positives, and there's no explainabilities with the model. And then, finally, there are some compliance aspects. Okay. This right, we use a couple different components to operationalize. One of them is basically convert my model into a microservice.
+
+[Speaker 3]
+Right, make it a rest endpoint. Give it a place where I can actually point to it, and I can get a result back. I can give it something, and it gives me something back. So with them, we basically use this opportunity to have a pre-built container with some very standard apis, motherhood, and apple pie. All the docs are there you take your models, you convert it into a microservice, and then using Nemo retriever, we can actually leverage, you know, the? Know world of generative AI? Now, I'll probably tell myself to say, I am not an NLP person. And on my team, I tell everybody I'm not an NLP person, but if you can use generative AI and large language models to help you with threat summarization and contextualize your lateral movement kits that you get from your model and accelerate the ability for clients to use that. And I think it's, it's pretty different, you know. So we found a way to use nim and Nemo in conjunction with Morpheus for our robust model.
+
+[Speaker 3]
+Um, so the first thing is? This is kind of like you've, uh, on the pancake box on the back, it says like an egg with milk and whatever. So, I'm just going to go through, like, sort of the back of the pancake box really quick, right? So you identify thread alerts. Architectural information, right? And these are, you know, common vulnerabilities exploits real-time threat and tell, and they, you figure out what's the best way best strategy for me to contextualize the information. So, pull in other pieces together to bring those in a way where I don't have to comb through it. I don't need to write scripts. I can just use generative AI to filter and contextualize that and use that. To really operationalize the hit that I've got with my eye model, and then once I really do this, I can also.
+
+[Speaker 3]
+And then really. I can provide these summarized reports and I can integrate with third parties. Integrating with third parties means other organizations, other threat Hunters, other groups, right? So, this is like. I would say if my colleagues were to say, well, what did? Why? Why would you want to use this? I would say, well, this is what how I would use it. My awesomeness is, like, right over here lateral movement, but think about how we've operationalized it, so I think this is. This gets us like the next step to think about cyber security. I have not said agentic AI of it twice. All right, so this is like one of two pictures that I think is, uh, pretty useful to think about the world, right? So, I'll start at the top, right?
+
+[Speaker 3]
+The threat alerts by our AI model are up here. Now, you all can think I have another AI model. Yeah, use that. We pre-process that alert data, and we generate an initial report. We passed that into Nemo retriever, right, and we want to query a database right automatically for
+
+[Speaker 4]
+Similar kinds of things right, similar kinds of things, mind you. Today, we have to do this in a manual way, which really,
+
+[Speaker 3]
+Really. Causes a lot of heartache and headache, and you have all of these really cool things. Llama three, all of these other, I mean, that's all available to you. Then, when we get to Morpheus right, we can create a report, and we can also re-rank these to build the prompts, right? And then, finally, we can make these consumable by different community, right? This whole process, right? Part of the advantage is building out this Vector store, and this external knowledge that you can use to contextualize.
+
+[Speaker 3]
+That you build it. So now, data scientists that are building AI models can work in a larger construct so they can contextualize and actually help an organization. So this gives you kind of a framework on how to actually make the AI bike move faster to help groups detect things. So, I wanted to give you a little bit of an example of some of the data that you would have to use manually right? And this would kind of be painful, right? So the summary is, hey, and this is all sampled there, uh? So, it's accountants and attorneys that have coached me to say the following things. This is all sample data, so in this sample data, we've had events that mimic, like October 10th, 2024. We've had threat actors that possibly Target different users, and we've identified certain vulnerabilities, right? So, this is what we know today.
+
+[Speaker 3]
+And so these are the detailed summary. Those eight things that we want to be able to, you know, compose, look for, analyze, and really use things based upon what my model is doing. So I have a model in the background, but this is my day-to-day. So, the macro level stats are total alerts, malicious events, benign events, and uh, false, positive rates, and so forth. And my detailed alerts are here. What would I have to do with this text if I didn't have something I would have to filter on it? I would have to parse it. I would have to build scripts I would have to use a third-party Pro. I would ask you a number of things to get this information into and three and four, and what do I want I want my iocs?
+
+[Speaker 3]
+I can detect things that are strange in my environment, in this case lateral movement. All right, so we have more information here. So when we were talking about this presentation, I was like, we need to talk about the pain that people go through today and how they have to parse information and make use of it, and we have to operationalize that and move very, very far in terms of using generative AI to help us here. So even pattern and Trend analysis, right? Um. Mitigation strategies miter attack tactics CD information. All of these things are all elements that my sock would mean to use. We would build teams upon teams of people to pull all this information together. It doesn't matter if you have a good AI if I'm spending hours on this, you kind of can't really get me into a position where I can use the AI effectively.
+
+[Speaker 3]
+Does this resonate with anybody?
+
+[Speaker 3]
+So, this is the applications and I have 6 minutes to. Really convince you of all the awesomeness that we're going to get to. So this is a little bit of future State. A little bit of Skynet, but I think we're very close. So, first thing you have sock functions, right? These are the sock functions that typically occur today, right? They do security intelligence alert management, log management, compliance, security, posture management, and then incident response, right incident responses. There's a compromise and event going on. There's a bad actor in my environment today. I want to remove them, and then I want to conduct an after action report and gather this information up to, and I want to patch all the holes and then finally threat hunting, right? I know of a threat here in my environment, and so.
+
+[Speaker 3]
+To focus on looking at these and trying to go after them. This should be like, um, you know, like a Hallmark card, right? Okay, so this is the slide that I don't want to say takes my breath away, but I just want to spend a little bit of time talking about it, right? If you were to tell me in this presentation, one slide for you to walk away from to think about how we could make the world a better place. It would be this slide, so I'm going to try to talk for a little bit and convince you of a world where data source data pre-processing are all things that you can get off the shelf I walk into Target. I'm going.
+
+[Speaker 3]
+These are things that can be done commodity, and we can almost quote the price that it would take per like bite or bit. To do this. This is not complicated, maybe five or ten years ago. This is something you do, but you have a lot of great vendors that can do this. So, let's just assume that you can normalize data, find data, cleanse data, bring that in. Tools I can do that. One of the things that we've had a lot of success with is using graph and graph architecture and building AI models on top of graphs or different, like graph metrics, so?
+
+[Speaker 3]
+I'm a firm believer that you need to persist a graph. This will tell you sorts of destination. This will tell you weight of relationships. I'm communicating a lot communicating a little. I can train models over that, so I want to use these graph features to enhance my detections again. This is the future statement. Engineering features, right? This is where I can look at all the raw data that I've collected on my authentication logs, and I construct phenomena that I want to measure that's relevant to. In this case, lateral movement, right? So, I'll talk with my cyber speed is to, say, hey, how do you detect lateral movement today? It would say look at these eight things, and this is how we're going to engineer these features.
+
+[Speaker 3]
+Teeving, right? A? Needs humans. To make it better when you find a false positive in your model which you will. You need to basically have a way for you to tag that class so that when you run the model again, it does not produce another false positive. So, we built something called, uh, retrieval augmented anomaly detection or rabbit. We just wrote a paper on it. It got accepted. It basically is human machines, even for false positive reduction. So the sock analyst sits here and says, hey, you!
+
+[Speaker 3]
+Database, and then when the model runs again, it recognizes that same class. So, over time? You'll see Precision and recall improve, and the model gets better in detection. Dashboards and alerts that's awesome! And then feedback loop as well, and then finally. It. It's, it's a firm belief that you need all of these elements in order to detect these malicious events. So, from our perspective, right where you have a model or a capability where we've looked at lateral movement initially. And we talked about all the different ways. We can detect lateral movement. We've built this up as a binary classifier to detect things. This is a way to operationalize or a road map to operationalize, operationalize, and you may not be, you know, advancing any one of these areas. But I?
+
+[Speaker 3]
+Of gas. And so I'm at the end. And, uh, this is the reference to the paper to talk about the AI itself. Everything else we talked about here is, um, a lot of work that we've done this particular capability here. See if I can get back.
+
+[Speaker 3]
+This particular capability we built, and so we have actively gotten lateral movement to work, answered a threat to work with this, and we are producing, you know, a lot of useful information points. Um.
+
+[Speaker 3]
+Thank you.
+
+[Speaker 2]
+We definitely have
+
+[Speaker 3]
+Time for some questions. So, how do you bring the mic right over the box collection? It's going to be lots of time. I
+
+[Speaker 1]
+Saw this hand first one.
+
+[Speaker 3]
+Uh, thank you for the theory. So many beautiful and knowledge slides. It's beautiful, I think. Yeah, it's very useful. Thank you and I. My question is, because the later movement is not a day-to-day every day happen, and GPU is expensive. So, how you evaluate and how you, how makes your customer or how we convince our box in this world world? Can you share some some Messiah teaching? How? How good you came to the right place?
+
+[Speaker 3]
+But I will say this lateral movement occurs in ways where it's not detected. And usually, if you can't see lateral movement, it's like signal to noise ratio is kind of imbalance, right. One of the ways that we're finding a lot of success is when we take these models and place it in a container and have that container with a certain amount of processing, and we budget for it. So the some success that I've had in convincing? Is, if you can budget for detections. You can put that against sort of. What's the cost of a loss, right? What's the cost of reputational damage? And so, when you factor that into your budget?
+
+[Speaker 3]
+Or compute storage, you can make that work. The other part is that everything that we've shown here also works on a CPU. So, Marcus, we Benchmarked on GPU and on CPU, so gpus are too expensive. We can, you know, find a less robust, uh, Hardware to use. Home, we can talk more outside. I can't. I'm happy to.
+
+[Speaker 5]
+There are. More experienced than groups out there in. And others. Being part of a real ransomware event myself.
+
+[Speaker 5]
+That actor. A lot of the experts. They do all their operations in memory. There's no logs, there's no detection. Have you guys thought of that and? Ran any analysis on how you might actually be able to? Detect something that right now is undetectable.
+
+[Speaker 3]
+So, we have built a couple of pocs. That's a great question. So we built a couple of pocs where we've done some things like, evaluate memory and memory dumps, looked at certain kinds of behaviors. I would contend if you could probably already down that even in a case where things operate in memory, I still have to take a memory thumb and I have to put it someplace to do my analysis. The area of being able to deploy an analytic inside of memory to operate. There have been a few cases where we've deployed these kinds of capabilities and its cause.
+
+[Speaker 3]
+You know, five to twenty percent performance degradation on the actual system where it's being deployed. So, we end up in a situation where your the trade-off is deved up to a place store, the memory pay for compute storage, or do you add more boost more compute storage on the node to handle the weight of having something embedded there, and I think storage has become like more commodity and people are willing to accept the risk, um. Next year. Maybe they'll accept my ransomware talk, and I can answer your question on answer. It
+
+[Speaker 5]
+Gives me an idea where I'm like, picturing like the task manager that you both, uh, you could probably code something where you're monitoring that that's in a while, and you do the math on something like member utilization. Utilization very high, but the. From the past manager in the process. It doesn't add up to that,
+
+[Speaker 3]
+And that so real something. So I actually worked on that before, and I got like a lot of false positives, uh, in a case where an adversary actually. Predicted that that would be kind of detected so they would maybe deploy a process that would throw that off a little bit somewhere else. Yeah, so I mean, and I don't want to say it's like Tit for Tat, but at the end of the day, right? Um, you know, like, we are in boxing, right? You have your card up here, but if you have kickbox or keep them in the knees or The Shins, so you have to figure out you know how to build better defense.
+
+[Speaker 3]
+Few ideas about that, but I have a terrible experience of false positives and getting yelled at, you know. Thank you
+
+[Speaker 5]
+So much for sharing all of this detailed information, and I'm going to look for your white paper. Just curious, do you have this published open on GitHub, or is this a commercial worker and that you're discussing
+
+[Speaker 3]
+Okay, uh?
+
+[Speaker 3]
+The model itself. Um. We have no code described in the paper we just talked about.
+
+[Speaker 3]
+Thing that we'd be happy to talk with you, you know, further, and engage. And, you know, well, our my team, our team? We're here to talk more about it, so definitely I'll be outside. Thank you
+
+[Speaker 5]
+Very much again! You're welcome, you're welcome! Um, I really wanted to talk about this particular slide and particularly the graph constructions. Yeah, have you come up with a common data model that you translate all of your endpoint worth or network laws to, and like, map it to, uh, the graph constructions there. So, like, is there like particular CDN that you are following to create those modes and edges?
+
+[Speaker 3]
+Done that. And then we've done a few other things. So we wrote a paper it's called grasp. It's actually on the archive. Trasb sand pastries is the lead author. That's one example of how we're using graph, and that's basically. Um, what we're using for vulnerability detection? Four coats we built by co-pilots. We use a graph in order to be able to understand. A syntax tree, so we use different techniques. Not just the node relationship or the weight of the node. We also use graph grammars, and we've had a lot of success using graph grammars with AST trees.
+
+[Speaker 3]
+And that's in the white paper. My name is first name last name dot at Lloyd, so you can email me anytime about this, and we'd be happy to, you know, have a
+
+[Speaker 5]
+Conversation. I think the first time trying to come up with a CDM that works for all the logs Internet. If you adoption to take database and they have some associations, so then I can pass all of those, and excuse me, um, last year. There was no talks
+
+[Speaker 3]
+After me. Questions. What's good for me is I only have five minutes. That's my personal, like, kind of be, you know, my, uh, self worth? I guess you don't have to beat me up too long, but just the point I'm not trying to get too sorry is, um. Edm, you're going to have to look at neem and iem, and you're going to have to grock me and basically interpolate neem into a graph structure, right? So, neem has one of the most robust data models for cyber. You're basically going to have to grump that and figure out at that, but we can talk.
+
+[Speaker 3]
+Thank you! Thanks so much. That's twice. I heard beautiful two times. That's worrisome that you want to see. The first slide is that the one, I don't want to say, title, because that's, uh.
+
+[Speaker 5]
+Yeah, there are multiple pieces in my device, and we are specifically talking about a lateral movement. I'm kind of coming to to the first question that he asked. If you are running entrance for one particular use case, and it is running all the time, we are essentially consuming our controls. Why not even something which can address all effectuality? So
+
+[Speaker 3]
+The answer to that is you can? And when you build it, you're still constrained by the data that you receive from the sensors. So, if the sensors are placed in the location, the network where you acquire information inclusive of the membrane inclusive of suricata C, Bros, Symantec. Whatever you are constrained by physics and
+
+[Speaker 5]
+Geography of
+
+[Speaker 3]
+Where the sensor is right. So, the key goal is if I have. And I want to get to, let's say here. My attack campaign in order to. From a social science perspective and a detection perspective is to compromise this host, right? So, how do I compromise this house? Why do I want to compromise this house because this host has services that are outdated that has Legacy? It hasn't been patched, and it does not have an agent running on it or has limited capability right now. Let's just say I'm exaggerating, but usually within a too hot graph of the crown. Cool that you want. You're going to need to Traverse in some kind of form or fashion.
+
+[Speaker 3]
+Speak for myself. It's not an excuse. They, I have to. We usually have to deal with what we are given, and when we walk into the environment, they're like, hey, I don't have a network detected response. I only have endpoint. Do I make use of my endpoint detection respondent? These are the only logs that I have. That means that I can't detect a lot of this situation over here at the end, right? I have difficulty detecting command and control because I don't have a sensor there. You're concerned by where you have a sensor.
+
+[Speaker 5]
+So, what do you think, like, what? What is your thought on? Let's see what would be the ideal situation? What would be the ideal data that you need to build something which can address all of these.
+
+[Speaker 3]
+Okay, we say something is going to have component parts to it, but you're we're going to have to decouple the sensor grid for data collection and aggregation. Tool detection here. So, when I started talking about this, I talked about detection strategy. So, maybe about five years ago, I was the detection Czar for this huge International cyber product company, and I would go around basically saying, hey, our ransomware strategy is terrible. We only do two iocs out of nine, so the idea is for depending upon what you want to detect. That is going to be driven by the data that you collect, it's just they're. They're very much merrier, and I don't.
+
+[Speaker 3]
+Of memory on a machine. Great time for one more.
+
+[Speaker 1]
+Earlier, you said, you've? Done this with sample data. Have you had have you deployed this in like a head-to-head like a blue team versus a sock using the system. And what did that look like? So right now, uh,
+
+[Speaker 3]
+Our lab is deployed on four customers in production. It is protecting things, but again, uh, the there's a class of balance, right? How many lateral moves events do we detect? Not many? My experience in terms of what it's being seen. We have found things have we been in like a CTF blue team red team. I think we have a couple years ago, but we could revisit that. But that's a great question. I think we do have the metrics on how well we detected versus not. We have deploy it in the customer environments. When we have protected things, so I don't want to say nothing is perfect, but I think we have good evidence that we can detect from our firm if you see when you read the paper in the back.
+
+[Speaker 3]
+Feel free to drop me off.
+
+[Speaker 5]
+Yes, yes.
+
+[Speaker 3]
+Of course. We can go to the last slide. But I have a feeling this is going to be the question that. I can control them later at dinner.
+
+[Speaker 5]
+And so, yeah, so I mean, very proud security department and the graph and chapters. Yeah, okay. So, my question is, do you're having, uh, data Source needs like inconvenience, contamination, music. They don't forge the information like, you need to ensure craft, which. Relationships, because if you look at the OCSI School, they are, um,
+
+[Speaker 3]
+I feel. Can I just say a couple things, but you said like five things. Okay, so first of all, those CSF to me is like a wool shirt. It like causes me in the itch a little bit, so I have a little bit of issues with that. There's a little just because the schema introduces, um, some some realness. Second, one is, I can extract. And type connection type. From some endpoint logs. In other words, who's connecting to me and who I'm connecting to? I can't get the whole picture because I don't have a network picture, but I can also get from endpoint logs, information on authentication information authentication in terms of food qualities mean is also part of the future.
+
+[Speaker 3]
+Even
+
+[Speaker 5]
+Cast me information from on the cloud side. Classific. It's
+
+[Speaker 3]
+All done. Free classification. It's part of the feature engineering.
+
+[Speaker 3]
+They
+
+[Speaker 4]
+Can let every emotions.
+
+[Speaker 4]
+Thanks everybody! Thank you so much and we're around to Applause. Thank you.

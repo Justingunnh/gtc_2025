@@ -1,0 +1,224 @@
+[Speaker 1]
+And I'm going to be your host for the for the session. Um, a little bit of housekeeping. Before we start the session, I just have a few announcements, um, don't forget to download the Nvidia GTC mobile app for latest updates, session categories, and easy access to everything that's going on in the convention as well as Maps. Um, explore the exhibit all hold on level two. The exhibit hall will be open from noon until five, and then there's a reception afterwards from five to seven, so feel free to go and check it out. Talk to the exhibitors and check out some really cool demos.
+
+[Speaker 1]
+Um, make sure you check out the GTC part, um outlets right outside the convention center, and they have food trucks and park installations and a lot of vendors are coming in. There's some music playing, so it's, it's really interesting to go and hang out and check it out. Also, there's a vibrant Night Market open from 7 to 9 p.m.
+
+[Speaker 1]
+Every day. Please feel free to check that out. Um, the session will be recorded and the recording will be made available to all the attendees 48 hours on the industria and on-demand link. Um, our session today is. The safe Enterprise AI with Nvidia Nim with our speaker Rehan javeil. Um, we will have time for questions at the end. We will set up a mic in the middle, so if you have any questions, please line up after the talk is finished, um. Like, I said, our presenter today is Johannesville. Rehabjali is the president and CEO of security AI, the pioneer of Padilla Command Center, a centralized platform that enables the safe use of data. And previously, he was the president and CEO of elastica, a cloud security company. Let's welcome Graham.
+
+[Speaker 1]
+Also,
+
+[Speaker 2]
+Thank you so much for being here, um. Obviously, you care about security or safety or Enterprise applications. And that's, uh, what we're going to talk about and how to utilize course, you know, land markets? So? In the Enterprise. I think anyone who's in any of the organizations, I think there's a top-down driver to adopt the app. And it's often coming from the boards. The CEOs and all kinds of leadership? At the same time. There is fundamental impediment that the AI if it creates any security, privacy, governance, and all these concerns. That's kind of an environment you want to bring it, but it's really not as simple to just bring AI into the Enterprise, right?
+
+[Speaker 2]
+So, you know, you get. You have access to all kinds of cool AI agents and. And more than all, but within the Enterprise. Without access to the proprietary Enterprise data. And the same use of it. It's just not practical to build most of the agentic. You know, workflows as well as? Um, the use cases that you you're trying to build and in the Enterprise. The data is not like sitting on a web where you can crawl and learn. Uh, it is obviously sitting in a variety of different applications is sitting in variety of different databases. Is setting a variety of different environments?
+
+[Speaker 2]
+Much, much of it is sometimes on premise some. It is in the cloud, somebody's in the SAS. So, first of all, the the data has to be kind of brought together, is used in a fashion that is the size of fundamental things, number one, the security of data. When you pick this data start, you use it either for training or inference use cases. Does its honor the rules of the company and often these rules? They are actually embedded as part of the application itself, right? So, um, so those have to be kind of whatever is in the source system, the the, the access and entitlements, and all the combined things that are sitting in the show system. Somehow, they need to be honored, as this data gets utilized with the most modern of the the models and.
+
+[Speaker 2]
+Could of? Organizations actually have trans device. Some drill internally is that they won't, uh, you know, the rules that is created and some driven by just external composed requirements. Those have to be ordered. There's the governance requirements. Those governance will be who can see what data, what projects are attached to software data sets, which teams are entitled to what data sets. These are not necessarily security concerns, but their internal governance concerns that are happening here. No question about that. You compliance laws and come, and you don't make sure that you've been in AI system. Goodbye. If you in Europe, you know, by next year the EU Act so we can comply with those those requirements, we're going to talk about these problem statements yet, you know, how do you address this in a much more elegant and simple ways? Why are you utilizing, uh?
+
+[Speaker 2]
+And on build your AI systems, you know, but in a safe fashion. I'm going to show you something a bit of an eye chart, but? This is simply to highlight that how some other Industries are rapidly kind of coming to the rescue. To say, let's create a frame different Frameworks. In which, what is really security really mean? And again, you don't have to go through the details of it, but there is a frame, of course, over stopped for evidence. If you're building in the air system, what are the kind of things you really need to care about whether it is from from injection attacks to a sense of data that should not be making?
+
+[Speaker 2]
+Understanding that you have not have access. An agency, which is literally entrance and what kind of things can be done with data. And variety of different things. Yeah, which of course not for this session is going to do much details for that, but If you were to see these requirements and map into an overall AI system that is being built is pretty interesting. These circles that you see? These are the same requirements that you saw in the last slide. But in this. In this version of the diagram of this information, what you see is pretty interesting things on the on the left side of it.
+
+[Speaker 2]
+Is where the data systems are. So fundamentally, the controls, the safety actually starts from where the source data is. That Source data. If it's used wrongly. And it is not used in a fashion that. Um, you know it that it basically wrong data goes into different places. You will actually have fundamental issues that you cannot fix it anywhere in the pipe itself. What permissions are there on this system? What agents? What AI projects can access? What data? That has to be honored because that's the chart of the journey itself, right? So, selection of the data becomes important, then secondly.
+
+[Speaker 2]
+You have the data is coming out, so you'll make sure that there is certain kind of data like sense information is not going. Actually, if you're using for inference or training purposes, so inspection of the data. From speaking from the solar system and making sure the data is cleaner, whether you're from before your journal needs and policies, or from external regulation or compliance needs. That data is just not going to to the model, so you can see, right? In the coming out, it has to be inspected, and it is to be cleaned. And of course, the morals. The models have to be safe. There's so many different models, you know, language models and?
+
+[Speaker 2]
+How do you know the ratings of the models how risky they are? So there has to be some categorization of the models itself. That what models you can check use or not use? The data that is going for training purposes. That it sounds can. Actually, you have been a poisoning. You can have instructions inside those. Data itself that it creates fundamental issues in terms of how responses given right. If you feel wrong training data, or it has actually have poisoning done in those data sets. It's the problems you have to make sure that its section is going on for any data that is being used for training purposes and then also going to make sure that if you don't want some sensor here to be going into training. It's not there, because what is not again on cell change, they're not going to forget that, right?
+
+[Speaker 2]
+Chinese songs when they create responses. Inspection has to be there right there to make sure there is no nothing, you know, sensitive, going out, um. And if you see on the on all the way on the left side of, it will actually end. User is communicated in a natural language with this either agent or or a chatbot. That point in time. You want to make sure that all the questions that are coming in, they are not malicious. There are a variety of different security issues like propagation attacks, jailbreaking instructions, and variety of things that you know. Make sure that they did not coming in into the system they're getting inspected and their orders in, uh, in terms of what responses are being done, right?
+
+[Speaker 2]
+The highest level. What you will see is that the the safe Enterprise AI is not just a large language foreign Fiverr or governments. That's a huge misconception. Often, it is there while I have a large language firewall or EF firewall will have to be six. No, it is literally. You have to almost Stitch it. The way you meet the car system to be set essentially, right? The question release. Then, of course, this looks very complicated. How do we do it? This is too complicated and often. In this conference, you will have. I'm a data and a guy, right? I'm going to do all this thing. I'll show you how it is going to be very simplified, of course. You use some frameworks that you've, uh, created that makes it super easy, or you embed all these things. It's very, very easier, right? Let me go to that right now.
+
+[Speaker 2]
+Um, at the highest level, of course. The combination of things is going to be like that you have. Unstructured or us structured data inside the Enterprise being used for your agent. Use cases, which includes your, you know, basic search and basic knowledge unions. More fun agents will be absolutely using, you know, this app information? And we could be using it to build your agents and co-pilots and assistants and all these things, but that's at the highest level. Of course you're trying to do, right? What you've done within a framework called gen4 or genco.ai? This. This is of course is not entire pipe.
+
+[Speaker 2]
+On the right, most is where your end user experiences. It could be a knowledge agent. It could be an agent doing something. Uh, with the underlying data, but you can see the Journey of it. It starts on the all the way to the left with that sphere. Your Source data is inside the Enterprise, right? In for generation enables. Is that first of all the journey starts with? Right selection of the data. Now, how does it do that? And once you connect the general to your data Systems, it actually builds a knowledge graph of the the data. The knowledge graph actually has information it automatically learns.
+
+[Speaker 2]
+For that particular system that you connected. What are the provisioning? What kind of data exists? How about what kind of users are there? Uh, what kind of permission policies exist in the solar system? It will also highlight that you. Uh, if did, any sense it inside here. Will highlight what regulations May apply on this data? That's something that is benefits. I'm gonna talk more about is until the command graph that's right on the top. The data command graph is actually a knowledge Graph. All the assets that were sitting in that application or in that data system. Our dynamication could be highly unstructured. Data could be, you know, Office 365 or Google or something?
+
+[Speaker 2]
+But also it could be structured here, right? That knowledge draft becomes the guiding principle guiding of a light for the entire pipeline that actually established within General. So very first thing is ingestion. It's action data. Building a particular use case or particular agent. There's always going to be some subset of data that you desire to use. Often, it is not going to be the entire data set. It could be entire data set. That, Peter said, maybe just type to HR use case. If you start your customer support use case, we need time to certain people in a belonging to certain groups.
+
+[Speaker 2]
+The graph actually makes it super easy for you to. Define what the logic is through which you. It's a well, well, that data set that buys with this basically selection logic only pick that one. Because if that is wrong. Of course. There is nothing at the end any quadras or fireworks. It doesn't know that you selected wrong area. So, first of all, the data selection and ingestion is done by the Gen core, and its sink is important. It's also very important because you want to make sure that. Uh, you know. And if beauty is coming in, you're able to pick that up automatically.
+
+[Speaker 2]
+The other important part is that within this? The framework is capability that you can Define that data with. Certain labels should not come in or data with only certain labels will come because you want to make sure that there's something sensitive your team has labeled it.
+
+[Speaker 2]
+It gives them the ability to kind of take certain data out that should never systemic temperature. Work allows you to label the data and then use data also at the same time to either include or exclude the underlying data. That is actually even those labels. Comes through. In this, you have spreadsheet. You have PowerPoint, you have PDFs, pictures, images, all kinds of data is going to appear. Now, you would Express basically that certain kind of data within your organization, their policies that will prohibit that data if there's certain kind of area, let's say if it's background numbers. And this is the customer support chatbot. It should not have it, as it should not have somebody's social security numbers or somebody's personal statements.
+
+[Speaker 2]
+The logic. India, or super easy to say. What kind of data is not possible for this pipe or this? This particular ES system that you're printing? Sanitization step! He will just take care of that. You would express it in, uh, in an easy way. They would actually remove. Basically, it will, of course, inspect every file coming into it. It will. You know, do what it needs to do to convert it in facts and all. And then, if you take that information out and then move along into the body. And of course, the process of, you know, factorization.
+
+[Speaker 2]
+Uh, framework allows you to, you know, use. Different kinds of embedding models. Um, and you get to find basically, you know, how do you want to utilize those inviting models to to factorize it in the world, of course, uh, place where you can actually? Uh, they find that, what kind of activities that you want to utilize, of course? There are some Vector DBS, which is powered by the gpus. For high performance, we provide those options actually here that. These gpus are powered by Nvidia gpus, and which means if you need high performance, you can utilize closer creates also.
+
+[Speaker 2]
+And then it goes retino retriever engine where you where you is going to be retrieval engine, creating all the retrievals. If you create the responses. Uh, she does before the rejevo. Will see that the safety, sensitive organization they want to make sure there is protection in front of activity. When a retrieval is being requested. At that point, you can actually put another inspection there, like a retrieval Powerball, which is provided as a lifted capability of gn4 that it can inspect all the the requests that are coming in, and if it doesn't comply with the policy, it's your organization has. If it removes that information or will deny that request for that kind of request, that's coming in from the retrieve engine.
+
+[Speaker 2]
+90s models, which is supported by varieties. Um. You will actually have. Uh, I'll enter the layer of safety that can be added to look at your all your natural language, your responses going on, and all the questions that are coming in in natural language to ensure that this is doesn't become a hundred to an attack from attack coming from large side coming in and also hundred affects filtration by mistake or by actually getting attacked. This concept of prompt and response firewalls, which look at every prop that comes in, it inspects it and and basically is typical attacks of jailbreaking.
+
+[Speaker 2]
+Promptly, you should attack and a long list of, you know, different kind of attacks that? Out there in the Bible, and there's a huge library for those. Uh, and then also looks at responses to make sure there's no acceleration going on, because that can become the door to get to this data of the left, everything on the right that you actually have an interface. It can become the conflict literally a backdoor to get to your data and face. Get the date out, uh?
+
+[Speaker 2]
+Of course. In this you, you saw that while the old west popular relevance looks very complex. But with the technology and this can be built. These pipelines can be built and literally within General in in minutes. You can actually just select it. What kind of data from which directories? What kind of users defines, they say, what time they are? You don't want to be going in and. I forgot these. What language now particular model you want to use within the name libraries and? And then you should be have. The interface being set up super easy stretching set this thing up.
+
+[Speaker 2]
+Another way of looking at is this? So, if you will see here in the bottom, these are all these Integrations with. Systems where actual data resides. And you will see this term of sick is because. Often, this is not a one-time loading exercise, right, you, you would want this information to be, uh? As soon as it changes. Or, if you want to do it in an hourly daily basis, if information changes, you should have new information available, uh, to your AI system, so it has to think all that does, and you better not bring all the all you know it better. Be basically the information that, uh?
+
+[Speaker 2]
+Information that is just the new information, because often the files could be pretty large, and it could only needs to be the new information that's actually there. And this will come back. In in the theorem of? The green thing that you're seeing, of course, is the place where you have the selection lognologic of all the the language models that are actually. There, you see, are you there find it back? Everyone here. Um. The enforcement of entitlements. I think that's the thing above the green thing that you've seen. The bad enforcement. That has to happen that if two different people are asking questions.
+
+[Speaker 2]
+You should only get an answer. From the information that they retracted to in the source system in the bottom. Because if two people ask a question and they talk to each other's information is flawed. Because all your, you know, feeding each other's information because you're not honoring the permission from the source system? In the bottom, all the sources that are there? The battery that are embedded as our own Source systems. They have to be automatically enforced from the top. Uh, to make sure there's no cross. Information that we kind of Crossing between people, right? Um, and then of course the gem code. You can find different kind of interfaces, others. Your flash channel is your um.
+
+[Speaker 2]
+You know your portal is to speak like that, right?
+
+[Speaker 2]
+It. This, I'm going to emphasize this is the knowledge graph. Do all that that I showed to you before? You need basically information available to you, which you can ask. You can say, well, you know, this person is asking questions what five this person has access to. In that particular system. So, when you, you're doing basic entitlement enforcement, this information could be available, and this information can, of course, be used. When you're even ingesting the data as part of Vector DBS that you actually have, you all the knowledge of the underlying permissioning, which is. Thank you! Sitting is part of this knowledge draft. You can just waiting it and start utilizing it, whether it injection time or whether at the the enforcement right on on the right of it.
+
+[Speaker 2]
+After the retriever, but as part of a retrieval that has happened, right? So, that's really the the driver you. You saw that that fundamentally is being the driver to actually enforce at the selection of data standardization of data, access information, and of course, the enforcement of who can ask, what? Question because it has all the source commission actually in the knowledge here of itself. Thing is, as I mentioned to you. These things. There's so many applications. There's so many use cases in the Enterprise. One of the fundamental Constructors that can be reader in minutes. Why can you just?
+
+[Speaker 2]
+You know, easy to figure. And and visually see it and then practically use things in minutes. And that's a fundamental requirement that you've seen. While safety is super important, the same that there are V2 complex. There's no reason that utilize it in in the the ID marks. For you to kind of create different kinds of AI agents and AI use cases in a very, very easy way in in a very intuitive UI. For what safety? As I've mentioned to you. Very easy to. A highlight, and that what kind of beta? What kind of information Act?
+
+[Speaker 2]
+You do not want now from your lens. Often, you know, we have also seen that. Instead of explicity is telling what kind, particular kind of fields you can say, look. I have certain regulatory body. It could be gdpr. It could be other thing anything that's tied to it. You figure it out like. These are the things I don't want that to be white. The screen book you can actually. Um, depending on when you watch your lead B, you can pass it. It can tokenize it. It can. Uh, the TV encrypted, uh? Market, but you actually have that information. Way to configure these things in the bathroom.
+
+[Speaker 2]
+We talked a bit about the large language modeling firewalls. Uh, you will see that. You are in edit at different points just before just after the vector DPS or retrieval. Policy enforcement on the retrieval side. Similarly. Organizing all the comps that come in. And also all the responses that go out. And it has to be part of fear every AI system. Um, in some form or fashion. Yeah, the deeper is embedded as in the system. Better control, better monitoring you be having with it. And of course, it has to tell you all the activity that's going on. It should have a way to for you to cut the policies that you like to consider, because for differently accessories, you know, changing policies. For instance, if your customer support chant on, you know, uhe have much more stringent policies because you know it's sitting on on the out. People are traversing with it and much higher bar.
+
+[Speaker 2]
+On your public website versus if it's any agent which is only accessible to your informal teams. Is a different kind of policy you're going to put on it. Maybe sensor realize it's okay to flow back and forth because they need that information, regardless of HRT, which is cs4t and along great. Um, in darkness, we talked about. And it's a complex topic because? Every system have their own permissioning method. There is no work operational method. Every SAS application have their own permission method, right? So the knowledge draft HD allows you, uh, to? First of all, have this visibility or also utilizing what we've seen is actually this. This becomes a pretty present tool, because before somebody can even talk. Connect the AI system often. We are seeing Securities, and why is that? You go and clean your environment to make sure provisioning there's no provisioning issues by mistake. What people unintended access issues don't exist in the underlying system because they get exposed? What these knowledge agents are amazing and?
+
+[Speaker 2]
+Thing that you have access to, and you generate an answer. Which optimize that if there's any mistake which was not detected for the resources aren't really good in these systems. Acted. The law of data is get leaking, so this whole Knowledge Graph actually gives the video to actually go fix the end line system first, then turn off. Your your business system that you want to create. Until you'll see that. Often. It will require often. Your teams will require that they have full visibility, what buyers are getting into, where what you know, what the sensitive information is going, where it's a full provenance.
+
+[Speaker 2]
+Of VI system, and you will have a lot of their systems, so you have a full provenance view, which is, is getting created, right? Um. So that overall view that you actually have from every system that is actually is right. The last thing in? Fpl system. You'll see that the time established for eua. We already know in terms of you are acted. There are certain. Fundamental checks have to be there on the use of data, use of models, entitlements, and kind of information can be in those systems. This what is created within the framework that you can actually check against those controls and the environments are there, so that is available.
+
+[Speaker 2]
+For your teams to kind of, not be a blocker, so to speak, because you actually have these control information and what they call evidence and evidence is available to say you're doing everything possible to make sure that your projects actually comply. You don't have to do something because completely different varied as far as the the framework. Greater. Next year, you will actually be like in in action enforced. Which means you're building the projects is rather. Started betting some of these controls. If if you actually will be subjective as that, but This is just one example of fact globally. You think that what totally different air regulations globally?
+
+[Speaker 2]
+Are already. The bike will be coming out. Um, with the jackpot, you see, the OtterBox. Libraries that actually exist, whether using for? Training, just bring the data engaging use of training purposes. Um, similarly, you actually have for creating knowledge agents or other kinds of agents. And of coursework for different guidances that you know she have, and you utilize the things. Through the example we've seen, of course, Brightness, different examples, it could be. Uh, a knowledge isn't created for customer success. Sitting on Riverside to make sure that you have this information that you can provide to your customers, and if the data is spread across and answers are spread across one to different places. Your customers or at least your customers basically people they can quickly find information and answer. You've seen that it's very common use case.
+
+[Speaker 2]
+Is also getting utilized for just bringing the activities, cleaning it up and then utilizing, for whatever internal purposes, their projects and things going on. You've certainly seen John Corbin utilized for training. Uh, great video sets. Because screen is that you want to make sure this is this example? Like, exactly, if I comply to getting can be picked upon Lee and there's hypocrite and certified copies can be created so it can be used for, uh, the health care use cases. I'm going to show you one example of variety of different controls that. Can be better at how they act how they should come into real life. Some of these controls that were invented easily in the build process in the next. What did you achieve? People are ready to utilize it. So,
+
+[Speaker 3]
+Here's the examples I.
+
+[Speaker 3]
+He gets a precise response for his opinions. What's remarkable is that
+
+[Speaker 4]
+This was?
+
+[Speaker 4]
+All right, good. Wait a little bit.
+
+[Speaker 4]
+All right, we'll see
+
+[Speaker 2]
+If you can. I can use this mic to show you this now.
+
+[Speaker 4]
+Nothing's
+
+[Speaker 3]
+Right there.
+
+[Speaker 4]
+Let's see the general
+
+[Speaker 3]
+Q a in action. When Chris asks, can you show me a table of my clients that includes their ages, planned retirement ages, investment approaches, current investment balances, and ETF Holdings? Precise response with cetaceans. Once remarkable, is that this was achieved without traditional data preparation steps. No manual joins or semantic modeling were required. The system automatically combined the information. When Chris asks a follow-up question, customer Baker has decided to retire earlier at 49.
+
+[Speaker 3]
+Should they change their investment approach, and if so, what ETS would we recommend? He gets a precise response from the knowledge agent with citations. This is based on the combination of both structured data, such as account details and unstructured data, such as investment choices and Bank Asian policy documents that we loaded. Let's show you the entitlement enforcement in action when Chris, the investment advisor one asks, can you give me the current investment balances and ETF owned for customers, donut and Funfetti. He is prevented from receiving an answer. Becomes. Chris does not own these clients accounts.
+
+[Speaker 3]
+On the contrary, when Celine another investment advisor asks the same question, she gets the information about those clients. This is because Celine owns these clients accounts and is entitled to their information.
+
+[Speaker 3]
+Let's show you the standardization logic in action. When Chris investment advisor 1 requests bank account numbers of his customers, the system asks all the digits in compliance with bank policy. Now, let's demonstrate the prompt firewall in action through a scenario involving off-topic content. When Chris asks about another employee Solis salary information, the knowledge agent shares salary information when the prompt firewall is off. However, when the prompt firewall for off-topic content is configured, Chris is prevented from receiving celine's salary information. The chatbot replies with, I am configured to help with client investment advisory Services only. I cannot provide employee salary information.
+
+[Speaker 3]
+Gen core 8 imprompt Fireball. The knowledge agent intelligently detects and prevents any discussion that falls outside the specified bounds of topics from the
+
+[Speaker 2]
+Pipeline. This is an example of, you know, different things that from your documents. And so, position from guard reading, understanding the promise and working used on inventory despitement was great. It's probably creating, you know, three minutes or four minutes. Are these all these checks and balances were embedded as follows? So that's, that's the session. I think we have a few minutes left if you have any comments, any questions happy to address those questions from the office?
+
+[Speaker 1]
+Thank you Rehan. Let's thank our speaker.
+
+[Speaker 1]
+Give me another few minutes. If anyone has any questions, so the mic at the middle of the hallway in the walkway, let's go ahead and get to them like and ask your questions, and if not. I just looked like another question.
+
+[Speaker 5]
+Is, does your platform require the use of your prompt interface?
+
+[Speaker 4]
+It does
+
+[Speaker 2]
+Not have to be a problem. A good question because if you want to utilize this in the back end, then you want to use an API that exists. You can simply use. Api. And then, of course, you can do whatever you want, uh, on top of the apis. Also, the finger can be, is, you don't have to use the reward for the entire pipe that you were showing you. Use partial. You can just lower the data or just mean the data. And that's it, and we can use the data copy and stuff, and everything can be done using API with no UI concept.
+
+[Speaker 5]
+So, if you want to adhere to the security model you have in your environment to start with.
+
+[Speaker 4]
+Does
+
+[Speaker 5]
+That require your prompt interface? You have to collect credentials at some point.
+
+[Speaker 2]
+It is not because you can primarily utilize for security. Construct is on the two places, one for the and arguments. Other is a key for the. Be fireworked. Independently used without having the UI the engine work into this. Anything to do with that? And happy new, and I'll show you the
+
+[Speaker 4]
+Details.
+
+[Speaker 4]
+All right.
+
+[Speaker 2]
+There's not quite much. Thank you so
+
+[Speaker 1]
+Much. Oh, there's one more question. There's one more question.
+
+[Speaker 4]
+I was wondering if you could talk a little bit more about
+
+[Speaker 2]
+The HIPAA compliance example and what exactly your system does and how does it contribute to the paper compliance access certification? In that example, it was a healthcare leader being used to create a model for healthcare so that that particular customer. And they were wanting to actually use the system for. Cleaning the data. Because if the healthcare data comes out and if it's been useful, only our use cases, you want to make sure that the data is key. It has no HIPA information inside it, so the the part of the python is used to actually get their idea and apply basically top policy, but related detection policies to then remove the information and the grid data sets and get them certified, right? Because without uncertification, you, you could not actually be.
+
+[Speaker 2]
+Your Healthcare projects. Essentially, that's the example that was shown in this in this use case, and of course, same thing exists. Even if you're building a healthcare or even knowledge agent, you can actually invent some of these policies to say the data that is related to HIPAA. It should not go in, but the rest data can actually be utilized to create an allergies for healthcare use cases, and Jen core would gracefully be able to do that to create those super compact College.
+
+[Speaker 2]
+For today. Thank you so much. Thank you very much.

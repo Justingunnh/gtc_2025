@@ -1,0 +1,381 @@
+[Speaker 1]
+My name is Cory Ellen. I work on the Rapids and vector building here at Nvidia. Today, I'm going to be our host for this session and before I begin, we have a few housekeeping announcements. Uh, please don't forget to download the Nvidia GTC mobile app for the latest updating session catalog on quick and easy complete session survey and more.
+
+[Speaker 1]
+As for the exhibit hall on level two, and don't miss the exhibit hall reception from five to seven. Also, make sure you check out the GDC Mark where you will find art installations, Lounge areas, food trucks, lunch service, and sponsor activations, as well as our Vibrance Night Market, which is open from 7 to 9 pm.
+
+[Speaker 1]
+Recording will be made available to attendees in the session catalog within 48 hours and to the public on the Nvidia on demand next week.
+
+[Speaker 1]
+And now, let's get started with our session. We will have time at the end of the session for a few questions. Thanks everyone.
+
+[Speaker 2]
+That they had a payment in the list at Payless worldwide Financial services. Today, I'm joined by CJ cousini principles of location architecture and Simon's Diner, senior AIML special resolutions, and exist. Guys, I really go over some of the things that we learned and partner with Nvidia for data processing, model training, and model entrance. Today for the agenda. What we do cover is business challenges that banks can pay to customers around the world are facing. These students are looking at employment for Crossing session. You go over obviously the data processing model training using Nvidia gpus and software stack on AWS.
+
+[Speaker 2]
+Point results for data processing, model training. Why the audience a takeaway like GitHub link that you can use on how you can mod and configure your notebooks to achieve similar results? Lastly, we will go over ways to get the Nvidia database. Do workshops on Mars to speed up your data processing, model training, and modeling anniversary times have a cheaper costs? So, before we start with the audience, you know how many folks in this room have today have experienced that phishing email encountered a fake website or received a scan text in the last month by a regular hand.
+
+[Speaker 3]
+It's a
+
+[Speaker 2]
+Problem, right? Today we faced it day in, day out, uh, the process are getting more sophisticated and what we're looking to help customers and also arm them related techniques to help anomalies and taxing for file detection.
+
+[Speaker 2]
+We've seen a tremendous role in e-commerce transaction from
+
+[Speaker 3]
+Having
+
+[Speaker 2]
+Worked at a Car Network myself, you know. It comes with his own challenges at online fraud. Race are three times higher than choir president police. Every business podcast, online payment fraud to exceed 362 billion with a period between 2023 and 2028. In addition, in U.S federal trade Museum data show that American consumers in order of losing a regular 10 billion scams in 2023.
+
+[Speaker 2]
+Some of the top scans include Georgia scams. Because you know, being read directly from social media to a big website, romance, scam, and wealth in lessons camp. Throughout 2024 Financial Regulators worldwide because we can demonstrate their intent to crack down on non-compliance. With anti-money laundering and counting the financing of Arizona rules. Have you received the second and largest AML fines in 2023? So thanks. Has saw it increased in terms of penalties in 2024, with both large institutions and Challenger or new events receiving large fines. Then, the second alone received over 3.2 billion combines last year.
+
+[Speaker 2]
+Timeflies included a bank failure to update its compliance program to update numbers such as money being funnel into higher resources. Example is a band going to file specific activity reports, despite transactions having been red flagged. Let's make criminal groups including drought and human traffickers were able to move billions of dollars through the bank. Heuristic and static rules are no longer able to keep up the various type of emergency
+
+[Speaker 1]
+Broadcast.
+
+[Speaker 2]
+The customers are using a multi-layered product to proper engines. Authentication, behavioral analytics, and risk engines. To build the combination of blue-based engines and machine learning areas. We help customers make yourself be able to build a. Holistic providential solution that includes one identity fabrication. Including running the kyc and AML checks, and any authentication which is pre-authorization. Looking at session colleges and behavioral biometrics and three broad prevention doing transaction, which includes authentication and dynamic cryptograms, which would generated for each unique transaction. A living analytics close transactions to deal with first-party fraud and return fraud. So today, uh, many banks and payment customers are moving from rule-based engines to AI based transaction prevention to all models. How the data processing future engineering model training?
+
+[Speaker 2]
+Is limited by the cpu-based infrastructure, which processes these steps sequentially. Here, one banks and campus companies are leveraging gpus for the parallel processing power to accelerate their ability to test and build new features. Um, and then basically build procremental models with physical and online transactions, and by marketing, since payment methods can vary by market. Broad detection workflow we built together, and you base our AWS Services to leverage Nvidia gpus and software library and makes easy to point code running on CPU based infrastructure to GPU gpus infrastructure to create predictive features at least more accurate models, reduce energy consumption, and deliver single digit millisecond inputs. This is critical as we move towards more real-time claw prevention, especially dealing with things like authorized push push.
+
+[Speaker 2]
+We also help customers build orchestration layers on AWS, leverage their employee property protection vendors, and enhance their multi-layer draw prevention systems. So, along with the growth of genotype, these opinions will be mentioned. Regulations such as the payment service director in Europe and Global messaging standards, such as ISO 28.2, increased the amount of data tanks and AIS service providers will be processing. Customers want to Leverage set of data to mind for insights and nominated infection, which provide detection. We're all about impacting, um, anomaly data at account level today. We're also starting to.
+
+[Speaker 2]
+My two, and what's your degrees of separation? To the astual receiving account and whether the receiving count is pi, three levels down to potentially a minimal account. The level integration is quite sophisticated, and the number of nodes is quite increasing as well. You know, we're also bringing additional data, such as device ID, IP address associated with advice, whether the device using your proxy or VPN, and how long an email has dissociated an account and this, and how long have that email been created, because that's a great indicator of whether this is tied to essentially across your spot as format. Get out with myself. Please make queries and features quickly, and now the way hours for the job survive, right? So, we heard from Banks and customers that some of the longer mod.
+
+[Speaker 2]
+Your crashes. That is a waste of 40 dollars that we. You know, migrate a lot from and drive more efficiency in the system. So customers want me to more reasoning or a daily training jobs, so the speed at which it changes from one can are increasingly becoming important. My problem fashion also requires factors in the previous times in single digit milliseconds. Already, collaboration with the media on AWS? Here's how the notebooks, which has been created that is the immediate gpus and software stack. We're also shared with you some of the configurations that really optimize this in GP acceleration and make it easier for developers to stop with these ping points. Now, our return, which is here to cover some of this software. We have leverage, you can
+
+[Speaker 3]
+Jump
+
+[Speaker 2]
+Into the video 94.
+
+[Speaker 4]
+So in this slide, what you're going to do is, I'm going to show, like, one of the critical learnings and then, especially the game, points what the customers have shared based on that. What we have done is.
+
+[Speaker 4]
+I'm going to show you the length where you can download, and you can start testing images. So, what we have done this? In this Workshop, we give it a tool called graphics isolated product, so this plugin can use the composer and also create some data. And again, it's like more of a sensitive financial information well. So, with this tool what we have seen, then it also offers 70 percent data crossing blocks when requires smartphone. What you could do is you just need to download GPU plugin for Apache Smart and just make minimum competition, and you can even run the same policies conscious.
+
+[Speaker 4]
+If you're gonna import your prior compounds as an employer as an output, you're gonna get Advanced PS4 and also potentially uncovered features. So, that way. What you could do is you can only focus on UK runs. And finally, it also supports. Media CDF practice Library, meaning operations like managing, sorting, filtering, and also aggregations where you could also do about real time with an office Crossing. So, moving on to the next slide?
+
+Yeah, here. What we have done is we have used our data boxing pipelines where I've used Amazon nsk for efficient messaging, and we also see customers. They try to screen the data into EMR, so EMR is where we have a managed elastic map ratio, which is using GP400 and with using energy Alaska processor that able to activate the GP file.
+
+And, by the way, this technology, we will get you three and also efficiency. And last year says, in simple terms, this means we enable the process faster, save costs, and U2 validity to detect fraud and managers in the next slide. Simon is going to go over the mission now.
+
+Be tackling this problem from a machine learning at the standpoint, and there's a few different approaches that are common. So, starting out with the first one, we have supervised machine learning. So, with this approach, we typically start off with a label data set. So, you have examples where you have fraud and not fraud.
+
+There's a few challenges with this approach, number one from the data lifeline perspective, and very often the data comes from the static and heuristics that Paul mentioned before. So, again, not necessary capture. Oh, if possible, fraud patterns. The other challenge with this is the imbalance in the classes frequently a year and a half, quite a few quite a bit more legitimate examples versus.
+
+And the general intuition behind this approach is. We establish some sort of a pattern for each customer based on their purchase history, purchase veterans behavioral patterns, and we apply algorithms to detect any sort of anomaly. Is anything that stands out? Become pattern that this customer exit is. And then, a few times when I'm writers there, and we utilize here we have random plant forests.
+
+We have a single fast svms, spectral clustering, and so forth. But the general idea is always the same. We're looking for outliers, something that doesn't match up with what we know about the customers purchasing. And then the third approach. Before I get into this one, I'm going to talk a little bit more about.
+
+[Speaker 3]
+Applies to volunteer in the first two approaches here, so number one very often. Um.
+
+[Speaker 4]
+There's quite a bit of effort that is involved on the future engineering side of things, and the data science system spend quite a bit of time engineering very specific features. So, for example, the number of transactions that a customer has made in a given time frame the distance, um.
+
+[Speaker 4]
+Is that their transactions in place? It's really no shortage of the number of features that you could. Engineer is called an art and science. The problem with that? We don't always know which of these features are going to be informative. Which one is going to improve the model. Pick it up, so potentially address as front patterns about those standard features may not necessarily keep up with that.
+
+[Speaker 4]
+And so, with the approach the third approach, here we apply representation, writing, where you explain the model to generate features, and there's a few different approaches within this category. So, for example, later transaction level, you can look at Auto encoders. You could also go.
+
+[Speaker 4]
+Transactions, but the pattern that is very starting to emerge is the graph based approach where you can take into account. Basically any given parameter with respect to the customers purchasing history. So the vendors they interacted with times that they work with those vendors. Any sort of relation now or temporal patterns could be represented in the crash structure.
+
+[Speaker 4]
+And then we have a series of algorithms which could be used to generate those graph-based features that help us. To help us detect, uh, transactions. Now, one of the challenges with this approach is the features that are generated cannot be interpreted in any way it just for any human Observer.
+
+[Speaker 4]
+They look like a random set of numbers. Bottom.
+
+Um, in different issues there. Maybe there's a vendor that has some sort of, um, anomalous?
+
+Advantages for using the UVU based Hardware. There's a few. There's a few, I just pretty much all go on end and end essentially by using gpus without any code changes. You didn't accelerate the training of the model from hours to minutes, and this has several advantages. So, number one is, you could utilize the larger amount of data, which would help you improve your orientation, accuracy, or even for the same amount of data.
+
+You could run a larger number of experiments do more. Hyper parameter optimizations come up with a better model.
+
+Brushes you can train? More complex models which help you to. More cases from out front. And the beauty of using, uh, Rapids, and AWS, is, you could pretty much do all of this without any cause changes. Because most of these libraries are natively accelerated at the Box. As far as the Amazon service status, typically given the amount of data that is involved, you're not going to be able to train these models in a simple instance.
+
+You would need a cluster of influences and configuring your cluster of instances to train your model is what we refer to as undifferentiated, heavy lifting. You've already won this to be spending your time and training and tuning your model, and so there's a few options that take away to have you with.
+
+So this is more of a fully managed service. And it pre-provisioned instances for you with the creation of the job out of the box. It has a number of different, um, managed container options that have pre-loaded with all of the libraries that you would need to train these models.
+
+So, basically, you just bring your training code, or in some cases, there's also out of the box, uh, entry points that could be utilized without having to write any comb. Essentially, you just need to get your data in the right kind of format and page maker AI takes care of the randemporium.
+
+This gives you quite a bit more flexibility. And if you are already running or comfortable with running kubernetes workflows, you could use containers, containers, representative, and brand new workflows and eks. The software perspective again. Combination of either Nvidia Rapids provided Docker containers or Amazon.
+
+[Speaker 2]
+Container options for various ml workbooks.
+
+[Speaker 2]
+And the benefits of using gpus doesn't start with just the training, and there's quite a bit of Advantage from the imprint. I, if you know anything. Nvidia's Triton inference server, we can see, uh, extremely large throughput with single millisecond latencies. Reduce your insurance cost instead of having to scale out to a large number of CPU based instances.
+
+[Speaker 2]
+You could process incredibly large amounts of data concurrency with high throughput, while at the same time taking advantage of the the
+
+[Speaker 3]
+Long, single digit latency that. Distance sacrifice you? And again, this is very similar stack. Uh, and to the training one that I shared earlier. You give you a stage maker AI, which is fully managed. So, again, you have containers. You have various functionalities to make it easy to deploy your models.
+
+[Speaker 3]
+Uh, you could run a, b testing. You can configure Auto scaling. With inference options as well, which are completely fully managed for you. Uh, and if you prefer, um, to go at it yourself, maybe utilize your own, uh, inference stack. You have Amazon dks. From a softer perspective and data, Triton server have been utilized football's traditional.
+
+[Speaker 3]
+Oregon based models with your linear regression models, three based models in addition to the more complex antique learning models like the graphitura of networks as well. So after I'll hand it back over to sadir, we're going to share some. Not benchmarking numbers.
+
+[Speaker 4]
+Thank you, Sam. Yeah, so now let's get into action, right? So what we are done is for fraud. We have realized that there's a need for the interesting last data set. And especially to get the last data set in the financially no one's gonna share this. So, what they have done is we have decided to sacrifice our own data type, so that way we can have like control on the project patterns and also the data.
+
+[Speaker 4]
+Right. What we have done is we have sold three different levels. One is customers one chance and transactions meaning, like, let's say, we all have customers going to the point of cell device and typically when you make the transactions. Those are
+
+[Speaker 3]
+The classes
+
+[Speaker 4]
+And Merchants happens to be any kind of reader's roles, so we have sold these three labels, which is a total lot of like around 100 gigabytes of data, so our goals are features we really do not want those small things we want to, like big and West kind of data.
+
+[Speaker 4]
+So, what we have done as we have done a complex joints?
+
+[Speaker 4]
+Drive close to 1.6 terabytes, but for that, we have used CPUs, the CPUs, the tennis, because functional, but it was taking like around 10 hours through this process. We have taken Nvid yourself, and that is where they have given up the plugin, which is Nvidia fabrics accelerator for the matches power, and we plugged in the same code with small configuration setting the same process we could able to run in just 40 minutes.
+
+[Speaker 4]
+10x, like, sorry from tennis, all the way to 40 minutes. It's like 50 next kind of enrollment, which we could do on the year across.
+
+[Speaker 3]
+Similarly, once
+
+[Speaker 4]
+We have the data being stored into RS3, that is where we have done the model training, even the model training Nvidia has asked us to go with hgpus GPU accelerator, which has really expedited our training. So, what we have seen is on billion rows of data set, especially using Nvidia plug n.
+
+[Speaker 4]
+We could able to solve, and I would say.
+
+[Speaker 4]
+In just two minutes, so this kind of entrance line what happens is, uh, we were able to give it to the customers so they could ever train faster to the data processing and also run the insurance very quickly on the last data set. So, as you can see initially, we have done with the CPU base, which is r6g, which are memory intensive devices, which is 120 gigahertz and 16 volt.
+
+[Speaker 4]
+And if you look at nvds, we have used a.
+
+[Speaker 4]
+164 and similarly, we're going to look at the model here. Again, use Empire instances, and when you learn the same thing on G6, we were able to launch the lower latencies and high costs. If you see the graph, right? One on the left hand side. This talks about the data engineering.
+
+[Speaker 4]
+As I said, it took us like 10 hours to run the data process since then. On the GPU, we were able to do it under, like 40 minutes, which is like parking under like four minutes and on the modern engineering simply like Montreal and six seventy five seconds and similar difficulty in one certain seconds is, and if you add it down, you are getting like fourteen x performance.
+
+[Speaker 4]
+The class is almost 8x lower the cost. When you compare to the CPU energy, the reason being is
+
+[Speaker 3]
+In CPU, you're running for long hours, and if you run a long house, you get charged for that. So, if
+
+[Speaker 4]
+You're running for Lora, I think that is where you'll get a good process.
+
+[Speaker 3]
+Now, moving on to the architecture. So, this is what we have did, and looking for the customers doing it. So, what we say is large and twice customers literally. They use their on-premise trying to get the data. So, what you could do is we do have multiple data sources where you can plug in the data, bring into an EMR clusters.
+
+[Speaker 3]
+That is, where you can run the patches bar.
+
+[Speaker 3]
+That's whatever is scheduled. A dedicated node group with the EKS cluster and this driver apps for the sample manager for the job. The spark driver part then creates executed ports in a separate room group. As you will see in the icon here, which are specifically designed for GPU acceleration.
+
+[Speaker 3]
+And here we are using locker stagger for Apaches one, so this executable part, as you can see in the diagram. Is this is trying to hold the customer's Docker images that includes Nvidia spark, rabbit isolator, and these images are put from our Amazon elastic container registry, which is PCR, which you could see in the diagram here.
+
+[Speaker 3]
+That the spark jobs can reverse the power of GB is also. So, once we have done this mod encoding model and encoding, and finally. Foreign Amazon S3, and from there, what we have done is we have used our stage group mode itself. And here we have leverage back end Nvidia GPU accelerators to train the model, which is again a supervisible model.
+
+[Speaker 3]
+And finally, uh, again, we do see customers. They also use a graphical. Out. And here, there are multiple. Uh, de responses what we have seen customers using. So, with Amazon, you can use Snapchat where you can load the data in Adventure and that can be sourced the digital rather into the S3, which can be trained, and that embeddings can be hooked into the XG boost.
+
+[Speaker 3]
+Nvidia has given us the answer has given us Nvidia GN and plugins, so that way what you could do is you could also run the container, and then you know, what do you call it? Adazzard remedies into an Xbox, so once you have this embeddings available. That is where you can have a tight end plus number, so we also have done a comparison between running on the CPU and also the GPU.
+
+[Speaker 3]
+What we can see is we could able to process 100 000 transaction for a second. Just I'll see you with trytime if you like.
+
+[Speaker 3]
+The first part comes about the data, right. Second, one is on the model engineering, and the third is on the training part. So, now our customer can get a rear diameter size, meaning mean walking in your store. Just tap my card, or like even closing it. So, the plan transaction goes all the way to another day.
+
+[Speaker 3]
+Let it change the traffic into another skin, which is man has Kafka, and here what we do is, uh, the Lambda password is going to call information, and then all in your server. And here, you can apply two Rican waves. For examples, and also for the other. That way, you can also get real Dimensions, meaning means planning address floor.
+
+[Speaker 3]
+You can even recommend whether my partner transactions are super performance. So, yeah, this computer architecture, or in a way like working, I've done it. We have given the notebooks as far and whatever the, whatever architecture is available, and we also have a workshop. I'm not sure. So, this is available in public guitar again.
+
+[Speaker 3]
+You can just okay, I can play.
+
+[Speaker 3]
+Yeah, in the next slide, I think Paul is going to talk about all the different ways sure. Thank you, um.
+
+[Speaker 2]
+Right, today we have a structure semi-structure and structured data. We are collaborating either from before the transaction, collect information on the device where the device is coming from all the way to the transaction itself. Uh, well, we really showcase here. In this, GitHub is going to use GPU acceleration when data processing future engineering so that you can try the future to see where?
+
+[Speaker 2]
+Creators to be able to leverage these workflows into their accelerators as well. And lastly, we encourage you to, you know, leverage an AWS genai Innovation Workshop or dot ideal ideal Labs Workshop that can take your data and then be able to run it and Benchmark your current trading models, um, and against the, uh, the models that you can create other new gpus.
+
+[Speaker 2]
+To kind of test out different demos. We have a demo including Insurance, banking, Capital markets, and payments. You know, a lot of interest in terms of using AI agents, uh, you know, objective workflows, and we allow and collaboration Nvidia these different demos to Showcase, um, how you can leverage agents as well as GP acceleration.
+
+[Speaker 2]
+So, we'll take any questions that you might have. I'll be there. Um, can you talk about explainabilities?
+
+[Speaker 3]
+If you talk about explainability for your supervised or supervised model or features? For, for your customers in general, and everyone.
+
+[Speaker 3]
+I'm sure I'll take that one, um,
+
+[Speaker 4]
+Explain about. It is kind of the function of the model itself. If you're building something like an entity boost model with handcrafted features. And they are, you know, some things like chat? For example, they the news that gives you feature attribution? As you get into, the more advanced models of graphics approaches that we mentioned before explaining loading becomes a lot more complicated.
+
+[Speaker 4]
+And that's why, if you pop all the draft based models with a graph database, you
+
+[Speaker 3]
+Can also it doesn't give you, you know, direct explainability, but you can kind of navigate into that graph and start
+
+[Speaker 4]
+Looking into connections in the patterns there, uh. To further analyze the data, okay?
+
+[Speaker 3]
+Hi, thank you so much for this presentation. This is close to my heart. I worked on a project exactly like this for the last two years, and uh, the challenge that we faced is, uh, in terms of our data, not just. About trustwater payment payments. And also real-time transactions.
+
+[Speaker 3]
+This is for a large National Bank, a global bank, and my question to you is, have you used a synthetic data creation for simulating data for customers payments and Merchants. How close was it to the production or the data set because it's extremely challenging to simulate our global data.
+
+[Speaker 3]
+I'm not talking about this viewers.
+
+[Speaker 3]
+Is working with China, right, Russia, and Saudi Arabia, and many other countries. So, I was just curious. How could you do that? And so that's very good question about
+
+[Speaker 4]
+It. I think it's like whatever classified things to do that one of the car payments of transaction history in Phoenix, moving from money movement from 100 right,
+
+[Speaker 3]
+Right? So?
+
+[Speaker 4]
+Okay, we have seen Independence and again here in Canada. What are the common statements the features we've been, even across one address and the last 60 days of transactions. And again, if a person is clearly doing a transaction in his life five minutes, okay, they keep climbing it. It's been other.
+
+[Speaker 4]
+It's a fraud. So we have taken all the rules. And based on that, we have close to 100 different features, again checking with the customer for the different families. That's how what we have done is based on that.
+
+[Speaker 4]
+But what we can do is? If you're really looking to do a workshop, we can come to your employees and we can help you again. Just a few examples for that, especially for the cross borders. What I would say is, it's nicer again. There are, like, so many banks available,
+
+[Speaker 3]
+And
+
+[Speaker 4]
+If you could break it up into competent ways, and you think what are the most common features which you think are supposed for based on that? Yes, we can help you. We can do that exercise for you. Yeah, uh. Second, part of the question was, you had a volume for fraud score.
+
+[Speaker 3]
+What was the algorithms you especially use, because again your deriving the front school based on the synthetic data so
+
+[Speaker 4]
+Serious that is correct for us for what we have done is especially when you're playing previous in the detail. This moment, right? And you would have, like, hundreds of features and further features for each kind of energy we are saying is fraud or non-fraid. So, based on that, we are trying to get the right side, and then we are trying to change the model.
+
+[Speaker 4]
+And we also use the DNA proper effect so. Every customer is different, so I want you to understand. So, what is your fraud because the part keeps changing? Okay,
+
+[Speaker 2]
+Yeah, a lot of the banks we work with, right? They have the label fraud, are not fraud, and they'll help them. We use their own data to save their properties different system. Thank you.
+
+[Speaker 5]
+Um, I'm curious, did you distinguish performance benefits and implants or with it that you sort of like together? Uh, yeah, that's a
+
+[Speaker 4]
+Good question too. Yeah, so right now, it is mostly real time. We did not fly on the batch. Yes, speaking time with us today. I'd imagine if having any concerns for you,
+
+[Speaker 3]
+Um, what time you write like this is a lot
+
+[Speaker 4]
+Of sales. You reality for the bash because most of the Cosmos for the CNS, the only UCS which I'm thinking is, let's say, the more.
+
+[Speaker 4]
+Big, maybe we can, I complain. Yeah, so there's a buckler, um? That goes out with a sufficient controvers and understand that in to the GPU for insurance. So, the specific impurity ratchet workbook you would just increase that to whatever memory contrades right within your GPO. Yeah, and one thing I want to mention is, I know, there's questions that a lot of when
+
+[Speaker 2]
+You want the banks, right? What the banks are going to is like, you know, the credit payment house, right? And now, they're seeing today. They have different crossovers for wires acas growth campaigns. We're just trying to call Cloud radio Hub so across all.
+
+[Speaker 2]
+I know about getting yourself. Yeah, thanks. Actually, the follow-up questions for real time, um,
+
+[Speaker 4]
+Yeah,
+
+[Speaker 2]
+Detection. Like, what kind of, uh, you know with your setup? Who is like mentioned about Hungary features? What kind of latency you can get, like being elicent or? Yeah, so if you look at tradition already, I would say most around like 30 or 40 milliseconds, right, or you know showing gears and we can bring that down to single digits, leveraging China and the server, right.
+
+[Speaker 2]
+So traditionally, like, having worked in the networks, so it's right around like 30 40 milliseconds, which was response times, right? But we are going to bring that diversity to
+
+[Speaker 4]
+Just.
+
+[Speaker 2]
+Have you mentioned like, you know, six months? Historical data from features, like, what if some people wants to looking at a customer behavior for the last two years? And, yeah, that makes a big difference, right?
+
+[Speaker 3]
+Yeah, and I think, uh, Gregory. So, again, this is just. It's right, uh, what you have done is, uh, I think it's like more than a year, I guess. Yeah, it's almost here. Here at work you have seen, but your computer, right? So the parents would be coming from the SRA years affected.
+
+[Speaker 3]
+Probably would able to be compared with CSU and GPU. Yes, we were able to fine-tune and create information now. You guys asked, and we can go.
+
+[Speaker 2]
+Thank you for the presentation, uh. Regarding the modern training in France, like since we have to keep retraining, have we experimented with feature space? Use the training time and also during the inference. Can you repeat the question, uh? Have you experimented in the feature space and features always? Our feature basically left as a company, or like Sweden, engineering of eBay, speech engineering for modern training, and employers.
+
+[Speaker 2]
+Use the freaking camera website. Again,
+
+[Speaker 3]
+It depend on the the algorithm, but in this case, it'd be fun with, um, more traditional achie boost-based approach. You can train on hundreds of gigabytes of data within several minutes. Um, so as long as you're able to monitor the trip and you just see that, there's some sort of performance generation retraining is not a big deal, but the more complex a graphics algorithm, you don't have to maintain those to scratch those support into a medical training, so it seemed data arrives.
+
+[Speaker 3]
+You are able to continuously train the existing model, so I hope it is that is.
+
+[Speaker 6]
+Big craft models. If you run into a scalability, issues with the transaction data.
+
+[Speaker 3]
+And it depends on how you structure a graph, or if you treat every transaction as a node, probably run into some scalability issue. The alternative to that is? Have an edge between them and there is small and muskers and the edges would reflect the transaction. Is previous syndromes of number transactions that they made the average?
+
+[Speaker 3]
+I said that. Community and images in a number of nodes and a little prevention in the issue of Mexico's always happening. But initial use cases.
+
+[Speaker 3]
+Yeah, my question would be around customers and.
+
+[Speaker 3]
+The challenges that everybody.
+
+[Speaker 2]
+All right,
+
+[Speaker 3]
+Yeah, so we do have like one percentages, uh, where you can care based on the type of data and working essayers videos.
+
+[Speaker 1]
+Okay, that's all the time. Thank you again to Paul suit here and Simon. And enjoy the rest of DTC everyone.
